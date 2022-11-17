@@ -4,7 +4,7 @@ body .topbar{
     height: 5rem;
     margin-left: -0.5rem;
     margin-top: -0.5rem;
-    box-shadow:#444444,5px;
+    box-shadow: 0px 2px 5px rgba(29, 29, 29, 0.5);
 }
 
 .logo{
