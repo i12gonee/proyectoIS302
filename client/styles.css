@@ -7,3 +7,7 @@ body .topbar{
     box-shadow:#444444,5px;
 }
 
+.logo{
+    height: 5rem;
+    width: 5rem;
+}
