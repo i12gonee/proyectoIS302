@@ -1,6 +1,9 @@
 body .topbar{
     background-color: #444444;
+    width: 85.4rem;
     height: 5rem;
-    width: fit-content;
+    margin-left: -0.5rem;
+    margin-top: -0.5rem;
+    box-shadow:#444444,5px;
 }
 
