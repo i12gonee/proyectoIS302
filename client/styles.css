@@ -9,5 +9,6 @@ body .topbar{
 
 .logo{
     height: 5rem;
-    width: 5rem;
+    width: 4rem;
+    margin-left: 0.4rem;
 }
