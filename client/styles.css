@@ -1,4 +1,5 @@
 body .topbar{
+    display: flex;
     background-color: #444444;
     width: 85.4rem;
     height: 5rem;
@@ -11,4 +12,8 @@ body .topbar{
     height: 5rem;
     width: 4rem;
     margin-left: 0.4rem;
+}
+
+.topbar .iniciarsesion{
+    color:aqua;
 }
