@@ -1,4 +1,6 @@
 body .topbar{
     background-color: #444444;
+    height: 5rem;
+    width: fit-content;
 }
 
