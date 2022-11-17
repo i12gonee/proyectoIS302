@@ -15,5 +15,10 @@ body .topbar{
 }
 
 .topbar .inisesion{
+<<<<<<< HEAD
     color:rgba(0, 255, 255, 0.79);
+=======
+    color:aqua;
+    text-align: end;
+>>>>>>> 3a52dcef73207a36ce4974b47fc7de4645969926
 }
