@@ -24,6 +24,11 @@
         color:rgba(0, 255, 255, 0.697);
         margin-right: 2rem;
     }
+
+    .Cursos .Curso1{
+        color: #FF8B00;
+        
+    }
 }
 
 @media screen and (max-width: 1366px){
@@ -53,3 +58,7 @@
         margin-right: 2rem;
     }
 }
+
+
+
+
