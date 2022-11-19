@@ -66,14 +66,27 @@
         width: 4rem;
         margin-left: 0.7rem;
     }
-    
+
     .topbar div{
         margin-top: 1rem;
     }
-    
+
     .topbar .inisesion{
-        color:rgba(0, 255, 255, 0.697);
+        color:#ff8c00;
         margin-right: 2rem;
+    }
+
+    .Curso1{
+        background-color: #ff8c00db;
+        width: 60rem;
+        height: 10rem;
+        margin-left: 8rem;
+        margin-top: 2rem;
+        border-radius: 11px;
+        border-color: #e48203c8;
+        border-width: medium;
+        border-style: solid;
+        box-shadow: 5px 5px 5px 0px rgba(56, 54, 56, 0.212);;
     }
 }
 
