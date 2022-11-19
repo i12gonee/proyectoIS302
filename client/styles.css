@@ -25,13 +25,26 @@
         margin-right: 2rem;
     }
 
+    .text{
+        color: #444444;
+        font-size: x-large;
+        margin-left: 8rem;
+        margin-top: 1rem;
+        font-weight: bolder;
+    }
+
     .Curso1{
-        background-color: #FF8B00;
+        background-color: #ff8c00db;
         width: 80rem;
         height: 10rem;
         margin-left: 8rem;
-        margin-top: 3rem;
+        margin-top: 2rem;
         border-radius: 11px;
+        border-color: #e48203c8;
+        border-width: medium;
+        border-style: solid;
+        box-shadow: 8px 8px 5px 0px rgba(56, 54, 56, 0.212);
+        
     }
 }
 
