@@ -59,6 +59,19 @@
         box-shadow: 5px 5px 5px 0px rgba(56, 54, 56, 0.212);
         font-family: 'Nunito',serif;
     }
+
+    ::-webkit-scrollbar {
+        width: 1rem;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #545454;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #ff8c00;
+        border-radius: 0.2rem;
+    }
 }
 
 /*PANTALLA RESOLUCION ANCHO 1366*/
@@ -113,6 +126,15 @@
 
     ::-webkit-scrollbar {
         width: 1rem;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #545454;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #ff8c00;
+        border-radius: 0.2rem;
     }
 }
 
