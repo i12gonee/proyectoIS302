@@ -26,6 +26,10 @@
         margin-right: 2rem;
     }
 
+    .Cursos {
+        font-family: 'Nunito',serif;
+    }
+
     .Curso1{
         background-color: #FF8B00;
         width: 80rem;
