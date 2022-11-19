@@ -1,3 +1,6 @@
+
+/*PANTALLA RESOLUCION ANCHO 1920*/
+
 @media screen and (max-width: 1920px){
     body .topbar{
         display: flex;
@@ -24,6 +27,7 @@
         color:#ff8c00;
         margin-right: 2rem;
         font-family: 'Nunito',serif;
+        text-decoration: none;
     }
 
     .material-icons{
@@ -56,6 +60,8 @@
         font-family: 'Nunito',serif;
     }
 }
+
+/*PANTALLA RESOLUCION ANCHO 1366*/
 
 @media screen and (max-width: 1366px){
     body .topbar{
