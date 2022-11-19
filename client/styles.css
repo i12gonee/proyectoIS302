@@ -104,6 +104,10 @@
         border-style: solid;
         box-shadow: 5px 5px 5px 0px rgba(56, 54, 56, 0.212);;
     }
+
+    ::-webkit-scrollbar {
+        width: 1rem;
+    }
 }
 
 
