@@ -6,7 +6,7 @@
         display: flex;
         justify-content: space-between;
         background-color: #444444;
-        width: 96rem;
+        width: 95rem;
         height: 5rem;
         margin-left: -0.5rem;
         margin-top: -0.5rem;
@@ -62,10 +62,22 @@
 
     .text1{
         margin-left: 0.9rem;
-
     }
-}
 
+    ::-webkit-scrollbar {
+        width: 1rem;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #545454;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #ff8c00;
+        border-radius: 0.2rem;
+    }
+
+}
 /*PANTALLA RESOLUCION ANCHO 1366*/
 
 @media screen and (max-width: 1366px){
@@ -118,6 +130,15 @@
 
     ::-webkit-scrollbar {
         width: 1rem;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #545454;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #ff8c00;
+        border-radius: 0.2rem;
     }
 }
 
