@@ -26,6 +26,12 @@
         font-family: 'Nunito',serif;
     }
 
+    .material-icons{
+        color: #ff8c00;
+        transform: translateY(0.5rem);
+        width: 1.8rem;
+    }
+
     .text{
         color: #444444;
         font-size: x-large;
