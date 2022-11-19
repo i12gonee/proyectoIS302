@@ -56,7 +56,7 @@
         display: flex;
         justify-content: space-between;
         background-color: #444444;
-        width: 86rem;
+        width: 85.4rem;
         height: 5rem;
         margin-left: -0.5rem;
         margin-top: -0.5rem;
@@ -70,17 +70,24 @@
     }
 
     .topbar div{
-        margin-top: 1rem;
+        margin-top: 1.3rem;
     }
 
     .topbar .inisesion{
         color:#ff8c00;
         margin-right: 2rem;
+        font-family: 'Nunito',serif;
+    }
+
+    .material-icons{
+        color: #ff8c00;
+        transform: translateY(0.5rem);
+        width: 1.8rem;
     }
 
     .Curso1{
         background-color: #ff8c00db;
-        width: 60rem;
+        width: 68rem;
         height: 10rem;
         margin-left: 8rem;
         margin-top: 2rem;
