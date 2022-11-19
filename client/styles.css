@@ -23,6 +23,7 @@
     .topbar .inisesion{
         color:rgba(0, 255, 255, 0.697);
         margin-right: 2rem;
+        font-family: 'Nunito',serif;
     }
 
     .text{
@@ -31,6 +32,7 @@
         margin-left: 8rem;
         margin-top: 1rem;
         font-weight: bolder;
+        font-family: 'Nunito',serif;
     }
 
     .Curso1{
