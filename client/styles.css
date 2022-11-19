@@ -31,7 +31,7 @@
         display: flex;
         justify-content: space-between;
         background-color: #444444;
-        width: 86rem;
+        width: 85.35rem;
         height: 5rem;
         margin-left: -0.5rem;
         margin-top: -0.5rem;
@@ -45,11 +45,18 @@
     }
     
     .topbar div{
-        margin-top: 1rem;
+        font-family: 'Nunito',serif;
+        margin-top: 1.5rem;
     }
-    
+    .topbar .material-icons{
+        width: 2rem;
+        transform: 0px 0px;
+        color: #ff7700;
+    }
+
     .topbar .inisesion{
-        color:rgba(0, 255, 255, 0.697);
+        color:#ff7700;
         margin-right: 2rem;
+        
     }
 }
