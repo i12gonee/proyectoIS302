@@ -74,6 +74,8 @@ body .topbar{
 }
 
 .botonisc{
+    margin-top: 2.75rem;
+    margin-left: 35rem;
     border-radius: 1rem;
     color: rgb(255, 246, 236);
     text-decoration: none;
