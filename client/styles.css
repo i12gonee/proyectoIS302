@@ -1,6 +1,4 @@
 
-/*PANTALLA RESOLUCION ANCHO 1920*/
-
 body .topbar{
     display: flex;
     justify-content: space-between;
@@ -45,7 +43,7 @@ body .topbar{
     text-decoration: underline;
 }
 
-.Curso1{
+.Curso{
     background-color: #ff8c00db;
     width: 83%;
     height: 10rem;
@@ -76,7 +74,7 @@ body .topbar{
     border-radius: 0.2rem;
 }
 
-
+/*PANTALLA RESOLUCION ANCHO 1920*/
 @media screen and (max-width: 1920px){
 
     body .topbar{
@@ -87,7 +85,7 @@ body .topbar{
 /*PANTALLA RESOLUCION ANCHO 1366*/
 
 @media screen and (max-width: 1366px){
-    
+
     body .topbar{
         padding: 8px;
     }
