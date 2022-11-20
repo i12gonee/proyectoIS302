@@ -1,5 +1,5 @@
 
-/*PANTALLA RESOLUCION ANCHO 1920*/
+
 
 body .topbar{
     display: flex;
@@ -76,6 +76,7 @@ body .topbar{
     border-radius: 0.2rem;
 }
 
+/*PANTALLA RESOLUCION ANCHO 1920*/
 
 @media screen and (max-width: 1920px){
 
