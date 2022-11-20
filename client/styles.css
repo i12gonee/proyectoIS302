@@ -1,13 +1,12 @@
 
 /*PANTALLA RESOLUCION ANCHO 1920*/
 
-@media screen and (max-width: 1920px){
+@media screen and (min-width: 1920px){
     body .topbar{
         display: flex;
         justify-content: space-between;
         background-color: #444444;
-        width: 100%;
-        transform: scaleY(30rem);
+        width: 95rem;
         height: 5rem;
         margin-left: -0.5rem;
         margin-top: -0.5rem;
