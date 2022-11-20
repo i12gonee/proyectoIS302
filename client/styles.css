@@ -1,7 +1,7 @@
 
 /*PANTALLA RESOLUCION ANCHO 1920*/
 
-@media all and (max-width: 1920px){
+@media screen and (max-width: 1920px){
     body .topbar{
         display: flex;
         justify-content: space-between;
