@@ -6,7 +6,8 @@
         display: flex;
         justify-content: space-between;
         background-color: #444444;
-        width: 95rem;
+        width: 100%;
+        padding: 8px;
         height: 5rem;
         margin-left: -0.5rem;
         margin-top: -0.5rem;
