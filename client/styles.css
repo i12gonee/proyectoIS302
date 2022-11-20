@@ -35,7 +35,7 @@ body .topbar{
     width: 1.8rem;
 }
 
-.text{
+.cursosdisponibles{
     color: #444444;
     font-size: x-large;
     margin-left: 8rem;
@@ -48,6 +48,7 @@ body .topbar{
 .Curso{
     display:flex;
     background-color: #ff8c00db;
+    justify-content: space-between;
     width: 83%;
     height: 10rem;
     margin-left: 8rem;
@@ -64,8 +65,18 @@ body .topbar{
     color: #444444;
 }
 
-.text1{
+.titulo{
+    margin-top: 3rem;
     margin-left: 0.9rem;
+}
+
+.plazo {
+    margin-top: -1.5rem;
+    margin-left: 1rem;
+}
+
+.botonisc{
+
 }
 
 ::-webkit-scrollbar {
