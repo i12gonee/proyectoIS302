@@ -1,6 +1,4 @@
 
-
-
 body .topbar{
     display: flex;
     justify-content: space-between;
@@ -76,7 +74,7 @@ body .topbar{
 }
 
 .botonisc{
-    border-radius: 1.5rem;
+    border-radius: 1rem;
     color: rgb(255, 246, 236);
     text-decoration: none;
     padding-top: 1.5rem;
