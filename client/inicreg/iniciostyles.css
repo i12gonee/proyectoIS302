@@ -9,12 +9,18 @@ body .topbar{
     box-shadow: 0px 2px 5px rgba(29, 29, 29, 0.5);
 }
 
+.container{
+    display: flex;
+    justify-content: center;
+}
+
 .tarjetainic{
     background-color: #ff8c00db;
     width: 20%;
     height: 20rem;
-    margin-left: 34rem;
+    
     margin-top: 10rem;
+    border-radius: 11px;
 }
 
 /*PANTALLA RESOLUCION ANCHO 1920*/
@@ -24,6 +30,7 @@ body .topbar{
     body .topbar{
         padding: 8px;
     }
+
 }
 
 /*PANTALLA RESOLUCION ANCHO 1366*/
