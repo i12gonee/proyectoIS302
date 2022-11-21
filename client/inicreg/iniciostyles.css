@@ -8,3 +8,23 @@ body .topbar{
     margin-top: -0.5rem;
     box-shadow: 0px 2px 5px rgba(29, 29, 29, 0.5);
 }
+
+/*PANTALLA RESOLUCION ANCHO 1920*/
+
+@media screen and (max-width: 1920px){
+
+    body .topbar{
+        padding: 8px;
+    }
+}
+
+/*PANTALLA RESOLUCION ANCHO 1366*/
+
+@media screen and (max-width: 1366px){
+
+    body .topbar{
+        padding: 8px;
+    }
+}
+
+
