@@ -16,11 +16,10 @@ body .topbar{
 
 .tarjetainic{
     background-color: #ff8c00db;
-    width: 20%;
-    height: 20rem;
-    
-    margin-top: 10rem;
-    border-radius: 11px;
+    width: 22%;
+    height: 22rem;
+    margin-top: 9rem;
+    border-radius: 20px;
 }
 
 /*PANTALLA RESOLUCION ANCHO 1920*/
