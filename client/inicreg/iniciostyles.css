@@ -16,55 +16,66 @@ body .topbar{
 
 .tarjetainic{
     background-color: #ff8c00db;
-    width: 22%;
-    height: 22rem;
-    margin-top: 9rem;
+    width: 33%;
+    height: 27rem;
+    margin-top: 5rem;
     border-radius: 20px;
     box-shadow: 10px 10px 5px 0px rgba(56, 54, 56, 0.212);
 }
 
 .Usuario{
     font-family: 'Nunito',serif;
-    margin-left: 1rem;
+    margin-left: 5.4rem;
     font-weight: bolder;
-    font-size: large;
+    font-size: 25px;
+    transform: translateY(1.7rem);
 }
 
 #usr{
-    margin-left: 1rem;
+    margin-left: 5.4rem;
     font-family: 'Nunito',serif;
+    font-size: large;
+    width: 60%;
+    height: 2.2rem;
 }
 
 .pass{
     font-family: 'Nunito',serif;
-    margin-left: 1rem;
-    margin-left: 1rem;
+    margin-left: 5.4rem;
     font-weight: bolder;
-    font-size: large;
+    font-size: 25px;
+    transform: translateY(1.7rem);
 }
 
 .bttm{
-    margin-left: 3rem;
+    margin-left: 9rem;
+    margin-top: 3rem;
     font-family: 'Nunito',serif;
     background-color: #444444;
     text-align: center;
     color: rgb(255, 246, 236);
-    border-radius: 1rem;
+    border-radius: 0.6rem;
     text-decoration: none;
     border-color: #444444;
-    width: 5rem;
-    height: 2rem;
+    width: 10rem;
+    height: 4rem;
+    border:none;
 }
-
+.textbttn{
+    margin-top: 2rem ;
+}
 .fpswrd{
-    margin-left: 1rem;
+    margin-top: 2.5rem;
+    margin-left: 7.3rem;
     font-family: 'Nunito',serif;
 }
 
 #pswrd{
-    margin-left: 1rem;
+    margin-left: 5.4rem;
     font-family: 'Nunito',serif;
-
+    font-size: large;
+    width: 60%;
+    height: 2.2rem;
 }
 
 /*PANTALLA RESOLUCION ANCHO 1920*/
