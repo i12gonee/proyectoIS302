@@ -10,7 +10,7 @@ const port = 8000
 app.use('/', express.static(path.join(__dirname, '../client')))
 
 app.post('/', urlencodedParser, (req, res) => {
-    console.log(`Usuario: ${req.body.usuario}\nContraseña ${req.body.contraseña}`)
+    console.log(`Usuario: ${req.body.usuario}\nContraseña: ${req.body.contraseña}`)
 })
 
 app.listen(port, () => {
