@@ -145,11 +145,19 @@ body .topbar{
     }
 
     .container{
-        padding-bottom: 17rem;
+        padding-bottom: 7rem;
     }
 
     .tarjetainic{
-        height: 45rem;
+        height: 40rem;
+    }
+
+    #usr {
+        margin-left: 7rem;
+    }
+
+    #pswrd {
+        margin-left: 7rem;
     }
 }
 
