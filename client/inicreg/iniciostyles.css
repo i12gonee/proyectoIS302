@@ -90,7 +90,7 @@ body .topbar{
 }
 
 .bttm{
-    
+    position: absolute;
     margin-left: 9rem;
     margin-top: 3rem;
     font-family: 'Nunito',serif;
@@ -161,8 +161,8 @@ body .topbar{
     }
 
     .bttm {
-        margin-top: 6rem;
-        margin-left: 12rem;
+        margin-top: 10rem;
+        margin-left: 13rem;
     }
 }
 
