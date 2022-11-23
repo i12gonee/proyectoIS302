@@ -30,8 +30,25 @@ body .topbar{
 }
 
 @keyframes arrimba{
-    0% {transform: scaleX(0.1);}
-    100% {transform: scaleX(1);}
+    0% {transform: translateY(4rem) translateX(-4.2rem) scale(0.6);}
+    100% {transform: translateY(2rem) scale(1);}
+}
+
+@keyframes arrimba2{
+    0% {transform: translateY(4rem) translateX(-4.2rem) scale(0.6);}
+    100% {transform: translateY(2rem) scale(1);}
+}
+
+.funcionactive{
+    animation-name: arrimba;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+}
+
+.funcionactive2{
+    animation-name: arrimba2;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
 }
 
 .Usuario{
@@ -40,7 +57,7 @@ body .topbar{
     font-weight: bolder;
     font-size: 25px;
     pointer-events: none;
-    transform: translateY(4rem);
+    transform: translateY(4rem) translateX(-4.2rem) scale(0.6);
     color: #ff8c00db;
 }
 
@@ -67,8 +84,9 @@ body .topbar{
     margin-left: 5.4rem;
     font-weight: bolder;
     font-size: 25px;
-    transform: translateY(1.7rem);
+    transform: translateY(4rem) translateX(-4.2rem) scale(0.6);
     color: #ff8c00db;
+    pointer-events: none;
 }
 
 .bttm{
@@ -113,6 +131,7 @@ body .topbar{
     background-color: transparent;
     outline: none;
     border-color: #ff8c00db;
+    
     
 
 }
