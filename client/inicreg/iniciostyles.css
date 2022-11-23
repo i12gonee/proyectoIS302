@@ -159,6 +159,16 @@ body .topbar{
     #pswrd {
         margin-left: 7rem;
     }
+
+    @keyframes arrimba{
+        0% {transform: translateY(4rem) translateX(-2.2rem) scale(0.6);}
+        100% {transform: translateY(2rem) scale(1);}
+    }
+    
+    @keyframes arrimba2{
+        0% {transform: translateY(4rem) translateX(-2.2rem) scale(0.6);}
+        100% {transform: translateY(2rem) scale(1);}
+    }
 }
 
 /*PANTALLA RESOLUCION ANCHO 1680*/
