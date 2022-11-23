@@ -29,17 +29,22 @@ body .topbar{
     box-shadow: 10px 10px 5px 0px rgba(56, 54, 56, 0.212);
 }
 
+@keyframes arrimba{
+    0% {transform: scaleX(0.1);}
+    100% {transform: scaleX(1);}
+}
+
 .Usuario{
     font-family: 'Nunito',serif;
     margin-left: 5.4rem;
     font-weight: bolder;
     font-size: 25px;
-    transform: translateY(2rem);
+    pointer-events: none;
+    transform: translateY(4rem);
     color: #ff8c00db;
 }
 
 #usr{
-
     text-decoration: none;
     color: rgb(255, 255, 255);
     margin-left: 5.4rem;
