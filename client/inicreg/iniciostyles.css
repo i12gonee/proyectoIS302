@@ -153,6 +153,23 @@ body .topbar{
     }
 }
 
+@media screen and (max-width: 1680px){
+
+    body .topbar{
+        padding: 8px;
+    }
+
+    .container{
+        padding-bottom: 5rem;
+    }
+
+    .tarjetainic{
+        height: 30rem;
+    }
+}
+
+
+
 /*PANTALLA RESOLUCION ANCHO 1366*/
 
 @media screen and (max-width: 1366px){
