@@ -1,3 +1,6 @@
+:root {
+    --main: 1px;
+    }
 
 body .topbar{
     display: flex;
@@ -59,8 +62,52 @@ body .topbar{
     font-family: 'Nunito',serif;
 }
 
+
+@keyframes despliegue{
+    from {
+        transform: scaleY(0%);
+    }
+    to{
+        transform: scaleY(100%);
+        height: 15rem;
+    }
+}
+
+@keyframes despliegue2{
+    0% {transform: scaleY(100%);height: 15rem;}
+    100% {transform: scaleY(0%);}
+}
+
+.desplegable {
+    width: 83.4%;
+    height: 0rem;
+    margin-left: 8rem;
+    border-radius: 0px 0px 10px 10px;
+    color: rgb(255, 255, 255);
+    background-color: #444444;
+    transform-origin: top;
+    animation-name: despliegue;
+    animation-duration: 0.7s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.desplegable2 {
+    width: 83.4%;
+    height: 0rem;
+    margin-left: 8rem;
+    border-radius: 0px 0px 10px 10px;
+    color: rgb(255, 255, 255);
+    background-color: #444444;
+    transform-origin: top;
+    animation-name: despliegue2;
+    animation-duration: 0.7s;
+    animation-iteration-count: 1;
+}
+
 .menu{
     color: #444444;
+    cursor: pointer;
 }
 
 .titulo{
@@ -84,7 +131,9 @@ body .topbar{
     height: 3rem;
     width: 10rem;
     background-color: #444444;
+    cursor: pointer;
 }
+
 
 ::-webkit-scrollbar {
     width: 1rem;
