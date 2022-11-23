@@ -131,9 +131,6 @@ body .topbar{
     background-color: transparent;
     outline: none;
     border-color: #ff8c00db;
-    
-    
-
 }
 
 /*PANTALLA RESOLUCION ANCHO 1920*/
@@ -222,6 +219,44 @@ body .topbar{
 
     .container{
         padding-bottom: 3.28rem;
+    }
+
+    .bttm {
+        margin-left: 9rem;
+        margin-top: 3rem;
+        width: 10rem;
+        height: 4rem;
+    }
+
+    .fpswrd{
+        margin-top: 9.5rem;
+        margin-left: 7.3rem;
+    }
+
+    .tarjetainic{
+        height: 27rem;
+    }
+
+    .Usuario{
+        margin-left: 5.4rem;
+        transform: translateY(4rem) translateX(-4.2rem) scale(0.6);
+    }
+
+    #usr{
+        margin-left: 5.4rem;
+        width: 60%;
+        height: 2.2rem;
+    }
+
+    .pass{
+        margin-left: 5.4rem;
+        transform: translateY(4rem) translateX(-4.2rem) scale(0.6);
+    }
+
+    #pswrd{
+        margin-left: 5.4rem;
+        width: 60%;
+        height: 2.2rem;
     }
 }
 
