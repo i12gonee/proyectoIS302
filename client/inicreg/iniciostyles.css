@@ -151,6 +151,14 @@ body .topbar{
     .tarjetainic{
         height: 40rem;
     }
+
+    #usr {
+        margin-left: 7rem;
+    }
+
+    #pswrd {
+        margin-left: 7rem;
+    }
 }
 
 /*PANTALLA RESOLUCION ANCHO 1680*/
