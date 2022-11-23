@@ -144,6 +144,9 @@ body .topbar{
         padding: 8px;
     }
 
+    .container{
+        padding-bottom: 3.28rem;
+    }
 }
 
 /*PANTALLA RESOLUCION ANCHO 1366*/
