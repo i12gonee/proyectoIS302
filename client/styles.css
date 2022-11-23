@@ -103,6 +103,7 @@ body .topbar{
     animation-name: despliegue2;
     animation-duration: 0.7s;
     animation-iteration-count: 1;
+    animation-fill-mode: forwards;
 }
 
 .menu{
@@ -134,17 +135,29 @@ body .topbar{
     cursor: pointer;
 }
 
-.Description .one{
+.Description.one{
+    transform: translateY(1rem);
     font-weight: bold;
     font-size: 25px;
-    text-decoration: overline;
+    text-decoration: underline;
+    margin-left: 2rem;
 }
 
+.Description.two{
+    transform: translateY(1.5rem);
+    font-weight: bold;
+    font-size: 25px;
+    text-decoration: underline;
+    margin-left: 2rem;
+}
+
+
 .Description{
+    transform: translateY(1.5rem);
     color: aliceblue;
     font-family: 'Nunito',serif;
     font-size: 20px;
-    margin-left: 1.5rem;
+    margin-left: 2.5rem;
 }
 
 

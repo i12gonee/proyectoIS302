@@ -37,8 +37,9 @@ function cru(){
         x++;
         document.getElementById("despl").innerHTML = `<div class="desplegable">
                                                         <div class="Description one">Descripción:</div>
-                                                        <div class="Description">tu turututuuu turututu tu turututuu turutu</div>
-                                                        <div class="Description 2">Aula: Alto Manolo</div>
+                                                        <div class="Description">Tu turututuuu turututu tu turututuu turutu</div>
+                                                        <div class="Description two">Aula:</div>
+                                                        <div class="Description 3">Alto Manolo</div>
                                                     </div>`;
         document.getElementById("curso").style.cssText=style;
 
@@ -47,6 +48,11 @@ function cru(){
         document.getElementById("crus").classList.add("iconactive");
         document.getElementById("crus").textContent = "menu";
         x--;
-        document.getElementById("despl").innerHTML = `<div class="desplegable2"></div>`;
+        document.getElementById("despl").innerHTML = `<div class="desplegable2">
+                                                    <div class="Description one">Descripción:</div>
+                                                    <div class="Description">Tu turututuuu turututu tu turututuu turutu</div>
+                                                    <div class="Description two">Aula:</div>
+                                                    <div class="Description 3">Alto Manolo</div>
+                                                    </div>`;
     }
 }
