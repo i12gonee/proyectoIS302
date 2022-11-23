@@ -147,6 +147,10 @@ body .topbar{
     .container{
         padding-bottom: 20rem;
     }
+
+    .tarjetainic{
+        height: 30rem;
+    }
 }
 
 /*PANTALLA RESOLUCION ANCHO 1366*/
