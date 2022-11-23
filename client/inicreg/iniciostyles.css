@@ -116,6 +116,7 @@ body .topbar{
     margin-left: 7.3rem;
     font-family: 'Nunito',serif;
     color: #ff8c00db;
+    cursor: help;
 }
 
 #pswrd{
