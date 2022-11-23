@@ -135,6 +135,15 @@ body .topbar{
 }
 
 
+.Description{
+    color: aliceblue;
+    font-family: 'Nunito',serif;
+    font-size: 20px;
+    margin-left: 1.5rem;
+}
+
+
+
 ::-webkit-scrollbar {
     width: 1rem;
 }

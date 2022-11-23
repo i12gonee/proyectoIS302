@@ -35,7 +35,10 @@ function cru(){
         document.getElementById("crus").classList.add("iconactive");
         document.getElementById("crus").textContent = "close";
         x++;
-        document.getElementById("despl").innerHTML = `<div class="desplegable"></div>`;
+        document.getElementById("despl").innerHTML = `<div class="desplegable">
+                                                        <div class="Description">tu turututuuu turututu tu turututuu turutu</div>
+                                                        <div class="Description 1">Aula: Alto Manolo</div>
+                                                    </div>`;
         document.getElementById("curso").style.cssText=style;
 
     }
