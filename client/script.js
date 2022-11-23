@@ -36,8 +36,9 @@ function cru(){
         document.getElementById("crus").textContent = "close";
         x++;
         document.getElementById("despl").innerHTML = `<div class="desplegable">
+                                                        <div class="Description one">Descripción:</div>
                                                         <div class="Description">tu turututuuu turututu tu turututuu turutu</div>
-                                                        <div class="Description 1">Aula: Alto Manolo</div>
+                                                        <div class="Description 2">Aula: Alto Manolo</div>
                                                     </div>`;
         document.getElementById("curso").style.cssText=style;
 
