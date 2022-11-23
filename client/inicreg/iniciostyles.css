@@ -168,6 +168,24 @@ body .topbar{
     .tarjetainic{
         height: 30rem;
     }
+
+    .Usuario{
+        transform: translateY(4rem) translateX(-4.4rem) scale(0.7);
+    }
+
+    #usr{
+        width: 70%;
+        margin-left: 4.7rem;
+    }
+
+    .pass{
+        transform: translateY(4rem) translateX(-4.4rem) scale(0.7);
+    }
+
+    #pswrd{
+        width: 70%;
+        margin-left: 4.7rem;
+    }
 }
 
 
