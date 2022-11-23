@@ -208,6 +208,18 @@ body .topbar{
         width: 70%;
         margin-left: 4.7rem;
     }
+
+    .bttm {
+        margin-left: 9rem;
+        margin-top: 3rem;
+        width: 10rem;
+        height: 4rem;
+    }
+
+    .fpswrd{
+        margin-top: 9.5rem;
+        margin-left: 7.3rem;
+    }
 }
 
 
