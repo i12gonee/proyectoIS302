@@ -32,7 +32,6 @@ const style2= `
 
 function cru(){
     if (x == 0) {
-        document.getElementById("crus").classList.add("iconactive");
         document.getElementById("crus").textContent = "close";
         x++;
         document.getElementById("despl").innerHTML = `<div class="desplegable">
@@ -45,7 +44,6 @@ function cru(){
 
     }
     else{
-        document.getElementById("crus").classList.add("iconactive");
         document.getElementById("crus").textContent = "menu";
         x--;
         document.getElementById("despl").innerHTML = `<div class="desplegable2">
