@@ -360,7 +360,6 @@ body .topbar{
 
     #name{
         margin-left: 5.4rem;
-        width: 60%;
         height: 2.2rem;
     }
 
@@ -370,8 +369,7 @@ body .topbar{
     }
 
     #surname{
-        margin-left: 5.4rem;
-        width: 60%;
+        margin-left: 5.4rem;    
         height: 2.2rem; 
     }
 
@@ -382,7 +380,7 @@ body .topbar{
     }
 
     .bttm {
-        transform: translateY(-1rem) translateX(4rem);
+        transform: translateY(-1rem) ;
     }
 
 
