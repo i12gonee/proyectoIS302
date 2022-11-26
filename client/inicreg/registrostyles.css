@@ -135,6 +135,15 @@ body .topbar{
     border-color: #ff8c00db;
 }
 
+.lineamedio{
+    height: 27rem;
+    width: 1%;
+    background-color: #787373;
+    border-radius: 5px;
+}
+
+
+
 /*PANTALLA RESOLUCION ANCHO 1920*/
 
 @media screen and (max-width: 1920px){
