@@ -21,6 +21,7 @@ body .topbar{
 }
 
 .tarjetareg{
+    display: flex;
     background-color: #444444;
     width: 70%;
     height: 27rem;
