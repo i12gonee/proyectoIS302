@@ -1,12 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cursos de extensión: Redistrarse</title>
+    <link rel="stylesheet" href="iniciostyles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito">
+    <script src="inicioscript.js"></script>
+    <title>Cursos de Extensión: Iniciar sesión</title>
 </head>
 <body>
-    
+    <div class="topbar">
+        <img class="logo" src="../resources/logo.png">
+    </div>
+    <div class="container">
+        <div class="tarjetainic">
+            <form action = "\" method = "POST">
+                <p id="usu" class="Usuario">Usuario:</p>
+                <input onclick="arrimba()" type="text" name="usuario" id="usr">
+                <p id="contra" class="pass">Contraseña:</p>
+                <input onclick="arrimba2()" type="password" name="contraseña" id="pswrd">
+                <br>
+                <button class="bttm">
+                    <p class="textbttn">Acceder</p>
+                </button>
+                <div class="fpswrd">¿Has olvidado la contraseña?</div>
+            </form>
+        </div>
+    </div>
 </body>
 </html>
