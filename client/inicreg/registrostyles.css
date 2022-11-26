@@ -141,10 +141,17 @@ body .topbar{
     width: 1%;
     background-color: #787373;
     border-radius: 5px;
-    margin-left: 14rem;
+    margin-left: 19.7rem;
     margin-top: 1rem;
 }
 
+.info{
+    font-weight: bolder;
+    font-size: 20px;
+    font-family: 'Nunito',serif;
+   
+    
+}
 
 
 /*PANTALLA RESOLUCION ANCHO 1920*/
