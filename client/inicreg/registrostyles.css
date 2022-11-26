@@ -297,22 +297,45 @@ body .topbar{
         height: 30rem;
     }
 
-    .Usuario{
-        transform: translateY(4rem) translateX(-4.4rem) scale(0.7);
+    .Nombre{
+        transform: translateY(4rem) translateX(-3rem) scale(0.7);
     }
 
-    #usr{
-        width: 70%;
-        margin-left: 4.7rem;
+    #name{
+        width: 100%;
+        margin-left: 6rem;
+        height: 2rem;
+        transform:  scale(1.5);
     }
 
-    .pass{
-        transform: translateY(4rem) translateX(-4.4rem) scale(0.7);
+    .Apellidos{
+        transform: translateY(4rem) translateX(-3rem) scale(0.7);
     }
 
-    #pswrd{
-        width: 70%;
-        margin-left: 4.7rem;
+    #surname{
+        width: 100%;
+        margin-left: 6rem;
+        transform:  scale(1.5);
+    }
+
+    .Correo{
+        transform: translateY(4rem) translateX(-3rem) scale(0.7);
+    }
+
+    #mail{
+        width: 100%;
+        margin-left: 6rem;
+        transform:  scale(1.5);
+    }
+
+    .documentodeidentidad{
+        transform: translateY(4rem) translateX(-3rem) scale(0.7);
+    }
+
+    #id{
+        width: 100%;
+        margin-left: 6rem;
+        transform:  scale(1.5);
     }
 
     .bttm {
