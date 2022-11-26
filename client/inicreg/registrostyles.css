@@ -52,17 +52,18 @@ body .topbar{
     animation-iteration-count: 1;
 }
 
-.Usuario{
+.Nombre{
     font-family: 'Nunito',serif;
     margin-left: 5.4rem;
     font-weight: bolder;
     font-size: 25px;
     pointer-events: none;
     transform: translateY(4rem) translateX(-4.2rem) scale(0.6);
+    margin-top: -4rem;
     color: #ff8c00db;
 }
 
-#usr{
+#name{
     text-decoration: none;
     color: rgb(255, 255, 255);
     margin-left: 5.4rem;
@@ -80,7 +81,7 @@ body .topbar{
 
 
 
-.pass{
+.Apellidos{
     font-family: 'Nunito',serif;
     margin-left: 5.4rem;
     font-weight: bolder;
@@ -120,7 +121,7 @@ body .topbar{
     cursor: help;
 }
 
-#pswrd{
+#surname{
     color: rgb(255, 255, 255);
     margin-left: 5.4rem;
     font-family: 'Nunito',serif;
@@ -253,32 +254,27 @@ body .topbar{
         height: 4rem;
     }
 
-    .fpswrd{
-        margin-top: 9.5rem;
-        margin-left: 7.3rem;
-    }
-
     .tarjetareg{
         height: 27rem;
     }
 
-    .Usuario{
+    .Nombre{
         margin-left: 5.4rem;
         transform: translateY(4rem) translateX(-4.2rem) scale(0.6);
     }
 
-    #usr{
+    #name{
         margin-left: 5.4rem;
         width: 60%;
         height: 2.2rem;
     }
 
-    .pass{
+    .Apellidos{
         margin-left: 5.4rem;
         transform: translateY(4rem) translateX(-4.2rem) scale(0.6);
     }
 
-    #pswrd{
+    #surname{
         margin-left: 5.4rem;
         width: 60%;
         height: 2.2rem; 
@@ -286,7 +282,8 @@ body .topbar{
 
     .lineamedio{
         height: 24rem;
-        
+        margin-top: 1.7rem;
+        margin-left: 10rem;
     }
 }
 
