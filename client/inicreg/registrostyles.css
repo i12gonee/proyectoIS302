@@ -22,7 +22,7 @@ body .topbar{
 
 .tarjetareg{
     background-color: #444444;
-    width: 60%;
+    width: 33%;
     height: 27rem;
     margin-top: 5rem;
     border-radius: 20px;
@@ -146,7 +146,7 @@ body .topbar{
         padding-bottom: 7rem;
     }
 
-    .tarjetainic{
+    .tarjetareg{
         height: 40rem;
     }
 
@@ -246,7 +246,7 @@ body .topbar{
         margin-left: 7.3rem;
     }
 
-    .tarjetainic{
+    .tarjetareg{
         height: 27rem;
     }
 
