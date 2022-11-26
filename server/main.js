@@ -7,7 +7,7 @@ const urlencodedParser = bodyParser.urlencoded({ extended: false })
 //start server
 const app = express()
 const port = 8000
-
+/*
 //connect to database (local)
 const connection = mysql.createConnection({
     host: 'localhost',
@@ -15,7 +15,7 @@ const connection = mysql.createConnection({
     password: 'basededatos_is',
     database: 'bd_is'
 })
-
+*/
 app.use('/', express.static(path.join(__dirname, '../client')))
 
 /*
