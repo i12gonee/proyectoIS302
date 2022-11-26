@@ -95,6 +95,7 @@ body .topbar{
     position: absolute;
     margin-left: 9rem;
     margin-top: 3rem;
+    transform: translateY(5rem) translateX(3rem);
     font-family: 'Nunito',serif;
     background-color: #ff8c00db;
     text-align: center;
@@ -147,11 +148,22 @@ body .topbar{
 
 .info{
     font-weight: bolder;
-    font-size: 20px;
+    font-size: 29px;
     font-family: 'Nunito',serif;
     color: #ff8c00db;
+    margin-top: 2rem;
+    margin-left: 1.8rem;
+    text-decoration: underline;
     
 }
+
+.two{
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: normal;
+    margin-right: 0.5rem;
+}
+
 
 
 /*PANTALLA RESOLUCION ANCHO 1920*/
