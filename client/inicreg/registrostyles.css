@@ -91,7 +91,7 @@ body .topbar{
     margin-left: 5.4rem;
     font-family: 'Nunito',serif;
     font-size: large;
-    width: 60%;
+    width: 80%;
     height: 2.2rem;
     border-left: 0px;
     border-top: 0px;
@@ -150,7 +150,7 @@ body .topbar{
     margin-left: 5.4rem;
     font-family: 'Nunito',serif;
     font-size: large;
-    width: 60%;
+    width: 80%;
     height: 2.2rem;
     border-left: 0px;
     border-top: 0px;
@@ -159,6 +159,8 @@ body .topbar{
     outline: none;
     border-color: #ff8c00db;
 }
+
+
 
 .lineamedio{
     height: 27rem;
@@ -204,7 +206,7 @@ body .topbar{
     margin-left: 5.4rem;
     font-family: 'Nunito',serif;
     font-size: large;
-    width: 60%;
+    width: 80%;
     height: 2.2rem;
     border-left: 0px;
     border-top: 0px;
@@ -231,7 +233,7 @@ body .topbar{
     margin-left: 5.4rem;
     font-family: 'Nunito',serif;
     font-size: large;
-    width: 60%;
+    width: 80%;
     height: 2.2rem;
     border-left: 0px;
     border-top: 0px;
@@ -377,6 +379,16 @@ body .topbar{
         height: 24rem;
         margin-top: 1.7rem;
         margin-left: 10rem;
+    }
+
+    .bttm {
+        transform: translateY(-1rem) translateX(4rem);
+    }
+
+
+
+    .parteizquierda{
+        width: 45rem;
     }
 }
 
