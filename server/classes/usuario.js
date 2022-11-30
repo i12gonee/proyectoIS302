@@ -1,11 +1,4 @@
-const mysql = require('mysql2')
-
-const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'i12almuf',
-    password: 'basededatos_is',
-    database: 'bd_is'
-})
+const connection = require('../database/connection')
 
 class Usuario{
     //------Private-----
@@ -62,57 +55,6 @@ class Usuario{
         }
 
         connection.end()
-    }
-
-    login(){
-        console.log(`Usuario: ${this.#nombre_completo_}\nContraseña: ${this.#contraseña_}`)
-        
-        connection.connect()
-    
-        connection.query('SELECT nombre_p, contrasena_p FROM PARTICIPANTES', (err, rows) => {
-            if(err) throw err
-    
-            for(let i = 0; i<rows.length; i++){
-                if(rows[i].nombre_p === this.#nombre_completo_ && rows[i].contrasena_p === this.#contraseña_){
-                    console.log(rows[i])
-                    console.log('contraseña correcta')
-                    return res.redirect('/')
-                } else {
-                    console.log('contraseña icorrecta')
-                }
-            }
-        })
-    
-        connection.query('SELECT nombre_cc, contrasena_cc FROM COORD_CURSOS', (err, rows) => {
-            if(err) throw err
-    
-            for(let i = 0; i<rows.length; i++){
-                if(rows[i].nombre_cc === this.#nombre_completo_ && rows[i].contrasena_cc === this.#contraseña_){
-                    console.log(rows[i])
-                    console.log('contraseña correcta')
-                    res.redirect('/')
-                } else {
-                    console.log('contraseña incorrecta') 
-                }
-            }
-        })
-    
-        connection.query('SELECT nombre_cr, contrasena_cr FROM COORD_RECURSOS', (err, rows) => {
-            if(err) throw err
-    
-            for(let i = 0; i<rows.length; i++){
-                if(rows[i].nombre_cr === this.#nombre_completo_ && rows[i].contrasena_cr === this.#contraseña_){
-                    console.log(rows[i])
-                    console.log('contraseña correcta')
-                    res.redirect('/')
-                } else {
-                    console.log('contraseña incorrecta') 
-                }
-            }
-        })
-    
-        connection.end()
-
     }
 }
 
