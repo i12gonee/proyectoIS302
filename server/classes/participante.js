@@ -26,4 +26,4 @@ class Participante extends Usuario{
     }
 }
 
-export default Participante
+module.exports =  Participante

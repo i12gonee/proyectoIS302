@@ -34,3 +34,5 @@ class Coord_Recursos extends Usuario{
     	curso.recursos = this.#recursos_coord_
     }
 }
+
+module.exports = Coord_Recursos

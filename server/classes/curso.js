@@ -38,4 +38,4 @@ class Curso{
     set recursos(recursos){this.#recursos_ = recursos}
 }
 
-export default Curso
+module.exports = Curso

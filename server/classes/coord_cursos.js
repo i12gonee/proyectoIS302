@@ -31,4 +31,4 @@ class Coord_Cursos extends Usuario{
 
 }
 
-export default Coord_Cursos
+module.exports = Coord_Cursos

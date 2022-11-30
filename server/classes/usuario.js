@@ -1,5 +1,11 @@
-import { query } from 'express'
-import connection from '../main.js'
+const mysql = require('mysql2')
+
+const connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'i12almuf',
+    password: 'basededatos_is',
+    database: 'bd_is'
+})
 
 class Usuario{
     //------Private-----
@@ -27,9 +33,9 @@ class Usuario{
     set contraseña(contraseña){this.#contraseña_ = contraseña}
 
     
-    register = () => { 
+    register(){ 
         const register_query = `INSERT INTO PARTICIPANTES(id_p, nombre_p, mail_p, contrasena_p) 
-                                VALUES('${this.#dni_}', '${this.#nombre_completo_}', '${this.#correo_electronico_}', '${this.#contraseña_}')`
+                                VALUES(${this.#dni_}, '${this.#nombre_completo_}', '${this.#correo_electronico_}', '${this.#contraseña_}')`
 
         connection.connect()
 
@@ -48,7 +54,7 @@ class Usuario{
             })
         }
         
-        if(!is_in_db){
+        if(!is_in_db()){
             connection.query(register_query, (err, rows) => {
                 if(err) throw err
                 console.log(rows)
@@ -58,7 +64,7 @@ class Usuario{
         connection.end()
     }
 
-    login = () => {
+    login(){
         console.log(`Usuario: ${this.#nombre_completo_}\nContraseña: ${this.#contraseña_}`)
         
         connection.connect()
@@ -110,4 +116,4 @@ class Usuario{
     }
 }
 
-export default Usuario
+module.exports = Usuario
