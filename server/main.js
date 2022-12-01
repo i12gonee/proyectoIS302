@@ -28,9 +28,11 @@ app.post('/register', urlencodedParser, (req, res) => {
 
     const usuario = new Usuario(dni, nombre, apellidos, email, "pasword")
 
-    console.log(usuario)
+    console.log(usuario.dni)
 
     usuario.register()
+
+    res.redirect('/')
 })
 
 app.post('/login', urlencodedParser, (req, res, next) => {
@@ -60,7 +62,7 @@ app.post('/login', urlencodedParser, (req, res, next) => {
             } else {
                 console.log("no")
                 res.json('Incorrect Username and/or Password!');
-            }			
+            }
         })
     }
 
