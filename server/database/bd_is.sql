@@ -1,35 +1,48 @@
-/*CREATE DATABASE bd_is;
-USE bd_is;*/
+/*
+CREATE DATABASE bd_is;
+USE bd_is;
 
-DROP TABLE PARTICIPANTES_CURSOS;
-DROP TABLE RECURSOS;
-DROP TABLE CURSOS;
-DROP TABLE PARTICIPANTES;
-DROP TABLE COORD_CURSOS;
-DROP TABLE COORD_RECURSOS;
+-----------CREAR USUARIO Y ASIGARLE TODOS LOS PRIVILEGIOS-----------
+CREATE USER 'proyectois'@'localhost' IDENTIFIED BY 'basededatos_is';
+GRANT ALL PRIVILEGES ON * . * TO 'proyectois'@'localhost';
+FLUSH PRIVILEGES;
+*/
 
-CREATE TABLE PARTICIPANTES (
+/*
+Cuando el usuario este creado, podreis acceder escribiendo el siguiente comando en la terminal:
+  mysql -u proyectois -p
+  *cuando deis enter os pedirá la contraseña*
+*/
+
+DROP TABLE participantes_cursos;
+DROP TABLE recursos;
+DROP TABLE cursos;
+DROP TABLE participantes;
+DROP TABLE coord_cursos;
+DROP TABLE coord_recursos;
+
+CREATE TABLE participantes (
   id_p INT(8) PRIMARY KEY,
   nombre_p VARCHAR(64) NOT NULL,
   mail_p VARCHAR(64) NOT NULL,
   contrasena_p VARCHAR(64) NOT NULL
 );
 
-CREATE TABLE COORD_CURSOS (
+CREATE TABLE coord_cursos (
   id_cc INT(8) PRIMARY KEY,
   nombre_cc VARCHAR(64) NOT NULL,
   mail_cc VARCHAR(64) NOT NULL,
   contrasena_cc VARCHAR(64) NOT NULL
 );
 
-CREATE TABLE COORD_RECURSOS (
+CREATE TABLE coord_recursos (
   id_cr INT(8) PRIMARY KEY,
   nombre_cr VARCHAR(64) NOT NULL,
   mail_cr VARCHAR(64) NOT NULL,
   contrasena_cr VARCHAR(64) NOT NULL
 );
 
-CREATE TABLE CURSOS (
+CREATE TABLE cursos (
   id_curso INT(8) PRIMARY KEY,
   fecha_inicio DATE NOT NULL,
   fecha_final DATE NOT NULL,
@@ -41,24 +54,41 @@ CREATE TABLE CURSOS (
   id_p INT(8) NOT NULL
 );
 
-CREATE TABLE RECURSOS (
+CREATE TABLE recursos (
   recurso VARCHAR(64) PRIMARY KEY,
   id_curso INT(8) NOT NULL,
   id_cr INT(8) NOT NULL
 );
 
-CREATE TABLE PARTICIPANTES_CURSOS (
-  PARTICIPANTES_id_p INT(8),
-  CURSOS_id_curso INT(8),
-  PRIMARY KEY (PARTICIPANTES_id_p, CURSOS_id_curso)
+CREATE TABLE participantes_cursos (
+  participantes_id_p INT(8),
+  cursos_id_curso INT(8),
+  PRIMARY KEY (participantes_id_p, cursos_id_curso)
 );
 
-ALTER TABLE PARTICIPANTES_CURSOS ADD FOREIGN KEY (PARTICIPANTES_id_p) REFERENCES PARTICIPANTES (id_p);
+ALTER TABLE participantes_cursos ADD FOREIGN KEY (participantes_id_p) REFERENCES participantes (id_p);
 
-ALTER TABLE PARTICIPANTES_CURSOS ADD FOREIGN KEY (CURSOS_id_curso) REFERENCES CURSOS (id_curso);
+ALTER TABLE participantes_cursos ADD FOREIGN KEY (cursos_id_curso) REFERENCES cursos (id_curso);
 
-ALTER TABLE CURSOS ADD CONSTRAINT fk_coord_cursos_cursos FOREIGN KEY (id_cc) REFERENCES COORD_CURSOS (id_cc);
+ALTER TABLE cursos ADD CONSTRAINT fk_coord_cursos_cursos FOREIGN KEY (id_cc) REFERENCES coord_cursos (id_cc);
 
-ALTER TABLE RECURSOS ADD CONSTRAINT fk_cursos_recursos FOREIGN KEY (id_curso) REFERENCES CURSOS (id_curso);
+ALTER TABLE recursos ADD CONSTRAINT fk_cursos_recursos FOREIGN KEY (id_curso) REFERENCES cursos (id_curso);
 
-ALTER TABLE RECURSOS ADD CONSTRAINT fk_coord_recursos_recursos FOREIGN KEY (id_cr) REFERENCES COORD_RECURSOS (id_cr);
+ALTER TABLE recursos ADD CONSTRAINT fk_coord_recursos_recursos FOREIGN KEY (id_cr) REFERENCES coord_recursos (id_cr);
+
+INSERT INTO participantes(id_p, nombre_p, mail_p, contrasena_p) VALUES (18851345, 'Aleix Fuentes', 'aleix@uco.es', '5cxne');
+INSERT INTO participantes(id_p, nombre_p, mail_p, contrasena_p) VALUES (57133453, 'Lydia Escribano', 'lydia@uco.es', 'v6eax');
+INSERT INTO participantes(id_p, nombre_p, mail_p, contrasena_p) VALUES (31268078, 'Francisca Machado', 'francisca@uco.es', 'vpc4d');
+INSERT INTO participantes(id_p, nombre_p, mail_p, contrasena_p) VALUES (75500134, 'Pablo Segarra', 'pablo@uco.es', '5i2gv');
+INSERT INTO participantes(id_p, nombre_p, mail_p, contrasena_p) VALUES (52892267, 'Alberto Barrera', 'albert@uco.es', 'oopmw');
+INSERT INTO participantes(id_p, nombre_p, mail_p, contrasena_p) VALUES (18423531, 'Pilar Vivas', 'pilar@uco.es', 'gtnyj');
+INSERT INTO participantes(id_p, nombre_p, mail_p, contrasena_p) VALUES (25474151, 'Saida Salas', 'saida@uco.es', 'mrvel');
+INSERT INTO participantes(id_p, nombre_p, mail_p, contrasena_p) VALUES (58352809, 'Consuelo Verdugo', 'consuelo@uco.es', '5aq3p');
+INSERT INTO participantes(id_p, nombre_p, mail_p, contrasena_p) VALUES (61511588, 'Victor Roca', 'victor@uco.es', 'v7odw');
+INSERT INTO participantes(id_p, nombre_p, mail_p, contrasena_p) VALUES (94320813, 'Imane Cuevas', 'imane@uco.es', 'y9vm3');
+
+INSERT INTO coord_cursos(id_cc, nombre_cc, mail_cc, contrasena_cc) VALUES (92943376, 'Emilio', 'i12gonee@uco.es', 'emiliocc');
+
+INSERT INTO coord_recursos(id_cr, nombre_cr, mail_cr, contrasena_cr) VALUES (71004647, 'Angela', 'i12gonee@uco.es', 'angelacr');
+
+INSERT INTO participantes(id_p, nombre_p, mail_p, contrasena_p) VALUES (58886431, 'Paco', 'i12almuf@uco.es', 'pacop');
