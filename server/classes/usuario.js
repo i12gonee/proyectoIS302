@@ -26,32 +26,56 @@ class Usuario{
     set contraseña(contraseña){this.#contraseña_ = contraseña}
 
     
-    register(){ 
-        const register_query = `INSERT INTO PARTICIPANTES(id_p, nombre_p, mail_p, contrasena_p) 
-                                VALUES(${this.#dni_}, '${this.#nombre_completo_}', '${this.#correo_electronico_}', '${this.#contraseña_}')`
+    register(res){
+        
+        let es_coord_recursos = false
+        let es_coord_cursos = false
+        let es_participante = true
+
+        const register_querys = [
+            `INSERT INTO PARTICIPANTES(id_p, nombre_p, mail_p, contrasena_p) 
+            VALUES(${this.#dni_}, '${this.#nombre_completo_}', '${this.#correo_electronico_}', '${this.#contraseña_}')`,
+            
+            `INSERT INTO COORD_CURSOS(id_cc, nombre_cc, mail_cc, contrasena_cc) 
+            VALUES(${this.#dni_}, '${this.#nombre_completo_}', '${this.#correo_electronico_}', '${this.#contraseña_}')`,
+
+            `INSERT INTO COORD_RECURSOS(id_cr, nombre_cr, mail_cr, contrasena_cr) 
+            VALUES(${this.#dni_}, '${this.#nombre_completo_}', '${this.#correo_electronico_}', '${this.#contraseña_}')`
+
+        ]
 
         connection.connect()
 
-        const is_in_db = () => {
-            connection.query('SELECT * FROM PARTICIPANTES', (err, rows) => {
-                if(err) throw err
-                
-                for(let i = 0; i<rows.length; i++){
-                    if(rows.at(i).id_p === this.#dni_){
-                        console.log('ya esta')
-                        return true
+        if(this.#dni_ && this.#nombre_completo_ && this.#correo_electronico_ && this.#contraseña_){
+            if(es_participante){
+                connection.query(register_querys[0], (err, rows) => {
+                    if(err){
+                        console.log('no')
                     }
-                }
-    
-                return false
-            })
-        }
         
-        if(!is_in_db()){
-            connection.query(register_query, (err, rows) => {
-                if(err) throw err
-                console.log(rows)
-            })
+                    console.log(rows)
+                })
+            } else if(es_coord_cursos){
+                connection.query(register_querys[1], (err, rows) => {
+                    if(err){
+                        console.log('no')
+                    }
+        
+                    console.log(rows)
+                })
+            } else if(es_coord_recursos){
+                connection.query(register_querys[2], (err, rows) => {
+                    if(err){
+                        console.log('no')
+                    }
+        
+                    console.log(rows)
+                })
+            } else {
+                console.log("NO SE ESPECIFICO TIPO DE USER")
+            }           
+        } else {
+            console.log('FALTAN DATOS')
         }
 
         connection.end()

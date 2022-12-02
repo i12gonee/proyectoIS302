@@ -30,7 +30,7 @@ app.post('/register', urlencodedParser, (req, res) => {
 
     console.log(usuario.dni)
 
-    usuario.register()
+    usuario.register(res)
 
     res.redirect('/')
 })
