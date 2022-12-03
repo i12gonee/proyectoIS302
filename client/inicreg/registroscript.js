@@ -21,3 +21,7 @@ function arrimba4(){
     document.getElementById("mailtext").classList.add("funcionactive4");
     document.getElementById("mailtext").style.cssText=style;
 }
+
+function volver(){
+    window.location.replace("../index.html")
+}
