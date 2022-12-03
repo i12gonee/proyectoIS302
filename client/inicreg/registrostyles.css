@@ -22,12 +22,17 @@ body .topbar{
 
 .tarjetareg{
     display: flex;
+    flex-direction: row;
     background-color: #444444;
     width: 70%;
     height: 27rem;
     margin-top: 5rem;
     border-radius: 20px;
     box-shadow: 10px 10px 5px 0px rgba(56, 54, 56, 0.212);
+}
+
+.flexbox{
+    display: flex;
 }
 
 @keyframes arrimba{
@@ -242,6 +247,9 @@ body .topbar{
     background-color: transparent;
     outline: none;
 }
+
+
+
 /*PANTALLA RESOLUCION ANCHO 1920*/
 
 @media screen and (max-width: 1920px){
@@ -305,6 +313,7 @@ body .topbar{
         width: 100%;
         margin-left: 6rem;
         height: 2rem;
+
     }
 
     .Apellidos{
@@ -397,7 +406,7 @@ body .topbar{
 
     .lineamedio{
         height: 24rem;
-        margin-top: 1.7rem;
+        margin-top: 1rem;
         margin-left: 10rem;
     }
 
@@ -408,7 +417,7 @@ body .topbar{
 
 
     .parteizquierda{
-        width: 45rem;
+        width: 39rem;
     }
 }
 
