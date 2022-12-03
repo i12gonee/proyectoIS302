@@ -305,7 +305,6 @@ body .topbar{
         width: 100%;
         margin-left: 6rem;
         height: 2rem;
-        transform:  scale(1.5);
     }
 
     .Apellidos{
@@ -315,7 +314,7 @@ body .topbar{
     #surname{
         width: 100%;
         margin-left: 6rem;
-        transform:  scale(1.5);
+        
     }
 
     .Correo{
@@ -325,7 +324,7 @@ body .topbar{
     #mail{
         width: 100%;
         margin-left: 6rem;
-        transform:  scale(1.5);
+
     }
 
     .documentodeidentidad{
@@ -335,7 +334,7 @@ body .topbar{
     #id{
         width: 100%;
         margin-left: 6rem;
-        transform:  scale(1.5);
+        
     }
 
     .bttm {
