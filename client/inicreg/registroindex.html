@@ -15,7 +15,7 @@
     </div>
     <div class="container">
         <div class="tarjetareg">
-            <form action = "\" method = "POST">
+            <form action = "/register" method = "POST" id = "reg">
                 <div class="flexbox">
                 <div class="parteizquierda">
                         <p id="nomb" class="Nombre">Nombre:</p>
@@ -28,16 +28,16 @@
                         <input onclick="arrimba4()" type="text" name="email" id="mail">
                 </div>
                 <div class="lineamedio"></div>
-                <div class="partederecha">
-                    <h1 class="info">Información:</h1>
-                    <p class="info two">El usuario y su respectiva contraseña serán enviados al correo indicado 
-                        en un plazo de 24 horas.
-                    </p>
-                    <button class="bttm">
-                        <p class="textbttn">Enviar datos</p>
-                    </button>
+                    <div class="partederecha">
+                        <h1 class="info">Información:</h1>
+                        <p class="info two">El usuario y su respectiva contraseña serán enviados al correo indicado 
+                            en un plazo de 24 horas.
+                        </p>
+                        <button class="bttm" form = "reg">
+                            <p class="textbttn">Enviar datos</p>
+                        </button>
+                    </div>
                 </div>
-            </div>
             </form>
         </div>
     </div>

@@ -1,77 +1,87 @@
 const express = require('express')
 const path = require('path')
 const bodyParser = require('body-parser')
-const urlencodedParser = bodyParser.urlencoded({ extended: false })
-const mysql = require('mysql2')
+const session = require('express-session');
+const urlencodedParser = bodyParser.urlencoded({ extended: true })
 
-//start server
+const Usuario = require('./classes/usuario')
+const {connection} = require('./database/connection');
+
 const app = express()
 const port = 8000
 
-//connect to database (local)
-const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'i12almuf',
-    password: 'basededatos_is',
-    database: 'bd_is'
-})
-
 app.use('/', express.static(path.join(__dirname, '../client')))
 
-app.post('/', urlencodedParser, (req, res) => {
+app.use(session({
+    secret: 'CB>uStqGpClDY4BCQBbKWOl**jy@/Zrvo5m7mCvai#NzYbqb/26mrKTeTTzvDcRd>n>Sczj3>3RG/2su/I+#6l/AJ#',
+    resave: true,
+    saveUninitialized: true
+}))
+
+app.post('/register', urlencodedParser, (req, res) => {
+    let dni = req.body.dni
+    let nombre = req.body.nombre
+    let apellidos =  req.body.apellidos
+    let email = req.body.email
+
+    console.log(dni, nombre, apellidos, email)
+
+    const usuario = new Usuario(dni, nombre, apellidos, email, "pasword")
+
+    console.log(usuario.dni)
+
+    usuario.register(res)
+
+    res.redirect('/')
+})
+
+app.post('/login', urlencodedParser, (req, res) => {
     let nombre = req.body.usuario
     let contraseña = req.body.contraseña
 
     console.log(`Usuario: ${nombre}\nContraseña: ${contraseña}`)
-    
+
+    const querys = [
+        `SELECT nombre_p, mail_p, contrasena_p FROM participantes WHERE nombre_p = '${nombre}' OR mail_p = '${nombre}' AND contrasena_p = '${contraseña}'`,
+
+        `SELECT nombre_cc, mail_cc, contrasena_cc FROM coord_cursos WHERE nombre_cc = '${nombre}' OR mail_cc = '${nombre}' AND contrasena_cc = '${contraseña}'`,
+
+        `SELECT nombre_cr, mail_cr, contrasena_cr FROM coord_recursos WHERE nombre_cr = '${nombre}' OR mail_cr = '${nombre}' AND contrasena_cr = '${contraseña}'`
+    ]
+
     connection.connect()
 
-    connection.query('SELECT nombre_p, contrasena_p FROM PARTICIPANTES', (err, rows) => {
-        if(err) throw err
+    if(nombre && contraseña){
+        connection.query(querys.join(';'), (error, rows) => {
+            if (error) throw error;
 
-        for(let i = 0; i<rows.length; i++){
-            if(rows[i].nombre_p === nombre && rows[i].contrasena_p === contraseña){
-                console.log(rows[i])
-                console.log('contraseña correcta')
-                return res.redirect('/')
-            } else {
-                console.log('contraseña icorrecta')
-            }
-        }
-    })
+            console.log(rows)
 
-    connection.query('SELECT nombre_cc, contrasena_cc FROM COORD_CURSOS', (err, rows) => {
-        if(err) throw err
-
-        for(let i = 0; i<rows.length; i++){
-            if(rows[i].nombre_cc === nombre && rows[i].contrasena_cc === contraseña){
-                console.log(rows[i])
-                console.log('contraseña correcta')
+            if(is_in_querys(rows)){
                 res.redirect('/')
             } else {
-                console.log('contraseña incorrecta') 
+                console.log("no")
+                res.json('Incorrect Username and/or Password!');
             }
-        }
-    })
-
-    connection.query('SELECT nombre_cr, contrasena_cr FROM COORD_RECURSOS', (err, rows) => {
-        if(err) throw err
-
-        for(let i = 0; i<rows.length; i++){
-            if(rows[i].nombre_cr === nombre && rows[i].contrasena_cr === contraseña){
-                console.log(rows[i])
-                console.log('contraseña correcta')
-                res.redirect('/')
-            } else {
-                console.log('contraseña incorrecta') 
-            }
-        }
-    })
+        })
+    }
 
     connection.end()
-    
+
 })
 
 app.listen(port, () => {
     console.log('Listening in http://localhost:'+port)
 })
+
+//---------------ADDITIONAL---------------//
+const is_in_querys = (matrix) => {
+    for(let i = 0; i<matrix.length; i++){
+        if(matrix[i].length !== 0){
+            return true
+        }
+    }
+
+    return false
+}
+//----------------------------------------//

@@ -363,8 +363,6 @@ body .topbar{
     }
 }
 
-
-
 /*PANTALLA RESOLUCION ANCHO 1366*/
 
 @media screen and (max-width: 1366px){
@@ -424,5 +422,3 @@ body .topbar{
         width: 39rem;
     }
 }
-
-
