@@ -1,5 +1,4 @@
 const {connection} = require('../database/connection')
-
 class Usuario{
     //------Private-----
     #dni_
@@ -26,8 +25,7 @@ class Usuario{
     set contraseña(contraseña){this.#contraseña_ = contraseña}
 
     
-    register(res){
-        
+    register(){        
         let es_coord_recursos = false //Estas variables se pondran en true cuando el sistema sepa si el usuario es alguno de los tres tipos 
         let es_coord_cursos = false //Estas variables se pondran en true cuando el sistema sepa si el usuario es alguno de los tres tipos
         let es_participante = true //Estas variables se pondran en true cuando el sistema sepa si el usuario es alguno de los tres tipos
@@ -74,6 +72,7 @@ class Usuario{
 
         connection.end()
     }
+    
 }
 
 module.exports = Usuario

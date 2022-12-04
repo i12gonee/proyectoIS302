@@ -1,7 +1,7 @@
-/*
-CREATE DATABASE bd_is;
-USE bd_is;
+/*CREATE DATABASE bd_is;
+/*USE bd_is;
 
+/*
 -----------CREAR USUARIO Y ASIGARLE TODOS LOS PRIVILEGIOS-----------
 CREATE USER 'proyectois'@'localhost' IDENTIFIED BY 'basededatos_is';
 GRANT ALL PRIVILEGES ON * . * TO 'proyectois'@'localhost';
@@ -11,7 +11,7 @@ FLUSH PRIVILEGES;
 /*
 Cuando el usuario este creado, podreis acceder escribiendo el siguiente comando en la terminal:
   mysql -u proyectois -p
-  *cuando deis enter os pedirá la contraseña*
+  <cuando deis enter os pedirá la contraseña>
 */
 
 DROP TABLE participantes_cursos;

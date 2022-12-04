@@ -1,8 +1,9 @@
 const express = require('express')
 const path = require('path')
 const bodyParser = require('body-parser')
-const session = require('express-session');
 const urlencodedParser = bodyParser.urlencoded({ extended: true })
+const nodemailer = require('nodemailer')
+
 
 const Usuario = require('./classes/usuario')
 const {connection} = require('./database/connection');
@@ -12,27 +13,22 @@ const port = 8000
 
 app.use('/', express.static(path.join(__dirname, '../client')))
 
-app.use(session({
-    secret: 'CB>uStqGpClDY4BCQBbKWOl**jy@/Zrvo5m7mCvai#NzYbqb/26mrKTeTTzvDcRd>n>Sczj3>3RG/2su/I+#6l/AJ#',
-    resave: true,
-    saveUninitialized: true
-}))
-
-app.post('/register', urlencodedParser, (req, res) => {
+app.post('/register', urlencodedParser, (req, res) => {    
     let dni = req.body.dni
     let nombre = req.body.nombre
     let apellidos =  req.body.apellidos
     let email = req.body.email
 
-    console.log(dni, nombre, apellidos, email)
+    send_email(email)
 
-    const usuario = new Usuario(dni, nombre, apellidos, email, "pasword")
-
-    console.log(usuario.dni)
-
-    usuario.register(res)
+    /*
+        Una vez enviado el email, el admin accederá a un formulario para asignarle una contraseña al usuario, una vez el 
+        servidor recoja esos datos, se creará un nuevo objeto partcipante, coord_cursos, coord_recursos, dependiendo de lo
+        que escoja el administrador y se guardará dentro de la base de datos.
+    */
 
     res.redirect('/')
+    
 })
 
 app.post('/login', urlencodedParser, (req, res) => {
@@ -83,5 +79,38 @@ const is_in_querys = (matrix) => {
     }
 
     return false
+}
+
+const send_email = (email) => {
+    const html = `
+                    <h1>El usuario ${email} quiere registrarse en la web</h1>
+                    <h2>Pulse el siguiente enlace para asiganarle una contraseña</h2>
+                    <a href = "http://localhost:8000/">ASIGNAR CONTRASEÑA</a>
+    
+    `
+    
+    
+    const transporter = nodemailer.createTransport({
+        host: 'localhost',
+        port: 8000,
+        service: 'gmail',
+        auth: {
+            user: 'proyectois302@gmail.com',
+            pass: 'jvfxtrudpyefzalr'
+        }
+    })
+
+    const mailOptions = {
+        from: 'proyectois302@gmail.com',
+        to: 'proyectois302@gmail.com',
+        subject: 'Nuevo registro',
+        html: html
+    }
+    
+    transporter.sendMail(mailOptions, (err, info) => {
+        if(err) throw err
+    
+        console.log('Mensaje enviado: ' + info.response)
+    })
 }
 //----------------------------------------//
