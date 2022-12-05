@@ -23,5 +23,5 @@ function arrimba4(){
 }
 
 function volver(){
-    window.location.replace("../index.html")
+    window.location.replace("/")
 }

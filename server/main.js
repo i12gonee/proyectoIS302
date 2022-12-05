@@ -15,6 +15,17 @@ app.use('/', express.static(path.join(__dirname, '../client')))
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, '../client'))
 
+app.get('/', (req, res) => {
+    connection.query('SELECT * FROM cursos', (err, rows) => {
+        if(err) throw err
+
+        console.log(rows)
+
+        res.render('index', {cursos: rows})
+    })
+})
+
+
 app.post('/register', urlencodedParser, (req, res) => {    
     let dni = req.body.dni
     let nombre = req.body.nombre
@@ -63,16 +74,6 @@ app.post('/login', urlencodedParser, (req, res) => {
             }
         })
     }
-})
-
-app.get('/', (req, res) => {
-    connection.query('SELECT * FROM cursos', (err, rows) => {
-        if(err) throw err
-
-        console.log(rows)
-
-        res.render('index', {cursos: rows})
-    })
 })
 
 app.listen(port, () => {

@@ -32,33 +32,3 @@ function cru(){
                                                     </div>`;
     }
 }
-
-const {connection} = require('../server/database/connection');
-
-
-connection.connect()
-
-connection.query('SELECT * FROM cursos', (err, rows) => {
-    if(err) throw err
-
-    console.log(rows)
-
-    document.innerHTML += `
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <div class="Curso 1" id="curso">
-        <div>
-            <h1 class="titulo uno">${rows[0].nombre_curso}</h1>
-            <p class="plazo">Plazo de inscripcion: 25/11/22 - 31/12/22</p>
-        </div>
-        <a class="botonisc">
-            Inscribirse
-        </a>
-        <span onclick="cru(this)" id="crus" class="material-icons menu">menu</span>
-        </div>
-    </div>`
-})
-
-connection.end()
