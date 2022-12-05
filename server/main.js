@@ -2,9 +2,9 @@ const express = require('express')
 const path = require('path')
 const bodyParser = require('body-parser')
 const nodemailer = require('nodemailer')
+
 const Usuario = require('./classes/usuario')
 const {connection} = require('./database/connection');
-const { connect } = require('http2')
 
 const app = express()
 const port = 8000
@@ -12,6 +12,8 @@ const url = 'http://localhost:' + port
 const urlencodedParser = bodyParser.urlencoded({ extended: true })
 
 app.use('/', express.static(path.join(__dirname, '../client')))
+app.set('view engine', 'ejs')
+app.set('views', path.join(__dirname, '../client'))
 
 app.post('/register', urlencodedParser, (req, res) => {    
     let dni = req.body.dni
@@ -61,13 +63,16 @@ app.post('/login', urlencodedParser, (req, res) => {
             }
         })
     }
-
-    connection.end()
-
 })
 
-app.get('/prueba', (req, res) => {
-    mostrar_cursos(res)
+app.get('/', (req, res) => {
+    connection.query('SELECT * FROM cursos', (err, rows) => {
+        if(err) throw err
+
+        console.log(rows)
+
+        res.render('index', {cursos: rows})
+    })
 })
 
 app.listen(port, () => {
@@ -112,34 +117,5 @@ const send_email = (email) => {
     
         console.log('Mensaje enviado: ' + info.response)
     })
-}
-
-const mostrar_cursos = (res) => {
-    connection.connect()
-
-    connection.query('SELECT * FROM cursos', (err, rows) => {
-        if(err) throw err
-
-        console.log(rows)
-
-        res.send(`
-        <link rel="stylesheet" href="styles.css">
-        <script src="script.js"></script>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-        <div class="Curso 1" id="curso">
-            <div>
-                <h1 class="titulo uno">${rows[0].nombre_curso}</h1>
-                <p class="plazo">Plazo de inscripcion: 25/11/22 - 31/12/22</p>
-            </div>
-            <a class="botonisc">
-                Inscribirse
-            </a>
-            <span onclick="cru(this)" id="crus" class="material-icons menu">menu</span>
-            </div>
-        </div>`)
-    })
-
-    connection.end()
 }
 //----------------------------------------//

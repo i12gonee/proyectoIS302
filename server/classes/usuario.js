@@ -69,8 +69,6 @@ class Usuario{
         } else {
             console.log('FALTAN DATOS')
         }
-
-        connection.end()
     }
     
 }

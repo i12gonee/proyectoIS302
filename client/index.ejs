@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    <title>Cursos de Extensión UCO</title>
+</head>
+<body>
+    <div class="topbar">
+        <img class="logo" src="./resources/logo.png">
+        <div>
+            <a target="_self" href="inicreg/inicioindex.html" class="inisesion"><span class="material-icons">login</span>Iniciar sesión</a>
+            <a target="_self" href="inicreg/registroindex.html" class="inisesion"><span class="material-icons">how_to_reg</span>Regrístrate</a>
+        </div>
+    </div>
+    <div class="Cursos">
+        <div class="cursosdisponibles">Cursos disponibles:</div>
+        <% cursos.forEach(curso => { %>
+            <div class="Curso 1" id="curso">
+                <div>
+                    <h1 class="titulo uno"> <%=curso.nombre_curso%> </h1>
+                    <p class="plazo">Plazo de inscripcion: <%=curso.fecha_inicio%> - <%=curso.fecha_final%></p>
+                </div>
+                <a class="botonisc">
+                    Inscribirse
+                </a>
+                <span onclick="cru(this)" id="crus" class="material-icons menu">menu</span>
+            </div>
+            <div id="despl"></div>
+        <% }); %>
+        
+    </div>
+</body>
+</html>
