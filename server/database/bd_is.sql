@@ -44,14 +44,15 @@ CREATE TABLE coord_recursos (
 
 CREATE TABLE cursos (
   id_curso INT(8) PRIMARY KEY,
+  nombre_curso VARCHAR(64) NOT NULL,
   fecha_inicio DATE NOT NULL,
   fecha_final DATE NOT NULL,
   max_inscripciones INT(8) NOT NULL,
   ponente VARCHAR(64) NOT NULL,
   descripcion VARCHAR(64) NOT NULL,
   aula VARCHAR(64) NOT NULL,
-  id_cc INT(8) NOT NULL,
-  id_p INT(8) NOT NULL
+  id_cc INT(8),
+  id_p INT(8)
 );
 
 CREATE TABLE recursos (
@@ -76,19 +77,45 @@ ALTER TABLE recursos ADD CONSTRAINT fk_cursos_recursos FOREIGN KEY (id_curso) RE
 
 ALTER TABLE recursos ADD CONSTRAINT fk_coord_recursos_recursos FOREIGN KEY (id_cr) REFERENCES coord_recursos (id_cr);
 
-INSERT INTO participantes(id_p, nombre_p, mail_p, contrasena_p) VALUES (18851345, 'Aleix Fuentes', 'aleix@uco.es', '5cxne');
-INSERT INTO participantes(id_p, nombre_p, mail_p, contrasena_p) VALUES (57133453, 'Lydia Escribano', 'lydia@uco.es', 'v6eax');
-INSERT INTO participantes(id_p, nombre_p, mail_p, contrasena_p) VALUES (31268078, 'Francisca Machado', 'francisca@uco.es', 'vpc4d');
-INSERT INTO participantes(id_p, nombre_p, mail_p, contrasena_p) VALUES (75500134, 'Pablo Segarra', 'pablo@uco.es', '5i2gv');
-INSERT INTO participantes(id_p, nombre_p, mail_p, contrasena_p) VALUES (52892267, 'Alberto Barrera', 'albert@uco.es', 'oopmw');
-INSERT INTO participantes(id_p, nombre_p, mail_p, contrasena_p) VALUES (18423531, 'Pilar Vivas', 'pilar@uco.es', 'gtnyj');
-INSERT INTO participantes(id_p, nombre_p, mail_p, contrasena_p) VALUES (25474151, 'Saida Salas', 'saida@uco.es', 'mrvel');
-INSERT INTO participantes(id_p, nombre_p, mail_p, contrasena_p) VALUES (58352809, 'Consuelo Verdugo', 'consuelo@uco.es', '5aq3p');
-INSERT INTO participantes(id_p, nombre_p, mail_p, contrasena_p) VALUES (61511588, 'Victor Roca', 'victor@uco.es', 'v7odw');
-INSERT INTO participantes(id_p, nombre_p, mail_p, contrasena_p) VALUES (94320813, 'Imane Cuevas', 'imane@uco.es', 'y9vm3');
+INSERT INTO participantes(id_p, nombre_p, mail_p, contrasena_p) 
+      VALUES (18851345, 'Aleix Fuentes', 'aleix@uco.es', '5cxne');
 
-INSERT INTO coord_cursos(id_cc, nombre_cc, mail_cc, contrasena_cc) VALUES (92943376, 'Emilio', 'i12gonee@uco.es', 'emiliocc');
+INSERT INTO participantes(id_p, nombre_p, mail_p, contrasena_p) 
+      VALUES (57133453, 'Lydia Escribano', 'lydia@uco.es', 'v6eax');
 
-INSERT INTO coord_recursos(id_cr, nombre_cr, mail_cr, contrasena_cr) VALUES (71004647, 'Angela', 'i12gonee@uco.es', 'angelacr');
+INSERT INTO participantes(id_p, nombre_p, mail_p, contrasena_p) 
+      VALUES (31268078, 'Francisca Machado', 'francisca@uco.es', 'vpc4d');
 
-INSERT INTO participantes(id_p, nombre_p, mail_p, contrasena_p) VALUES (58886431, 'Paco', 'i12almuf@uco.es', 'pacop');
+INSERT INTO participantes(id_p, nombre_p, mail_p, contrasena_p) 
+      VALUES (75500134, 'Pablo Segarra', 'pablo@uco.es', '5i2gv');
+
+INSERT INTO participantes(id_p, nombre_p, mail_p, contrasena_p) 
+      VALUES (52892267, 'Alberto Barrera', 'albert@uco.es', 'oopmw');
+
+INSERT INTO participantes(id_p, nombre_p, mail_p, contrasena_p) 
+      VALUES (18423531, 'Pilar Vivas', 'pilar@uco.es', 'gtnyj');
+
+INSERT INTO participantes(id_p, nombre_p, mail_p, contrasena_p) 
+      VALUES (25474151, 'Saida Salas', 'saida@uco.es', 'mrvel');
+
+INSERT INTO participantes(id_p, nombre_p, mail_p, contrasena_p) 
+      VALUES (58352809, 'Consuelo Verdugo', 'consuelo@uco.es', '5aq3p');
+
+INSERT INTO participantes(id_p, nombre_p, mail_p, contrasena_p) 
+      VALUES (61511588, 'Victor Roca', 'victor@uco.es', 'v7odw');
+
+INSERT INTO participantes(id_p, nombre_p, mail_p, contrasena_p) 
+      VALUES (94320813, 'Imane Cuevas', 'imane@uco.es', 'y9vm3');
+
+
+INSERT INTO coord_cursos(id_cc, nombre_cc, mail_cc, contrasena_cc) 
+      VALUES (92943376, 'Emilio', 'i12gonee@uco.es', 'emiliocc');
+
+INSERT INTO coord_recursos(id_cr, nombre_cr, mail_cr, contrasena_cr) 
+      VALUES (71004647, 'Angela', 'i12gonee@uco.es', 'angelacr');
+
+INSERT INTO participantes(id_p, nombre_p, mail_p, contrasena_p) 
+      VALUES (58886431, 'Paco', 'i12almuf@uco.es', 'pacop');
+
+INSERT INTO cursos(id_curso, nombre_curso, fecha_inicio, fecha_final, max_inscripciones, ponente, descripcion, aula, id_cc, id_p) 
+      VALUES (1234, 'Algebra lineal', DATE '2023-2-19', DATE '2023-3-19', 20, 'Alfonso', 'Curso de Algebra', 'B1', 92943376, 58886431);
