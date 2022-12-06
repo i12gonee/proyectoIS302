@@ -1,0 +1,194 @@
+:root {
+    --main: 1px;
+    }
+
+body .topbar{
+    display: flex;
+    justify-content: space-between;
+    background-color: #444444;
+    width: 100%;
+    height: 5rem;
+    margin-left: -0.5rem;
+    margin-top: -0.5rem;
+    box-shadow: 0px 2px 5px rgba(29, 29, 29, 0.5);
+}
+
+.logo{
+    height: 5rem;
+    width: 10rem;
+    margin-left: 0.7rem;
+}
+
+.topbar div{
+    margin-top: 1.3rem;
+}
+
+.topbar .coordcur{
+    color:#ff8c00;
+    margin-right: 2rem;
+    font-family: 'Nunito',serif;
+    text-decoration: none;
+}
+
+.material-icons{
+    color: #ff8c00;
+    transform: translateY(0.5rem);
+    width: 1.8rem;
+}
+
+.cursosdisponibles{
+    color: #444444;
+    font-size: x-large;
+    margin-left: 8rem;
+    margin-top: 1.5rem;
+    font-weight: bolder;
+    font-family: 'Nunito',serif;
+    text-decoration: underline;
+}
+
+.Curso{
+    display:flex;
+    background-color: #ff8c00db;
+    justify-content: space-between;
+    width: 83%;
+    height: 10rem;
+    margin-left: 8rem;
+    margin-top: 1.5rem;
+    border-radius: 11px;
+    border-color: #e48203c8;
+    border-width: medium;
+    border-style: solid;
+    box-shadow: 5px 5px 5px 0px rgba(56, 54, 56, 0.212);
+    font-family: 'Nunito',serif;
+}
+
+
+@keyframes despliegue{
+    from {
+        transform: scaleY(0%);
+    }
+    to{
+        transform: scaleY(100%);
+        height: 15rem;
+    }
+}
+
+@keyframes despliegue2{
+    0% {transform: scaleY(100%);height: 15rem;}
+    100% {transform: scaleY(0%);}
+}
+
+.desplegable {
+    width: 83.4%;
+    height: 0rem;
+    margin-left: 8rem;
+    border-radius: 0px 0px 10px 10px;
+    color: rgb(255, 255, 255);
+    background-color: #444444;
+    transform-origin: top;
+    animation-name: despliegue;
+    animation-duration: 0.7s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.desplegable2 {
+    width: 83.4%;
+    height: 0rem;
+    margin-left: 8rem;
+    border-radius: 0px 0px 10px 10px;
+    color: rgb(255, 255, 255);
+    background-color: #444444;
+    transform-origin: top;
+    animation-name: despliegue2;
+    animation-duration: 0.7s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.menu{
+    color: #444444;
+    cursor: pointer;
+}
+
+.titulo{
+    margin-top: 3rem;
+    margin-left: 0.9rem;
+}
+
+.plazo {
+    margin-top: -1.5rem;
+    margin-left: 1rem;
+}
+
+.botonisc{
+    margin-top: 2.75rem;
+    margin-left: 35rem;
+    border-radius: 1rem;
+    color: rgb(255, 246, 236);
+    text-decoration: none;
+    padding-top: 1.5rem;
+    text-align: center;
+    height: 3rem;
+    width: 10rem;
+    background-color: #444444;
+    cursor: pointer;
+}
+
+.Description.one{
+    transform: translateY(1rem);
+    font-weight: bold;
+    font-size: 25px;
+    text-decoration: underline;
+    margin-left: 2rem;
+}
+
+.Description.two{
+    transform: translateY(1.5rem);
+    font-weight: bold;
+    font-size: 25px;
+    text-decoration: underline;
+    margin-left: 2rem;
+}
+
+
+.Description{
+    transform: translateY(1.5rem);
+    color: aliceblue;
+    font-family: 'Nunito',serif;
+    font-size: 20px;
+    margin-left: 2.5rem;
+}
+
+
+
+::-webkit-scrollbar {
+    width: 1rem;
+}
+
+::-webkit-scrollbar-track {
+    background: #545454;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ff8c00;
+    border-radius: 0.2rem;
+}
+
+/*PANTALLA RESOLUCION ANCHO 1920*/
+
+@media screen and (max-width: 1920px){
+
+    body .topbar{
+        padding: 8px;
+    }
+}
+
+/*PANTALLA RESOLUCION ANCHO 1366*/
+
+@media screen and (max-width: 1366px){
+
+    body .topbar{
+        padding: 8px;
+    }
+}
