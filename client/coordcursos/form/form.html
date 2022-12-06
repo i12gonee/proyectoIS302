@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="registrostyles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito">
+    <script src="registroscript.js"></script>
+    <title>Modificacion de curso</title>
+</head>
+<body>
+    <div class="topbar">
+        <img class="logo" src="../resources/logo.png" onclick="volver()">
+    </div>
+    <div class="container">
+        <div class="tarjetareg">
+            <form action = "/register" method = "POST" id = "reg">
+                <div class="flexbox">
+                <div class="parteizquierda">
+                        <p id="nomb" class="Nombre">Nombre del curso:</p>
+                        <input onclick="arrimba()" type="text" name="nombre" id="name">
+                        <p id="aplld" class="Apellidos">Descripcion:</p>
+                        <input onclick="arrimba2()" type="text" name="apellidos" id="surname">
+                        <p id="dni" class="documentodeidentidad">Plazo:</p>
+                        <input onclick="arrimba3()" type="text" name="dni" id="id">
+                        <p id="mailtext" class="Correo">Ponentes:</p>
+                        <input onclick="arrimba4()" type="text" name="email" id="mail">
+                </div>
+                <div class="lineamedio"></div>
+                    <div class="partederecha">
+                        <button class="bttm" form = "reg">
+                            <p class="textbttn">Enviar datos</p>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
