@@ -12,6 +12,8 @@ const url = 'http://localhost:' + port
 const urlencodedParser = bodyParser.urlencoded({ extended: true })
 
 app.use('/', express.static(path.join(__dirname, '../client')))
+app.use('/password', express.static(path.join(__dirname, '../client/accountset')))
+
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, '../client'))
 
@@ -25,23 +27,36 @@ app.get('/', (req, res) => {
     })
 })
 
+app.get('/password', (req, res) => {
+    res.sendFile(path.join(__dirname, '../client/accountset/account.html'))
+})
+
+let usuario //Declaramos un usuario vacío
 
 app.post('/register', urlencodedParser, (req, res) => {    
     let dni = req.body.dni
     let nombre = req.body.nombre
     let apellidos =  req.body.apellidos
     let email = req.body.email
+    let pass = ""
+
+    usuario = new Usuario(dni, nombre, apellidos, email, pass)
 
     send_email(email)
 
-    /*
-        Una vez enviado el email, el admin accederá a un formulario para asignarle una contraseña al usuario, una vez el 
-        servidor recoja esos datos, se creará un nuevo objeto partcipante, coord_cursos, coord_recursos, dependiendo de lo
-        que escoja el administrador y se guardará dentro de la base de datos.
-    */
+    res.redirect('/')
+})
+
+app.post('/pass', urlencodedParser, (req, res) => {
+    let pass = req.body.pass
+
+    usuario.contraseña = pass
+
+    usuario.register()
+
+    console.log('USUARIO REGISTRADO')
 
     res.redirect('/')
-    
 })
 
 app.post('/login', urlencodedParser, (req, res) => {
@@ -94,7 +109,7 @@ const is_in_querys = (matrix) => {
 const send_email = (email) => {
     const html = `<h1>El usuario ${email} quiere registrarse en la web</h1>
                   <h2>Pulse el siguiente enlace para asiganarle una contraseña</h2>
-                  <a href = "http://localhost:8000/">ASIGNAR CONTRASEÑA</a>`
+                  <a href = "http://localhost:8000/password">ASIGNAR CONTRASEÑA</a>`
     
     const transporter = nodemailer.createTransport({
         host: 'localhost',
