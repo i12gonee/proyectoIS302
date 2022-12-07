@@ -39,9 +39,11 @@ app.post('/register', urlencodedParser, (req, res) => {
 app.post('/pass', urlencodedParser, (req, res) => {
     let pass = req.body.pass
 
-    usuario.contraseña = pass
+    participante.contraseña = pass
 
-    usuario.register()
+    console.log(participante.dni, participante.nombre_completo, participante.correo_electronico, participante.contraseña)
+
+    participante.register()
 
     console.log('USUARIO REGISTRADO')
 
@@ -98,8 +100,6 @@ app.get('/', (req, res) => {
     connection.query('SELECT * FROM cursos', (err, rows) => {
         if(err) throw err
 
-        console.log(rows)
-
         res.render('index', {cursos: rows})
     })
 })
@@ -107,24 +107,30 @@ app.get('/', (req, res) => {
 app.get('/participant', (req, res) => {
     app.set('views', path.join(__dirname, '../client/registered'))
 
-    connection.query('SELECT * FROM cursos', (err, rows) => {
+    const querys = [
+        'SELECT * FROM cursos',
+        `SELECT nombre_p FROM participantes where mail_p = '${nombre}' or nombre_p = '${nombre}'`
+    ]
+
+    connection.query(querys.join(';'), (err, rows) => {
         if(err) throw err
 
-        console.log(rows)
-
-        res.render('regist', {cursos: rows, nombre: nombre})
+        res.render('regist', {cursos: rows[0], nombre: rows[1][0].nombre_p})
     })
 })
 
 app.get('/coordcursos', (req, res) => {
     app.set('views', path.join(__dirname, '../client/coordcursos'))
 
-    connection.query('SELECT * FROM cursos', (err, rows) => {
+    const querys = [
+        'SELECT * FROM cursos',
+        `SELECT nombre_p FROM participantes  where mail_p = '${nombre}' or nombre_p = '${nombre}'`
+    ]
+
+    connection.query(querys.join(';'), (err, rows) => {
         if(err) throw err
 
-        console.log(rows)
-
-        res.render('coordcur', {cursos: rows, nombre: nombre})
+        res.render('coordcur', {cursos: rows[0], nombre: rows[1][0].nombre_p})
     })
 })
 
@@ -141,7 +147,6 @@ const is_in_querys = (matrix) => {
     for(let i = 0; i<matrix.length; i++){
         if(matrix[i].length !== 0){
             type_user = i
-            console.log(i)
             return true
         }
     }

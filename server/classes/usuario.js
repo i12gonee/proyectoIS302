@@ -26,46 +26,16 @@ class Usuario{
 
     
     register(){        
-        let es_coord_recursos = false //Estas variables se pondran en true cuando el sistema sepa si el usuario es alguno de los tres tipos 
-        let es_coord_cursos = false //Estas variables se pondran en true cuando el sistema sepa si el usuario es alguno de los tres tipos
-        let es_participante = true //Estas variables se pondran en true cuando el sistema sepa si el usuario es alguno de los tres tipos
-
-        const register_querys = [
-            `INSERT INTO participantes(id_p, nombre_p, mail_p, contrasena_p) 
-            VALUES(${this.#dni_}, '${this.#nombre_completo_}', '${this.#correo_electronico_}', '${this.#contraseña_}')`,
-            
-            `INSERT INTO coord_cursos(id_cc, nombre_cc, mail_cc, contrasena_cc) 
-            VALUES(${this.#dni_}, '${this.#nombre_completo_}', '${this.#correo_electronico_}', '${this.#contraseña_}')`,
-
-            `INSERT INTO coord_recursos(id_cr, nombre_cr, mail_cr, contrasena_cr) 
-            VALUES(${this.#dni_}, '${this.#nombre_completo_}', '${this.#correo_electronico_}', '${this.#contraseña_}')`
-
-        ]
-
+        const query = `INSERT INTO participantes(id_p, nombre_p, mail_p, contrasena_p) 
+                        VALUES(${this.#dni_}, '${this.#nombre_completo_}', '${this.#correo_electronico_}', '${this.#contraseña_}')`
+        
         connection.connect()
 
-        if(this.#dni_ && this.#nombre_completo_ && this.#correo_electronico_ && this.#contraseña_){
-            if(es_participante){
-                connection.query(register_querys[0], (err, rows) => {
-                    if(err) throw err
-        
-                    console.log(rows)
-                })
-            } else if(es_coord_cursos){
-                connection.query(register_querys[1], (err, rows) => {
-                    if(err) throw err
-        
-                    console.log(rows)
-                })
-            } else if(es_coord_recursos){
-                connection.query(register_querys[2], (err, rows) => {
-                    if(err) throw err
-        
-                    console.log(rows)
-                })
-            } else {
-                console.log("NO SE ESPECIFICO TIPO DE USER")
-            }           
+        if(this.#dni_ && this.#nombre_completo_ && this.#correo_electronico_ && this.#contraseña_){ 
+            connection.query(query, (err, rows) => {
+                if(err) throw err
+            })
+
         } else {
             console.log('FALTAN DATOS')
         }
