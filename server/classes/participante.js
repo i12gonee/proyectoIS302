@@ -13,25 +13,46 @@ class Participante extends Usuario{
         this.#dni_ = dni
     }
 
+    get curso(){return this.#curso_}
+
+    set curso(curso){this.#curso_ = curso}
+
     inscribirse_curso(){
         connection.connect()
 
         const query = `INSERT INTO participantes_cursos(participantes_id_p, cursos_id_curso)
                         VALUES(${this.#dni_}, ${this.#curso_})`
 
-        /*connection.query(query, (err, rows) => {
+        if(!this.#dni_ && !this.#curso_){
+            return false   
+        }
+
+        connection.query(query, (err, rows) => {
             if(err) throw err
             console.log('INSCRITO')
-        })*/
+        })
 
-        console.log(this.#dni_)
+        return true
+    }
+
+    darse_de_alta_curso(){
+        connection.connect()
+
+        const query = `DELETE FROM participantes_cursos 
+                        WHERE participantes_id_p = ${this.#dni_}`
+
+        if(!this.#dni_){
+            return false
+        }
+
+        connection.query(query, (err, rows) => {
+            if(err) throw err
+
+            console.log('Dado de alta correctamente')
+        })
+
+        return true
     }
 }
 
-
-let participante = new Participante(123, 'Paco', 'ALgar', 'lmknjbh', 'hbnjkml,', 97654)
-
-participante.inscribirse_curso()
-
-
-module.exports =  Participante
+module.exports = Participante

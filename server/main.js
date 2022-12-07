@@ -4,7 +4,7 @@ const bodyParser = require('body-parser')
 const nodemailer = require('nodemailer')
 
 const Participante = require('./classes/participante')
-const {connection} = require('./database/connection');
+const {connection} = require('./database/connection')
 
 const app = express()
 const port = 8000
@@ -20,7 +20,7 @@ app.set('view engine', 'ejs')
 
 let dni, nombre, apellidos, email, pass
 let participante //Declaramos un usuario vacío
-let type_user
+let type_user = -1 //Inicializamos el tipo de usuario a -1 para 
 
 app.post('/register', urlencodedParser, (req, res) => {    
     dni = req.body.dni
@@ -124,13 +124,13 @@ app.get('/coordcursos', (req, res) => {
 
     const querys = [
         'SELECT * FROM cursos',
-        `SELECT nombre_p FROM participantes  where mail_p = '${nombre}' or nombre_p = '${nombre}'`
+        `SELECT nombre_p FROM coord_cursos where mail_cc = '${nombre}' or nombre_cc = '${nombre}'`
     ]
 
     connection.query(querys.join(';'), (err, rows) => {
         if(err) throw err
 
-        res.render('coordcur', {cursos: rows[0], nombre: rows[1][0].nombre_p})
+        res.render('coordcur', {cursos: rows[0], nombre: rows[1][0].nombre_cc})
     })
 })
 
