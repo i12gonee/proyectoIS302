@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="coordcur.css">
+    <script src="coordcur.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     
@@ -13,9 +13,9 @@
 </head>
 <body>
     <div class="topbar">
-        <img class="logo" src="./resources/logo.png">
+        <img class="logo" src="../resources/logo.png">
         <div>
-            <p class="coordcur">login</span>Coordinador de Cursos</p>
+            <p class="coordcur"> <%=nombre%> </p>
         </div>
     </div>
     <div class="Cursos">
@@ -35,5 +35,7 @@
         <% }); %>
         
     </div>
+
+    <h1>COORD_CURSOS</h1>
 </body>
 </html>

@@ -3,7 +3,7 @@ const path = require('path')
 const bodyParser = require('body-parser')
 const nodemailer = require('nodemailer')
 
-const Usuario = require('./classes/usuario')
+const Participante = require('./classes/participante')
 const {connection} = require('./database/connection');
 
 const app = express()
@@ -13,34 +13,23 @@ const urlencodedParser = bodyParser.urlencoded({ extended: true })
 
 app.use('/', express.static(path.join(__dirname, '../client')))
 app.use('/password', express.static(path.join(__dirname, '../client/accountset')))
+app.use('/participant', express.static(path.join(__dirname, '../client/registered')))
+app.use('/coordcursos', express.static(path.join(__dirname, '../client/coordcursos')))
 
 app.set('view engine', 'ejs')
-app.set('views', path.join(__dirname, '../client'))
 
-app.get('/', (req, res) => {
-    connection.query('SELECT * FROM cursos', (err, rows) => {
-        if(err) throw err
-
-        console.log(rows)
-
-        res.render('index', {cursos: rows})
-    })
-})
-
-app.get('/password', (req, res) => {
-    res.sendFile(path.join(__dirname, '../client/accountset/account.html'))
-})
-
-let usuario //Declaramos un usuario vacío
+let dni, nombre, apellidos, email, pass
+let participante //Declaramos un usuario vacío
+let type_user
 
 app.post('/register', urlencodedParser, (req, res) => {    
-    let dni = req.body.dni
-    let nombre = req.body.nombre
-    let apellidos =  req.body.apellidos
-    let email = req.body.email
-    let pass = ""
+    dni = req.body.dni
+    nombre = req.body.nombre
+    apellidos =  req.body.apellidos
+    email = req.body.email
+    pass = ""
 
-    usuario = new Usuario(dni, nombre, apellidos, email, pass)
+    participante = new Participante(dni, nombre, apellidos, email, pass)
 
     send_email(email)
 
@@ -60,7 +49,7 @@ app.post('/pass', urlencodedParser, (req, res) => {
 })
 
 app.post('/login', urlencodedParser, (req, res) => {
-    let nombre = req.body.usuario
+    nombre = req.body.usuario
     let contraseña = req.body.contraseña
 
     console.log(`Usuario: ${nombre}\nContraseña: ${contraseña}`)
@@ -82,13 +71,65 @@ app.post('/login', urlencodedParser, (req, res) => {
             console.log(rows)
 
             if(is_in_querys(rows)){
-                res.redirect('/')
+                switch(type_user){
+                    case 0:
+                        res.redirect('/participant')
+                    break;
+
+                    case 1:
+                        res.redirect('/coordcursos')
+                    break;
+                    
+                    case 2:
+                        res.redirect('/')
+                    break;
+                }
             } else {
                 console.log("no")
                 res.json('Incorrect Username and/or Password!');
             }
         })
     }
+})
+
+app.get('/', (req, res) => {
+    app.set('views', path.join(__dirname, '../client'))
+
+    connection.query('SELECT * FROM cursos', (err, rows) => {
+        if(err) throw err
+
+        console.log(rows)
+
+        res.render('index', {cursos: rows})
+    })
+})
+
+app.get('/participant', (req, res) => {
+    app.set('views', path.join(__dirname, '../client/registered'))
+
+    connection.query('SELECT * FROM cursos', (err, rows) => {
+        if(err) throw err
+
+        console.log(rows)
+
+        res.render('regist', {cursos: rows, nombre: nombre})
+    })
+})
+
+app.get('/coordcursos', (req, res) => {
+    app.set('views', path.join(__dirname, '../client/coordcursos'))
+
+    connection.query('SELECT * FROM cursos', (err, rows) => {
+        if(err) throw err
+
+        console.log(rows)
+
+        res.render('coordcur', {cursos: rows, nombre: nombre})
+    })
+})
+
+app.get('/password', (req, res) => {
+    res.sendFile(path.join(__dirname, '../client/accountset/account.html'))
 })
 
 app.listen(port, () => {
@@ -99,6 +140,8 @@ app.listen(port, () => {
 const is_in_querys = (matrix) => {
     for(let i = 0; i<matrix.length; i++){
         if(matrix[i].length !== 0){
+            type_user = i
+            console.log(i)
             return true
         }
     }
