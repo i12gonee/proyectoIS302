@@ -23,9 +23,7 @@ class Participante extends Usuario{
         const query = `INSERT INTO participantes_cursos(participantes_id_p, cursos_id_curso)
                         VALUES(${this.#dni_}, ${this.#curso_})`
 
-        if(!this.#dni_ && !this.#curso_){
-            return false   
-        }
+        if(!this.#dni_ && !this.#curso_) return false
 
         connection.query(query, (err, rows) => {
             if(err) throw err
@@ -41,9 +39,7 @@ class Participante extends Usuario{
         const query = `DELETE FROM participantes_cursos 
                         WHERE participantes_id_p = ${this.#dni_}`
 
-        if(!this.#dni_){
-            return false
-        }
+        if(!this.#dni_) return false
 
         connection.query(query, (err, rows) => {
             if(err) throw err

@@ -1,0 +1,39 @@
+{
+  "name": "proyectois302",
+  "version": "1.0.0",
+  "description": "",
+  "directories": {
+    "client": "client",
+    "server": "server",
+    "test": "tests"
+  },
+  "scripts": {
+    "start": "node ./server/app.js",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/i12gonee/proyectoIS302.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/i12gonee/proyectoIS302/issues"
+  },
+  "homepage": "https://github.com/i12gonee/proyectoIS302#readme",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "cors": "^2.8.5",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.3.3",
+    "nodemailer": "^6.8.0"
+  },
+  "devDependencies": {
+    "jest": "^29.3.1",
+    "supertest": "^6.3.3"
+  }
+}

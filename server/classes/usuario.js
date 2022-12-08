@@ -31,14 +31,15 @@ class Usuario{
         
         connection.connect()
 
-        if(this.#dni_ && this.#nombre_completo_ && this.#correo_electronico_ && this.#contraseña_){ 
-            connection.query(query, (err, rows) => {
-                if(err) throw err
-            })
+        if(!this.#dni_ || !this.#nombre_completo_ || !this.#correo_electronico_ || !this.#contraseña_) return false
 
-        } else {
-            console.log('FALTAN DATOS')
-        }
+        connection.query(query, (err, rows) => {
+            if(err) throw err
+
+            console.log(rows)
+        })
+
+        return true
     }
     
 }
