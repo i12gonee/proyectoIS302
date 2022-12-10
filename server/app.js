@@ -4,6 +4,8 @@ const bodyParser = require('body-parser')
 const nodemailer = require('nodemailer')
 
 const Participante = require('./classes/participante')
+const Coord_cursos = require('./classes/coord_cursos')
+const Coord_recursos = require('./classes/coord_recursos')
 const {connection} = require('./database/connection')
 
 const app = express()
@@ -15,21 +17,28 @@ app.use('/', express.static(path.join(__dirname, '../client')))
 app.use('/password', express.static(path.join(__dirname, '../client/accountset')))
 app.use('/participant', express.static(path.join(__dirname, '../client/registered')))
 app.use('/coordcursos', express.static(path.join(__dirname, '../client/coordcursos')))
+app.use('/login_page', express.static(path.join(__dirname, '../client/inicreg')))
 
 app.set('view engine', 'ejs')
 
 let dni, nombre, apellidos, email, pass
-let participante //Declaramos un usuario vacío
-let type_user = -1 //Inicializamos el tipo de usuario a -1 para 
+let user //Declaramos un usuario vacío
+let type_user = 0
+let is_login = false
 
 app.post('/register', urlencodedParser, (req, res) => {    
     dni = req.body.dni
     nombre = req.body.nombre
     apellidos =  req.body.apellidos
     email = req.body.email
+
+    if(!email.includes('@uco.es')){
+        return res.send('NO UCO USER')
+    }
+
     pass = ""
 
-    participante = new Participante(dni, nombre, apellidos, email, pass)
+    user = new Participante(dni, nombre, apellidos, email, pass)
 
     send_email(email)
 
@@ -39,9 +48,11 @@ app.post('/register', urlencodedParser, (req, res) => {
 app.post('/pass', urlencodedParser, (req, res) => {
     let pass = req.body.pass
 
-    participante.contraseña = pass
+    user.contraseña = pass
 
-    participante.register()
+    user.register()
+
+    is_user = true
 
     res.redirect('/')
 })
@@ -50,9 +61,45 @@ app.post('/login', urlencodedParser, (req, res) => {
     nombre = req.body.usuario
     let contraseña = req.body.contraseña
 
-    console.log(`Usuario: ${nombre}\nContraseña: ${contraseña}`)
+    const querys = [
+        `SELECT id_p, nombre_p, mail_p, contrasena_p FROM participantes WHERE nombre_p = '${nombre}' OR mail_p = '${nombre}' AND contrasena_p = '${contraseña}'`,
 
-    login(nombre, contraseña, res)
+        `SELECT id_cc, nombre_cc, mail_cc, contrasena_cc FROM coord_cursos WHERE nombre_cc = '${nombre}' OR mail_cc = '${nombre}' AND contrasena_cc = '${contraseña}'`,
+
+        `SELECT id_cr, nombre_cr, mail_cr, contrasena_cr FROM coord_recursos WHERE nombre_cr = '${nombre}' OR mail_cr = '${nombre}' AND contrasena_cr = '${contraseña}'`
+    ]
+
+    connection.connect()
+
+    if(nombre && contraseña){
+        connection.query(querys.join(';'), (error, rows) => {
+            if (error) throw error;
+
+            console.log(rows)
+
+            if(is_in_querys(rows)){
+                switch(type_user){
+                    case 0:
+                        user = new Participante(rows[0][0].id_p, rows[0][0].nombre_p, '', rows[0][0].mail_p, rows[0][0].contrasena_p)
+                        is_login = true
+                        return res.redirect('/participant')
+
+                    case 1:
+                        user = new Coord_cursos(rows[1][0].id_cc, rows[1][0].nombre_cc, '', rows[1][0].mail_cc, rows[1][0].contrasena_cc)
+                        is_login = true
+                        return res.redirect('/coordcursos')
+                    
+                    case 2:
+                        user = new Coord_recursos(rows[2][0].id_cr, rows[2][0].nombre_cr, '', rows[2][0].mail_cr, rows[2][0].contrasena_cr)
+                        is_login = true
+                        return res.redirect('/')
+                }
+            } else {
+                console.log("no")
+                return res.json('Incorrect Username and/or Password!');
+            }
+        })
+    }
 })
 
 app.get('/', (req, res) => {
@@ -95,8 +142,30 @@ app.get('/coordcursos', (req, res) => {
     })
 })
 
+app.get('/login_page', (req, res) => {
+    res.sendFile(path.join(__dirname, '../client/inicreg/inicioindex.html'))
+})
+
+app.get('/register_page', (req, res) => {
+    res.sendFile(path.join(__dirname, '../client/inicreg/registroindex.html'))
+})
+
 app.get('/password', (req, res) => {
     res.sendFile(path.join(__dirname, '../client/accountset/account.html'))
+})
+
+app.get('/inscribirse', (req, res) => {
+    if(!is_login){
+        res.redirect('/login_page')
+    }
+
+    //FALTA SABER COMO ENCONTAR EL ID DEL CURSO
+
+    if(user.inscribirse_curso()){
+        res.send('INSCRITO')
+    } else {
+        res.send('NO INSCRITO')
+    }
 })
 
 app.listen(port, () => {
@@ -142,46 +211,6 @@ const send_email = (email) => {
     
         console.log('Mensaje enviado: ' + info.response)
     })
-}
-
-const login = (nombre, contraseña, res) => {
-    const querys = [
-        `SELECT nombre_p, mail_p, contrasena_p FROM participantes WHERE nombre_p = '${nombre}' OR mail_p = '${nombre}' AND contrasena_p = '${contraseña}'`,
-
-        `SELECT nombre_cc, mail_cc, contrasena_cc FROM coord_cursos WHERE nombre_cc = '${nombre}' OR mail_cc = '${nombre}' AND contrasena_cc = '${contraseña}'`,
-
-        `SELECT nombre_cr, mail_cr, contrasena_cr FROM coord_recursos WHERE nombre_cr = '${nombre}' OR mail_cr = '${nombre}' AND contrasena_cr = '${contraseña}'`
-    ]
-
-    connection.connect()
-
-    if(nombre && contraseña){
-        connection.query(querys.join(';'), (error, rows) => {
-            if (error) throw error;
-
-            console.log(rows)
-
-            if(is_in_querys(rows)){
-                switch(type_user){
-                    case 0:
-                        res.redirect('/participant')
-                        return true
-
-                    case 1:
-                        res.redirect('/coordcursos')
-                        return true
-                    
-                    case 2:
-                        res.redirect('/')
-                        return true
-                }
-            } else {
-                console.log("no")
-                res.json('Incorrect Username and/or Password!');
-                return false
-            }
-        })
-    }
 }
 //----------------------------------------//
 

@@ -3,27 +3,27 @@ const {connection} = require('../database/connection')
 
 class Participante extends Usuario{
 
-    #curso_
+    #id_curso_
     #dni_
 
-    constructor(dni, nombre, apellidos, correo_electronico, contraseña, curso){
+    constructor(dni, nombre, apellidos = '', correo_electronico, contraseña, id_curso = 0){
         super(dni, nombre, apellidos, correo_electronico, contraseña)
 
-        this.#curso_ = curso
+        this.#id_curso_ = id_curso
         this.#dni_ = dni
     }
 
-    get curso(){return this.#curso_}
+    get id_curso(){return this.#id_curso_}
 
-    set curso(curso){this.#curso_ = curso}
+    set id_curso(id_curso){this.#id_curso_ = id_curso}
 
     inscribirse_curso(){
         connection.connect()
 
         const query = `INSERT INTO participantes_cursos(participantes_id_p, cursos_id_curso)
-                        VALUES(${this.#dni_}, ${this.#curso_})`
+                        VALUES(${this.#dni_}, ${this.#id_curso_})`
 
-        if(!this.#dni_ && !this.#curso_) return false
+        if(!this.#dni_ && !this.#id_curso_) return false
 
         connection.query(query, (err, rows) => {
             if(err) throw err

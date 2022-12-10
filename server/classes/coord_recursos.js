@@ -1,5 +1,4 @@
-import Usuario from './usuario.js'
-import Curso from './curso.js'
+const Usuario = require('./usuario')
 
 class Coord_Recursos extends Usuario{
     #recursos_coord_ = []

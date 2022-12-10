@@ -41,7 +41,6 @@ class Usuario{
 
         return true
     }
-    
 }
 
 module.exports = Usuario
