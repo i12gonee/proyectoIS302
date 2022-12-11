@@ -18,6 +18,7 @@ body {
 }
 
 .overlay{
+    font-family: 'Nunito',serif;
     background-color: rgb(232, 232, 232);
     position: absolute;
     font-size: 50px;
@@ -26,6 +27,26 @@ body {
     height: 30rem;
     z-index: 10;
     border-radius: 10px;
+}
+
+.textooverlay{
+    text-align: center;
+    font-size: 3rem;
+    margin-top: 8rem;
+}
+
+.textback {
+    color: #d87700db;
+    font-size: 2rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+.textretry {
+    color: #d87700db;
+    font-size: 2rem;
+    text-align: center;
+    cursor: pointer;
 }
 
 body .topbar{
