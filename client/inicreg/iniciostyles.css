@@ -20,6 +20,7 @@ body {
 .overlay{
     font-family: 'Nunito',serif;
     background-color: rgb(232, 232, 232);
+    font-weight: bold;
     position: absolute;
     font-size: 50px;
     margin-top: 3rem;
