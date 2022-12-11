@@ -1,0 +1,287 @@
+body {
+    background-image: url(../resources/fondo.png);
+    background-size: 100%;
+}
+
+.logo:hover{
+    cursor: pointer;
+}
+
+.tituloadmin{
+    color: #ff8c00db;
+    font-family: 'Nunito',serif;
+    margin-left: 0.5rem;
+    margin-top: 6rem;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+body .topbar{
+    display: flex;
+    justify-content: center;
+    background-color: #444444;
+    width: 100%;
+    height: 5rem;
+    margin-left: -0.5rem;
+    margin-top: -0.5rem;
+    box-shadow: 0px 2px 5px rgba(29, 29, 29, 0.5);
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.481);
+}
+
+.tarjetainic{
+    background-color: #444444;
+    width: 33%;
+    height: 27rem;
+    margin-top: 5rem;
+    border-radius: 20px;
+    box-shadow: 10px 10px 5px 0px rgba(56, 54, 56, 0.212);
+}
+
+@keyframes arrimba{
+    0% {transform: translateY(4rem) translateX(-4.2rem) scale(0.6);}
+    100% {transform: translateY(2rem) scale(1);}
+}
+
+@keyframes arrimba2{
+    0% {transform: translateY(4rem) translateX(-4.2rem) scale(0.6);}
+    100% {transform: translateY(2rem) scale(1);}
+}
+
+.funcionactive{
+    animation-name: arrimba;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+}
+
+.funcionactive2{
+    animation-name: arrimba2;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+}
+
+.Usuario{
+    font-family: 'Nunito',serif;
+    margin-left: 5.4rem;
+    font-weight: bolder;
+    font-size: 25px;
+    pointer-events: none;
+    transform: translateY(4rem) translateX(-4.2rem) scale(0.6);
+    color: #ff8c00db;
+}
+
+#usr{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    margin-left: 5.4rem;
+    font-family: 'Nunito',serif;
+    font-size: large;
+    width: 60%;
+    height: 2.2rem;
+    border-left: 0px;
+    border-top: 0px;
+    border-right: 0px;
+    border-color: #ff8c00db;
+    background-color: transparent;
+    outline: none;
+}
+
+
+
+.pass{
+    font-family: 'Nunito',serif;
+    margin-left: 5.4rem;
+    font-weight: bolder;
+    font-size: 25px;
+    transform: translateY(4rem) translateX(-4.2rem) scale(0.6);
+    color: #ff8c00db;
+    pointer-events: none;
+}
+
+.bttm{
+    position: absolute;
+    margin-left: 9rem;
+    margin-top: 3rem;
+    font-family: 'Nunito',serif;
+    background-color: #ff8c00db;
+    text-align: center;
+    color: rgb(255, 246, 236);
+    border-radius: 0.6rem;
+    text-decoration: none;
+    width: 10rem;
+    height: 4rem;
+    border:none;
+    cursor:pointer;
+}
+.textbttn{
+    margin-top: 1rem;
+    color: #2c2c2c;
+    font-weight: bolder;
+    font-size: large;
+}
+.fpswrd{
+
+    margin-top: 9.5rem;
+    margin-left: 7.3rem;
+    font-family: 'Nunito',serif;
+    color: #ff8c00db;
+    cursor: help;
+}
+
+#pswrd{
+    color: rgb(255, 255, 255);
+    margin-left: 5.4rem;
+    font-family: 'Nunito',serif;
+    font-size: large;
+    width: 60%;
+    height: 2.2rem;
+    border-left: 0px;
+    border-top: 0px;
+    border-right: 0px;
+    background-color: transparent;
+    outline: none;
+    border-color: #ff8c00db;
+}
+
+/*PANTALLA RESOLUCION ANCHO 1920*/
+
+@media screen and (max-width: 1920px){
+
+    body .topbar{
+        padding: 8px;
+    }
+
+    .container{
+        padding-bottom: 7rem;
+    }
+
+    .tarjetainic{
+        height: 40rem;
+    }
+
+    #usr {
+        width: 70%;
+        margin-left: 5.5rem;
+    }
+
+    #pswrd {
+        width: 70%;
+        margin-left: 5.5rem;
+    }
+
+    .bttm {
+        margin-top: 10rem;
+        margin-left: 12rem;
+        width: 15rem;
+        height: 6rem
+    }
+
+    .fpswrd{
+        margin-top: 22rem;
+        margin-left: 13rem;
+    }
+}
+
+/*PANTALLA RESOLUCION ANCHO 1680*/
+
+@media screen and (max-width: 1680px){
+
+    body .topbar{
+        padding: 8px;
+    }
+
+    .container{
+        padding-bottom: 5rem;
+    }
+
+    .tarjetainic{
+        height: 30rem;
+    }
+
+    .Usuario{
+        transform: translateY(4rem) translateX(-4.4rem) scale(0.7);
+    }
+
+    #usr{
+        width: 70%;
+        margin-left: 4.7rem;
+    }
+
+    .pass{
+        transform: translateY(4rem) translateX(-4.4rem) scale(0.7);
+    }
+
+    #pswrd{
+        width: 70%;
+        margin-left: 4.7rem;
+    }
+
+    .bttm {
+        margin-left: 9rem;
+        margin-top: 3rem;
+        width: 10rem;
+        height: 4rem;
+    }
+
+    .fpswrd{
+        margin-top: 9.5rem;
+        margin-left: 7.3rem;
+    }
+}
+
+
+
+/*PANTALLA RESOLUCION ANCHO 1366*/
+
+@media screen and (max-width: 1366px){
+
+    body .topbar{
+        padding: 8px;
+    }
+
+    .container{
+        padding-bottom: 3.28rem;
+    }
+
+    .bttm {
+        margin-left: 9rem;
+        margin-top: 3rem;
+        width: 10rem;
+        height: 4rem;
+    }
+
+    .fpswrd{
+        margin-top: 9.5rem;
+        margin-left: 7.3rem;
+    }
+
+    .tarjetainic{
+        height: 27rem;
+    }
+
+    .Usuario{
+        margin-left: 5.4rem;
+        transform: translateY(4rem) translateX(-4.2rem) scale(0.6);
+    }
+
+    #usr{
+        margin-left: 5.4rem;
+        width: 60%;
+        height: 2.2rem;
+    }
+
+    .pass{
+        margin-left: 5.4rem;
+        transform: translateY(4rem) translateX(-4.2rem) scale(0.6);
+    }
+
+    #pswrd{
+        margin-left: 5.4rem;
+        width: 60%;
+        height: 2.2rem; 
+    }
+}

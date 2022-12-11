@@ -1,0 +1,33 @@
+-<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="account.css">
+    <script src="account.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    <title>Asignación de Contraseña</title>
+</head>
+<body>
+    <div class="topbar">
+        <img onclick="volver()" class="logo" src="../resources/logo.png">
+    </div>
+    <div class="container">
+        <div class="tarjetainic">
+            <p class="tituloadmin">Introduce el nombre del curso</p>
+            <form action = "/inscribirse" method = "POST" id = "titulo_curso">
+                <p id="contra" class="pass">Nombre curso:</p>
+                <input onclick="arrimba2()" type="text" name="titulo_curso" id="pswrd">
+                <br>
+                <button class="bttm" form = "titulo_curso">
+                    <p class="textbttn">Inscribirse</p>
+                </button>
+            </form>
+        </div>
+    </div>
+    
+</body>
+</html>

@@ -24,17 +24,16 @@
         <% cursos.forEach(curso => { %>
             <div class="Curso 1" id="curso">
                 <div>
-                    <h1 class="titulo uno"> <%=curso.nombre_curso%> </h1>
+                    <h1 class="titulo uno"> <%= curso.nombre_curso%> </h1>
                     <p class="plazo">Plazo de inscripcion: <%=curso.fecha_inicio%> - <%=curso.fecha_final%></p>
                 </div>
-                <a class="botonisc" href = "/inscribirse">
+                <a class="botonisc" href = "/page_inscribirse">
                     Inscribirse
                 </a>
                 <span onclick="cru(this)" id="crus" class="material-icons menu">menu</span>
             </div>
             <div id="despl"></div>
         <% }); %>
-        
     </div>
 </body>
 </html>

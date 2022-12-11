@@ -15,6 +15,7 @@ const urlencodedParser = bodyParser.urlencoded({ extended: true })
 
 app.use('/', express.static(path.join(__dirname, '../client')))
 app.use('/password', express.static(path.join(__dirname, '../client/accountset')))
+app.use('/inscribirse', express.static(path.join(__dirname, '../client/accountset')))
 app.use('/participant', express.static(path.join(__dirname, '../client/registered')))
 app.use('/coordcursos', express.static(path.join(__dirname, '../client/coordcursos')))
 app.use('/login_page', express.static(path.join(__dirname, '../client/inicreg')))
@@ -25,6 +26,7 @@ let dni, nombre, apellidos, email, pass
 let user //Declaramos un usuario vacío
 let type_user = 0
 let is_login = false
+let titulo_curso
 
 app.post('/register', urlencodedParser, (req, res) => {    
     dni = req.body.dni
@@ -102,6 +104,27 @@ app.post('/login', urlencodedParser, (req, res) => {
     }
 })
 
+app.post('/inscribirse', urlencodedParser, (req, res) => {
+    titulo_curso = req.body.titulo_curso
+    console.log('Titulo: ' + titulo_curso)
+
+    connection.query(`SELECT id_curso FROM cursos WHERE nombre_curso = '${titulo_curso}'`, (err, rows) => {
+        if(err) throw err
+
+        console.log(rows)
+
+        user.id_curso = rows[0].id_curso
+
+        console.log(user.id_curso)
+
+        if(user.inscribirse_curso()){
+            res.send('INSCRITO')
+        } else {
+            res.send('NO INSCRITO')
+        }
+    })
+})
+
 app.get('/', (req, res) => {
     app.set('views', path.join(__dirname, '../client'))
 
@@ -154,18 +177,12 @@ app.get('/password', (req, res) => {
     res.sendFile(path.join(__dirname, '../client/accountset/account.html'))
 })
 
-app.get('/inscribirse', (req, res) => {
+app.get('/page_inscribirse', urlencodedParser, (req, res) => {
     if(!is_login){
-        res.redirect('/login_page')
+        return res.redirect('/login_page')
     }
 
-    //FALTA SABER COMO ENCONTAR EL ID DEL CURSO
-
-    if(user.inscribirse_curso()){
-        res.send('INSCRITO')
-    } else {
-        res.send('NO INSCRITO')
-    }
+    res.sendFile(path.join(__dirname, '../client/inscribirse/inscribirse.html'))
 })
 
 app.listen(port, () => {
@@ -213,5 +230,3 @@ const send_email = (email) => {
     })
 }
 //----------------------------------------//
-
-module.exports = app
