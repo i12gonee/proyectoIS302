@@ -13,10 +13,6 @@ body {
     justify-content: center;
 }
 
-.darkened{
-    background-color: #2c2c2cbc;
-}
-
 .overlay{
     font-family: 'Nunito',serif;
     background-color: rgb(232, 232, 232);
@@ -27,6 +23,16 @@ body {
     height: 30rem;
     z-index: 10;
     border-radius: 10px;
+}
+
+
+.inputolvido{
+    position:  absolute;
+    transform: translateX(19rem);
+}
+
+.olvidobttn{
+    transform: translateX(11rem);
 }
 
 .textooverlay{

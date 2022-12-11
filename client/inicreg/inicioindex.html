@@ -20,6 +20,15 @@
             <p class="textretry" onclick="hideoverlay()">Intentar de nuevo</p>
         </div>
     </div>
+    <div id="over2" class="overlaywrapper">
+        <div class="overlay">
+            <p class="textooverlay">Introduce tu usuario y un mensaje será enviado al administrador</p>
+            <input type="text" class="inputolvido">
+            <button class="bttm olvidobttn" >
+                <p class="textbttn">Enviar</p>
+            </button>
+        </div>
+    </div>
     <div id="cont" class="container">
         <div class="tarjetainic">
             <form action = "/login" method = "POST" id = "init">
@@ -31,7 +40,7 @@
                 <button class="bttm" form = "init">
                     <p class="textbttn">Acceder</p>
                 </button>
-                <div onclick="showoverlay()" class="fpswrd">¿Has olvidado la contraseña?</div>
+                <div onclick="showoverlay2()" class="fpswrd">¿Has olvidado la contraseña?</div>
             </form>
         </div>
     </div>

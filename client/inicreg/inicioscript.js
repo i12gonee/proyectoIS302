@@ -30,6 +30,19 @@ function hideoverlay() {
     
 }
 
+function showoverlay2() {
+
+    document.getElementById("over2").style.display = "flex";
+    document.getElementById("cont").style.backgroundColor = "#2c2c2cbc";
+    
+}
+
+function hideoverlay2() {
+
+    document.getElementById("over2").style.display = "none";
+    document.getElementById("cont").style.backgroundColor = "rgba(255, 255, 255, 0.481)";
+    
+}
 /*
 if (//condicion para paco) {
     showoverlay();
