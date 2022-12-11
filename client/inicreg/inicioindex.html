@@ -13,7 +13,12 @@
     <div class="topbar">
         <img onclick="volver()" class="logo" src="../resources/logo.png">
     </div>
-    <div class="container">
+    <div id="over" class="overlaywrapper">
+        <div class="overlay">
+            <p class="textooverlay">koala</p>
+        </div>
+    </div>
+    <div id="cont" class="container">
         <div class="tarjetainic">
             <form action = "/login" method = "POST" id = "init">
                 <p id="usu" class="Usuario">Usuario:</p>
@@ -24,7 +29,7 @@
                 <button class="bttm" form = "init">
                     <p class="textbttn">Acceder</p>
                 </button>
-                <div class="fpswrd">¿Has olvidado la contraseña?</div>
+                <div onclick="showoverlay()" class="fpswrd">¿Has olvidado la contraseña?</div>
             </form>
         </div>
     </div>

@@ -15,3 +15,10 @@ function arrimba2(){
 function volver(){
     window.location.replace("/")
 }
+
+function showoverlay() {
+
+    document.getElementById("over").style.display = "flex";
+    document.getElementById("cont").style.backgroundColor = "#2c2c2cbc";
+    
+}
