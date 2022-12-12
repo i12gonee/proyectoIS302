@@ -8,6 +8,7 @@ const Coord_Cursos = require('./classes/coord_cursos')
 const Coord_Recursos = require('./classes/coord_recursos')
 const {connection} = require('./database/connection')
 const showoverlay = require('../client/inicreg/inicioscript')
+const Usuario = require('./classes/usuario')
 
 const app = express()
 const port = 8000
@@ -19,10 +20,12 @@ app.use('/password', express.static(path.join(__dirname, '../client/accountset')
 app.use('/page_inscribirse', express.static(path.join(__dirname, '../client/accountset')))
 app.use('/participant', express.static(path.join(__dirname, '../client/registered')))
 app.use('/coordcursos', express.static(path.join(__dirname, '../client/coordcursos')))
+app.use('/add_cursos_form', express.static(path.join(__dirname, '../client/coordcursos/form_add')))
+app.use('/edit_cursos_form', express.static(path.join(__dirname, '../client/coordcursos/form_edit')))
 app.use('/login_page', express.static(path.join(__dirname, '../client/inicreg')))
 app.use('/register_page', express.static(path.join(__dirname, '../client/inicreg')))
 app.use('/error_page', express.static(path.join(__dirname, '../client/error')))
-app.use('/add_curso_form', express.static(path.join(__dirname, '../client/coordcursos/form')))
+
 
 app.set('view engine', 'ejs')
 
@@ -129,8 +132,43 @@ app.post('/inscribirse', urlencodedParser, (req, res) => {
     })
 })
 
+app.post('/add_cursos', urlencodedParser,(req, res) => {
+    let nombre_curso = req.body.nombre_curso
+    let descripcion = req.body.descripcion
+    let fecha_inicio = req.body.fecha_inicio
+    let fecha_fin = req.body.fecha_fin
+    let max_inscripciones = req.body.max_inscripciones
+    let aula = req.body.aula
+    let ponentes = req.body.ponentes
+
+
+    user.añadir_curso(nombre_curso, fecha_inicio, fecha_fin, max_inscripciones, ponentes, descripcion, aula) ? res.redirect('/coordcursos') : res.redirect('/error_page')
+})
+
+app.post('/edit_cursos', urlencodedParser,(req, res) => {
+    let new_nombre_curso = req.body.new_nombre
+    let last_nombre_curso = req.body.last_nombre
+    let descripcion = req.body.descripcion
+    let fecha_inicio = req.body.fecha_inicio
+    let fecha_fin = req.body.fecha_fin
+    let max_inscripciones = req.body.max_inscripciones
+    let aula = req.body.aula
+    let ponentes = req.body.ponentes
+
+    if(!user.editar_curso(new_nombre_curso, last_nombre_curso, fecha_inicio, fecha_fin, max_inscripciones, ponentes, descripcion, aula)){
+        return res.redirect('/erro_page')
+    }
+
+    return res.redirect('/coordcursos')
+
+})
+
+
 app.get('/', (req, res) => {
     app.set('views', path.join(__dirname, '../client'))
+
+    is_login = false
+    user = new Usuario
 
     connection.query('SELECT * FROM cursos', (err, rows) => {
         if(err) throw err
@@ -193,8 +231,12 @@ app.get('/error_page', (req, res) => {
     res.sendFile(path.join(__dirname, '../client/error/error.html'))
 })
 
-app.get('/add_curso_form', (req, res) => {
-    res.sendFile(path.join(__dirname, '../client/coordcursos/form/form.html'))
+app.get('/add_cursos_form', (req, res) => {
+    res.sendFile(path.join(__dirname, '../client/coordcursos/form_add/form_add.html'))
+})
+
+app.get('/edit_cursos_form', (req, res) => {
+    res.sendFile(path.join(__dirname, '../client/coordcursos/form_edit/form_edit.html'))
 })
 
 app.listen(port, () => {

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type = "text/css" href="form_edit.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito">
+    <script src="./form_edit.js"></script>
+    <title>Modificacion de curso</title>
+</head>
+<body>
+    <div class="topbar">
+        <img class="logo" src="../resources/logo.png" onclick="volver()">
+    </div>
+    <div class="container">
+        <div class="tarjetareg">
+            <form action = "/edit_cursos" method = "POST" id = "reg">
+                <div class="flexbox">
+                <div class="parteizquierda">
+                        <p id="nomb" class="Nombre">Nuevo nombre del curso:</p>
+                        <input onclick="arrimba()" type="text" name="new_nombre" id="name">
+                        <p id="nomb" class="Nombre">Antiguo nombre del curso:</p>
+                        <input onclick="arrimba()" type="text" name="last_nombre" id="name">
+                        <p id="aplld" class="Apellidos">Descripcion:</p>
+                        <input onclick="arrimba2()" type="text" name="descripcion" id="surname">
+                        <p id="dni" class="documentodeidentidad">Fecha incio:</p>
+                        <input onclick="arrimba3()" type="text" name="fecha_inicio" id="id">
+                        <p id="dni" class="documentodeidentidad">Fecha fin:</p>
+                        <input onclick="arrimba3()" type="text" name="fecha_fin" id="id">
+                        <p id="dni" class="documentodeidentidad">Máx inscripciones:</p>
+                        <input onclick="arrimba3()" type="text" name="max_inscripciones" id="id">
+                        <p id="dni" class="documentodeidentidad">Aula:</p>
+                        <input onclick="arrimba3()" type="text" name="aula" id="id">
+                        <p id="mailtext" class="Correo">Ponentes:</p>
+                        <input onclick="arrimba4()" type="text" name="ponentes" id="mail">
+                </div>
+                <div class="lineamedio"></div>
+                    <div class="partederecha">
+                        <button class="bttm" form = "reg">
+                            <p class="textbttn">Enviar datos</p>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

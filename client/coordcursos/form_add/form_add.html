@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="registrostyles.css">
+    <link rel="stylesheet" type = "text/css" href="form_add.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito">
-    <script src="registroscript.js"></script>
+    <script src="./form_add.js"></script>
     <title>Modificacion de curso</title>
 </head>
 <body>
@@ -15,17 +15,23 @@
     </div>
     <div class="container">
         <div class="tarjetareg">
-            <form action = "/register" method = "POST" id = "reg">
+            <form action = "/add_cursos" method = "POST" id = "reg">
                 <div class="flexbox">
                 <div class="parteizquierda">
                         <p id="nomb" class="Nombre">Nombre del curso:</p>
-                        <input onclick="arrimba()" type="text" name="nombre" id="name">
+                        <input onclick="arrimba()" type="text" name="new_nombre" id="name">
                         <p id="aplld" class="Apellidos">Descripcion:</p>
-                        <input onclick="arrimba2()" type="text" name="apellidos" id="surname">
-                        <p id="dni" class="documentodeidentidad">Plazo:</p>
-                        <input onclick="arrimba3()" type="text" name="dni" id="id">
+                        <input onclick="arrimba2()" type="text" name="descripcion" id="surname">
+                        <p id="dni" class="documentodeidentidad">Fecha incio:</p>
+                        <input onclick="arrimba3()" type="text" name="fecha_inicio" id="id">
+                        <p id="dni" class="documentodeidentidad">Fecha fin:</p>
+                        <input onclick="arrimba3()" type="text" name="fecha_fin" id="id">
+                        <p id="dni" class="documentodeidentidad">Máx inscripciones:</p>
+                        <input onclick="arrimba3()" type="text" name="max_inscripciones" id="id">
+                        <p id="dni" class="documentodeidentidad">Aula:</p>
+                        <input onclick="arrimba3()" type="text" name="aula" id="id">
                         <p id="mailtext" class="Correo">Ponentes:</p>
-                        <input onclick="arrimba4()" type="text" name="email" id="mail">
+                        <input onclick="arrimba4()" type="text" name="ponentes" id="mail">
                 </div>
                 <div class="lineamedio"></div>
                     <div class="partederecha">
