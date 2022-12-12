@@ -129,4 +129,7 @@ INSERT INTO cursos(id_curso, nombre_curso, fecha_inicio, fecha_final, max_inscri
       VALUES (16778567, 'Cálculo', '2023-09-08', '2023-05-10', 100, 'Alfonso', 'Curso de cálculo', 'P10', 92943376);
 
 INSERT INTO cursos(id_curso, nombre_curso, fecha_inicio, fecha_final, max_inscripciones, ponente, descripcion, aula, id_cc) 
-      VALUES (16790567, 'Introducción a la programación', '2023-09-10', '2023-12-05', 200, 'Salinas', 'Curso de introducción a la programación', 'P2', 92943376);
+      VALUES (16790567, 'IP', '2023-09-10', '2023-12-05', 200, 'Salinas', 'Curso de introducción a la programación', 'P2', 92943376);
+
+INSERT INTO cursos(id_curso, nombre_curso, fecha_inicio, fecha_final, max_inscripciones, ponente, descripcion, aula, id_cc) 
+      VALUES (17690567, 'Física', '2023-10-10', '2023-12-05', 200, 'Salinas', 'Curso de física', 'P9', 92943376);

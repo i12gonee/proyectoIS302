@@ -7,6 +7,7 @@ const Participante = require('./classes/participante')
 const Coord_cursos = require('./classes/coord_cursos')
 const Coord_recursos = require('./classes/coord_recursos')
 const {connection} = require('./database/connection')
+const showoverlay = require('../client/inicreg/inicioscript')
 
 const app = express()
 const port = 8000
@@ -19,6 +20,7 @@ app.use('/page_inscribirse', express.static(path.join(__dirname, '../client/acco
 app.use('/participant', express.static(path.join(__dirname, '../client/registered')))
 app.use('/coordcursos', express.static(path.join(__dirname, '../client/coordcursos')))
 app.use('/login_page', express.static(path.join(__dirname, '../client/inicreg')))
+app.use('/error_page', express.static(path.join(__dirname, '../client/error')))
 
 app.set('view engine', 'ejs')
 
@@ -35,7 +37,7 @@ app.post('/register', urlencodedParser, (req, res) => {
     email = req.body.email
 
     if(!email.includes('@uco.es')){
-        return res.send('NO UCO USER')
+        return res.redirect('/error_page')
     }
 
     pass = ""
@@ -52,9 +54,9 @@ app.post('/pass', urlencodedParser, (req, res) => {
 
     user.contraseña = pass
 
-    user.register()
-
-    is_user = true
+    if(!user.register()){
+        return res.redirect('/error_page')
+    }
 
     res.redirect('/')
 })
@@ -98,7 +100,7 @@ app.post('/login', urlencodedParser, (req, res) => {
                 }
             } else {
                 console.log("no")
-                return res.json('Incorrect Username and/or Password!');
+                return res.redirect('/error_page')
             }
         })
     }
@@ -120,7 +122,7 @@ app.post('/inscribirse', urlencodedParser, (req, res) => {
         if(user.inscribirse_curso()){
             res.send('INSCRITO')
         } else {
-            res.send('NO INSCRITO')
+            res.redirect('/error_page')
         }
     })
 })
@@ -183,6 +185,10 @@ app.get('/page_inscribirse', urlencodedParser, (req, res) => {
     }
 
     res.sendFile(path.join(__dirname, '../client/inscribirse/inscribirse.html'))
+})
+
+app.get('/error_page', (req, res) => {
+    res.sendFile(path.join(__dirname, '../client/error/error.html'))
 })
 
 app.listen(port, () => {
