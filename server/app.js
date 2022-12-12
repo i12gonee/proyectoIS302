@@ -15,7 +15,7 @@ const urlencodedParser = bodyParser.urlencoded({ extended: true })
 
 app.use('/', express.static(path.join(__dirname, '../client')))
 app.use('/password', express.static(path.join(__dirname, '../client/accountset')))
-app.use('/inscribirse', express.static(path.join(__dirname, '../client/accountset')))
+app.use('/page_inscribirse', express.static(path.join(__dirname, '../client/accountset')))
 app.use('/participant', express.static(path.join(__dirname, '../client/registered')))
 app.use('/coordcursos', express.static(path.join(__dirname, '../client/coordcursos')))
 app.use('/login_page', express.static(path.join(__dirname, '../client/inicreg')))

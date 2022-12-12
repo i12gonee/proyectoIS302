@@ -51,8 +51,7 @@ CREATE TABLE cursos (
   ponente VARCHAR(64) NOT NULL,
   descripcion VARCHAR(64) NOT NULL,
   aula VARCHAR(64) NOT NULL,
-  id_cc INT(8),
-  id_p INT(8)
+  id_cc INT(8)
 );
 
 CREATE TABLE recursos (
@@ -117,11 +116,17 @@ INSERT INTO coord_recursos(id_cr, nombre_cr, mail_cr, contrasena_cr)
 INSERT INTO participantes(id_p, nombre_p, mail_p, contrasena_p) 
       VALUES (58886431, 'Paco', 'i12almuf@uco.es', 'pacop');
 
-INSERT INTO cursos(id_curso, nombre_curso, fecha_inicio, fecha_final, max_inscripciones, ponente, descripcion, aula, id_cc, id_p) 
-      VALUES (1234, 'Algebra lineal', '2023-09-01', '2023-10-01', 20, 'Alfonso', 'Curso de Algebra', 'B1', 92943376, 58886431);
+INSERT INTO cursos(id_curso, nombre_curso, fecha_inicio, fecha_final, max_inscripciones, ponente, descripcion, aula, id_cc) 
+      VALUES (12347865, 'Algebra lineal', '2023-09-01', '2023-10-01', 20, 'Alfonso', 'Curso de Algebra', 'B1', 92943376);
 
-INSERT INTO cursos(id_curso, nombre_curso, fecha_inicio, fecha_final, max_inscripciones, ponente, descripcion, aula, id_cc, id_p) 
-      VALUES (1254, 'IS', '2023-09-05', '2023-10-05', 50, 'Emilio', 'Curso de IS', 'B2', 92943376, 58886431);
+INSERT INTO cursos(id_curso, nombre_curso, fecha_inicio, fecha_final, max_inscripciones, ponente, descripcion, aula, id_cc) 
+      VALUES (12549987, 'IS', '2023-09-05', '2023-10-05', 50, 'Emilio', 'Curso de IS', 'B2', 92943376);
 
-INSERT INTO cursos(id_curso, nombre_curso, fecha_inicio, fecha_final, max_inscripciones, ponente, descripcion, aula, id_cc, id_p) 
-      VALUES (1674, 'POO', '2023-09-10', '2023-12-05', 50, 'Paco', 'Curso de IS', 'B6', 92943376, 58886431);
+INSERT INTO cursos(id_curso, nombre_curso, fecha_inicio, fecha_final, max_inscripciones, ponente, descripcion, aula, id_cc) 
+      VALUES (16745567, 'POO', '2023-09-10', '2023-12-05', 50, 'Paco', 'Curso de IS', 'B6', 92943376);
+
+INSERT INTO cursos(id_curso, nombre_curso, fecha_inicio, fecha_final, max_inscripciones, ponente, descripcion, aula, id_cc) 
+      VALUES (16778567, 'Cálculo', '2023-09-08', '2023-05-10', 100, 'Alfonso', 'Curso de cálculo', 'P10', 92943376);
+
+INSERT INTO cursos(id_curso, nombre_curso, fecha_inicio, fecha_final, max_inscripciones, ponente, descripcion, aula, id_cc) 
+      VALUES (16790567, 'Introducción a la programación', '2023-09-10', '2023-12-05', 200, 'Salinas', 'Curso de introducción a la programación', 'P2', 92943376);
