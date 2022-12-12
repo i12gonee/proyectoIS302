@@ -20,7 +20,9 @@ app.use('/page_inscribirse', express.static(path.join(__dirname, '../client/acco
 app.use('/participant', express.static(path.join(__dirname, '../client/registered')))
 app.use('/coordcursos', express.static(path.join(__dirname, '../client/coordcursos')))
 app.use('/login_page', express.static(path.join(__dirname, '../client/inicreg')))
+app.use('/register_page', express.static(path.join(__dirname, '../client/inicreg')))
 app.use('/error_page', express.static(path.join(__dirname, '../client/error')))
+app.use('/add_curso_form', express.static(path.join(__dirname, '../client/coordcursos/form')))
 
 app.set('view engine', 'ejs')
 
@@ -189,6 +191,10 @@ app.get('/page_inscribirse', urlencodedParser, (req, res) => {
 
 app.get('/error_page', (req, res) => {
     res.sendFile(path.join(__dirname, '../client/error/error.html'))
+})
+
+app.get('/add_curso_form', (req, res) => {
+    res.sendFile(path.join(__dirname, '../client/coordcursos/form/form.html'))
 })
 
 app.listen(port, () => {
