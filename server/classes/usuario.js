@@ -34,7 +34,7 @@ class Usuario{
         if(!this.#dni_ || !this.#nombre_completo_ || !this.#correo_electronico_ || !this.#contraseña_) return false
 
         connection.query(query, (err, rows) => {
-            if(err) throw err
+            if(err) return false
 
             console.log(rows)
         })

@@ -1,20 +1,24 @@
 const Usuario = require('./usuario')
 const {connection} = require('../database/connection')
-const Curso = require('./curso')
 
 class Coord_Cursos extends Usuario{    
-    constructor(id_usuario, nombre_completo, correo_electronico, contraseña){
-        super(id_usuario, nombre_completo, correo_electronico, contraseña)
+    
+    #dni_
+    
+    constructor(id_usuario, nombre, apellidos, correo_electronico, contraseña){
+        super(id_usuario, nombre, apellidos, correo_electronico, contraseña)
+
+        this.#dni_ = id_usuario
     }
 
-    añadir_curso(curso){
-        const query = `INSERT INTO cursos(id_curso, nombre_curso, fecha_inicio, fecha_final, max_inscripciones, ponente, descripcion, aula)
-                        VALUES(${curso.id_curso}, ${curso.nombre_curso}, '${curso.fecha_inicio}', '${curso.fecha_final}', ${curso.n_inscripciones}, '${curso.ponentes}', '${curso.descripcion}', '${curso.aula}')`
+    añadir_curso(id_curso, nombre_curso, fecha_inicio, fecha_final, n_inscripciones, ponentes, descripcion, aula){
+        const query = `INSERT INTO cursos(id_curso, nombre_curso, fecha_inicio, fecha_final, max_inscripciones, ponente, descripcion, aula, id_cc)
+                        VALUES(${id_curso}, '${nombre_curso}', '${fecha_inicio}', '${fecha_final}', ${n_inscripciones}, '${ponentes}', '${descripcion}', '${aula}', ${this.#dni_})`
 
         connection.connect()
 
         connection.query(query, (err, rows) => {
-            if(err) throw err
+            if(err) return false
 
             console.log('Curso añadido a la base de datos')
             console.log(rows)
@@ -23,10 +27,20 @@ class Coord_Cursos extends Usuario{
         return true
     }
 
-    eliminar_cursos(){
-        
-    }
+    eliminar_curso(id_curso){
+        const query = `DELETE FROM cursos WHERE id_curso = ${id_curso}`
 
+        connection.connect()
+
+        connection.query(query, (err, rows) => {
+            if(err) return false
+
+            console.log('Curso eliminado de la base de datos')
+            console.log(rows)
+        })
+
+        return true
+    }
 }
 
 module.exports = Coord_Cursos

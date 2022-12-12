@@ -1,3 +1,15 @@
+const generate_id = () => {
+    let numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+    let id = ""
+
+    for(var i = 0; i<8; i++){
+        var random = parseInt(Math.random() * 10)
+        id += numbers.at(random);
+    }
+
+    return parseInt(id)
+}
+
 class Curso{
     #id_curso_
     #nombre_curso_
@@ -7,10 +19,10 @@ class Curso{
     #ponentes_
     #descripcion_
     #aula_
-    #recursos_
+    #id_cc_
 
-    constructor(id_curso, nombre_curso, fecha_inicio, fecha_final, n_inscripciones, ponentes, descripcion, aula, recursos,){
-        this.#id_curso_ = id_curso
+    constructor(nombre_curso, fecha_inicio, fecha_final, n_inscripciones, ponentes, descripcion, aula, id_cc){
+        this.#id_curso_ = generate_id()
         this.#nombre_curso_ = nombre_curso
         this.#fecha_inicio_ = fecha_inicio
         this.#fecha_final_ = fecha_final
@@ -18,7 +30,7 @@ class Curso{
         this.#ponentes_ = ponentes
         this.#descripcion_ = descripcion
         this.#aula_ = aula
-        this.#recursos_ = recursos
+        this.#id_cc_ = id_cc
     }
 
     get id_curso(){return this.#id_curso_}
@@ -29,7 +41,7 @@ class Curso{
     get ponentes(){return this.#ponentes_}
     get descripcion(){return this.#descripcion_}
     get aula(){return this.#aula_}
-    get recursos(){return this.#recursos_}
+    get id_cc(){return this.#id_cc_}
 
     set id_curso(id_curso){this.#id_curso_ = id_curso}
     set nombre_curso(nombre_curso){this.#nombre_curso_ = nombre_curso}
@@ -39,7 +51,7 @@ class Curso{
     set ponentes(ponentes){this.#ponentes_ = ponentes}
     set descripcion(descripcion){this.#descripcion_ = descripcion}
     set aula(aula){this.#aula_ = aula}
-    set recursos(recursos){this.#recursos_ = recursos}
+    set id_cc(id_cc){this.#id_cc_ = id_cc}
 }
 
 module.exports = Curso

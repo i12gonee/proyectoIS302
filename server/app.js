@@ -4,8 +4,8 @@ const bodyParser = require('body-parser')
 const nodemailer = require('nodemailer')
 
 const Participante = require('./classes/participante')
-const Coord_cursos = require('./classes/coord_cursos')
-const Coord_recursos = require('./classes/coord_recursos')
+const Coord_Cursos = require('./classes/coord_cursos')
+const Coord_Recursos = require('./classes/coord_recursos')
 const {connection} = require('./database/connection')
 const showoverlay = require('../client/inicreg/inicioscript')
 
@@ -89,12 +89,12 @@ app.post('/login', urlencodedParser, (req, res) => {
                         return res.redirect('/participant')
 
                     case 1:
-                        user = new Coord_cursos(rows[1][0].id_cc, rows[1][0].nombre_cc, '', rows[1][0].mail_cc, rows[1][0].contrasena_cc)
+                        user = new Coord_Cursos(rows[1][0].id_cc, rows[1][0].nombre_cc, '', rows[1][0].mail_cc, rows[1][0].contrasena_cc)
                         is_login = true
                         return res.redirect('/coordcursos')
                     
                     case 2:
-                        user = new Coord_recursos(rows[2][0].id_cr, rows[2][0].nombre_cr, '', rows[2][0].mail_cr, rows[2][0].contrasena_cr)
+                        user = new Coord_Recursos(rows[2][0].id_cr, rows[2][0].nombre_cr, '', rows[2][0].mail_cr, rows[2][0].contrasena_cr)
                         is_login = true
                         return res.redirect('/')
                 }
