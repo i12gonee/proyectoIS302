@@ -1,5 +1,5 @@
 const Usuario = require('./usuario')
-const {connection} = require('../database/connection')
+const connection = require('../database/connection')
 
 class Participante extends Usuario{
 
