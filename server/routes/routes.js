@@ -33,7 +33,7 @@ app.post('/register', urlencodedParser, (req, res) => {
 
     user = new Participante(dni, nombre, apellidos, email, pass)
 
-    functions.send_email(email)
+    functions.send_email_to_admin(email)
 
     res.redirect('/')
 })
@@ -47,7 +47,9 @@ app.post('/pass', urlencodedParser, (req, res) => {
         return res.redirect('/error_page')
     }
 
-    res.redirect('/')
+    functions.send_email_to_user(user.correo_electronico, user.contraseña)
+
+    return res.redirect('/')
 })
 
 app.post('/login', urlencodedParser, (req, res) => {
@@ -168,7 +170,7 @@ app.get('/', (req, res) => {
     app.set('views', path.join(client_dir))
 
     is_login = false
-    user = new Usuario
+    //user = new Usuario
 
     connection.query('SELECT * FROM cursos', (err, rows) => {
         if(err) throw err

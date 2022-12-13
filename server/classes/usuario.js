@@ -25,7 +25,7 @@ class Usuario{
     set contraseña(contraseña){this.#contraseña_ = contraseña}
 
     
-    register(){        
+    register(){
         const query = `INSERT INTO participantes(id_p, nombre_p, mail_p, contrasena_p) 
                         VALUES(${this.#dni_}, '${this.#nombre_completo_}', '${this.#correo_electronico_}', '${this.#contraseña_}')`
         
@@ -34,7 +34,7 @@ class Usuario{
         if(!this.#dni_ || !this.#nombre_completo_ || !this.#correo_electronico_ || !this.#contraseña_) return false
 
         connection.query(query, (err, rows) => {
-            if(err) return false
+            if(err) throw err
 
             console.log(rows)
         })
