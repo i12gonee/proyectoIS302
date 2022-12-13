@@ -192,7 +192,6 @@ body .topbar{
 
 .material-icons.delete{
     margin-top: 8rem;
-    margin-left: -6rem;
     color: #444444;
     cursor: pointer;
     transform: scale(1.2,1.2);
@@ -214,4 +213,13 @@ body .topbar{
     body .topbar{
         padding: 8px;
     }
+}
+
+@media screen and (max-width: 1680px){
+
+    .material-icons.delete{
+        margin-left: -6rem;  
+    }
+
+
 }
