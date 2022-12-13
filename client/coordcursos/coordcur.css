@@ -191,9 +191,11 @@ body .topbar{
 }
 
 .material-icons.delete{
-    margin-top: 7rem;
+    margin-top: 8rem;
     margin-left: -6rem;
     color: #444444;
+    cursor: pointer;
+    transform: scale(1.2,1.2);
 }
 
 /*PANTALLA RESOLUCION ANCHO 1920*/

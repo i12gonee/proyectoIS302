@@ -36,3 +36,7 @@ function cru(){
 function editar(){
     window.location.replace("form_add/form_add.html")
 }
+
+function eliminar(){
+    window.location.replace("form_delete/form_delete.html")
+}
