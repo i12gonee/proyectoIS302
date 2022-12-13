@@ -11,6 +11,18 @@ const is_in_querys = (matrix) => {
     return false
 }
 
+const generate_id = () => {
+    let numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+    let id = ""
+
+    for(var i = 0; i<8; i++){
+        var random = parseInt(Math.random() * 10)
+        id += numbers.at(random);
+    }
+
+    return parseInt(id)
+}
+
 const send_email = (email) => {
     const html = `<h1>El usuario ${email} quiere registrarse en la web</h1>
                   <h2>Pulse el siguiente enlace para asiganarle una contraseña</h2>
@@ -41,4 +53,5 @@ const send_email = (email) => {
 }
 
 module.exports.is_in_querys = is_in_querys
+module.exports.generate_id = generate_id
 module.exports.send_email = send_email

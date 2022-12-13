@@ -1,14 +1,4 @@
-const generate_id = () => {
-    let numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
-    let id = ""
-
-    for(var i = 0; i<8; i++){
-        var random = parseInt(Math.random() * 10)
-        id += numbers.at(random);
-    }
-
-    return parseInt(id)
-}
+const functions = require('../functions/functions')
 
 class Curso{
     #id_curso_
@@ -22,7 +12,7 @@ class Curso{
     #id_cc_
 
     constructor(nombre_curso, fecha_inicio, fecha_final, n_inscripciones, ponentes, descripcion, aula, id_cc){
-        this.#id_curso_ = generate_id()
+        this.#id_curso_ = functions.generate_id()
         this.#nombre_curso_ = nombre_curso
         this.#fecha_inicio_ = fecha_inicio
         this.#fecha_final_ = fecha_final
