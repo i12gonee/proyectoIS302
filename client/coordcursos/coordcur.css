@@ -190,6 +190,12 @@ body .topbar{
     cursor:pointer;
 }
 
+.material-icons.delete{
+    margin-top: 7rem;
+    margin-left: -6rem;
+    color: #444444;
+}
+
 /*PANTALLA RESOLUCION ANCHO 1920*/
 
 @media screen and (max-width: 1920px){
