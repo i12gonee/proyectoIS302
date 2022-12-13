@@ -55,7 +55,9 @@ CREATE TABLE cursos (
 );
 
 CREATE TABLE recursos (
-  recurso VARCHAR(64) PRIMARY KEY,
+  id_recurso VARCHAR(64) PRIMARY KEY,
+  nombre_recurso VARCHAR(64) NOT NULL,
+  tipo_recurso VARCHAR(64) NOT NULL,
   id_curso INT(8) NOT NULL,
   id_cr INT(8) NOT NULL
 );
