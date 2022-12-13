@@ -180,6 +180,15 @@ body .topbar{
     border-radius: 0.2rem;
 }
 
+.editar{
+    margin-left: 45rem;
+    margin-top: 2rem;
+}
+
+.material-icons.circle{
+    transform: scale(2,2);
+}
+
 /*PANTALLA RESOLUCION ANCHO 1920*/
 
 @media screen and (max-width: 1920px){
