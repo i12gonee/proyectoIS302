@@ -1,8 +1,9 @@
 const path = require('path')
 
 const express = require('express')
+const client_dir = require('../dir_client')
 
-const client_dir = '/home/pacoalgar/Documentos/uco/proyectoIS302/client'
+console.log(client_dir);
 
 const app = express()
 

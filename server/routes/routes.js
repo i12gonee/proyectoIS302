@@ -8,11 +8,11 @@ const Usuario = require('../classes/usuario')
 
 const connection = require('../database/connection')
 const functions = require('../functions/functions')
+const client_dir = require('../dir_client')
 
 const app = require('../static/static')
 
 const urlencodedParser = bodyParser.urlencoded({ extended: true })
-const client_dir = '/home/pacoalgar/Documentos/uco/proyectoIS302/client'
 
 let dni, nombre, apellidos, email, pass
 let user //Declaramos un usuario vacío
