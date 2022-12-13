@@ -34,5 +34,5 @@ function cru(){
 }
 
 function editar(){
-    window.location.replace("/form_add/form_add.html")
+    window.location.replace("form_add/form_add.html")
 }
