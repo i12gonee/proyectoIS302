@@ -90,7 +90,7 @@ app.post('/login', urlencodedParser, (req, res) => {
                     case 2:
                         user = new Coord_Recursos(rows[2][0].id_cr, rows[2][0].nombre_cr, '', rows[2][0].mail_cr, rows[2][0].contrasena_cr)
                         is_login = true
-                        return res.redirect('/')
+                        return res.redirect('/coordrecursos')
                 }
             } else {
                 console.log("no")
@@ -206,6 +206,24 @@ app.get('/coordcursos', (req, res) => {
         if(err) throw err
 
         res.render('coordcur', {cursos: rows[0], nombre: rows[1][0].nombre_cc})
+    })
+})
+
+app.get('/coordrecursos', (req, res) => {
+    app.set('views', path.join(client_dir, '/coordrecursos'))
+
+    const querys = [
+        'SELECT * FROM cursos',
+        `SELECT nombre_cr FROM coord_recursos where mail_cr = '${nombre}' or nombre_cr = '${nombre}'`,
+        'SELECT * FROM recursos',
+    ]
+
+    connection.query(querys.join(';'), (err, rows) => {
+        if(err) throw err
+
+        console.log(rows[1]);
+
+        res.render('coordrecursos', {cursos: rows[0], nombre: rows[1][0].nombre_cr, recursos: rows[2]})
     })
 })
 
