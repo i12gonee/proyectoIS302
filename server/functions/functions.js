@@ -1,16 +1,5 @@
 const nodemailer = require('nodemailer')
 
-const is_in_querys = (matrix) => {
-    for(let i = 0; i<matrix.length; i++){
-        if(matrix[i].length !== 0){
-            type_user = i
-            return true
-        }
-    }
-
-    return false
-}
-
 const generate_id = () => {
     let numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
     let id = ""
@@ -52,6 +41,5 @@ const send_email = (email) => {
     })
 }
 
-module.exports.is_in_querys = is_in_querys
 module.exports.generate_id = generate_id
 module.exports.send_email = send_email

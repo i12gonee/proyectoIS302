@@ -54,6 +54,8 @@ app.post('/login', urlencodedParser, (req, res) => {
     nombre = req.body.usuario
     let contraseña = req.body.contraseña
 
+    user = new Usuario()
+
     const querys = [
         `SELECT id_p, nombre_p, mail_p, contrasena_p FROM participantes WHERE nombre_p = '${nombre}' OR mail_p = '${nombre}' AND contrasena_p = '${contraseña}'`,
 
@@ -70,7 +72,8 @@ app.post('/login', urlencodedParser, (req, res) => {
 
             console.log(rows)
 
-            if(functions.is_in_querys(rows)){
+            if(is_in_querys(rows)){
+                console.log(type_user)
                 switch(type_user){
                     case 0:
                         user = new Participante(rows[0][0].id_p, rows[0][0].nombre_p, '', rows[0][0].mail_p, rows[0][0].contrasena_p)
@@ -239,5 +242,16 @@ app.get('/edit_cursos_form', (req, res) => {
 app.get('/delete_cursos_form', (req, res) => {
     res.sendFile(path.join(client_dir, '/coordcursos/form_delete/form_delete.html'))
 })
+
+const is_in_querys = (matrix) => {
+    for(let i = 0; i<matrix.length; i++){
+        if(matrix[i].length !== 0){
+            type_user = i
+            return true
+        }
+    }
+
+    return false
+}
 
 module.exports = app
