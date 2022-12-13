@@ -32,3 +32,7 @@ function cru(){
                                                     </div>`;
     }
 }
+
+function editar(){
+    window.location.replace("/form_add/form_add.html")
+}

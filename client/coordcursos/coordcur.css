@@ -187,6 +187,7 @@ body .topbar{
 
 .material-icons.circle{
     transform: scale(2,2);
+    cursor:pointer;
 }
 
 /*PANTALLA RESOLUCION ANCHO 1920*/
