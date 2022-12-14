@@ -12,11 +12,11 @@ class Coord_Cursos extends Usuario{
         this.#dni_ = id_usuario
     }
 
-    añadir_curso(nombre_curso, fecha_inicio, fecha_final, n_inscripciones, ponentes, descripcion, aula){
-        const curso = new Curso(nombre_curso, fecha_inicio, fecha_final, n_inscripciones, ponentes, descripcion, aula, this.#dni_)
+    añadir_curso(nombre_curso, fecha_inicio, fecha_final, n_inscripciones, precio, ponentes, descripcion, aula){
+        const curso = new Curso(nombre_curso, fecha_inicio, fecha_final, n_inscripciones, precio, ponentes, descripcion, aula, this.#dni_)
         
-        const query = `INSERT INTO cursos(id_curso, nombre_curso, fecha_inicio, fecha_final, max_inscripciones, ponente, descripcion, aula, id_cc)
-                        VALUES(${curso.id_curso}, '${curso.nombre_curso}', '${curso.fecha_inicio}', '${curso.fecha_final}', ${curso.n_inscripciones}, '${curso.ponentes}', '${curso.descripcion}', '${curso.aula}', ${curso.id_cc})`
+        const query = `INSERT INTO cursos(id_curso, nombre_curso, fecha_inicio, fecha_final, max_inscripciones, precio, ponente, descripcion, aula, id_cc)
+                        VALUES(${curso.id_curso}, '${curso.nombre_curso}', '${curso.fecha_inicio}', '${curso.fecha_final}', ${curso.n_inscripciones}, ${curso.precio}, '${curso.ponentes}', '${curso.descripcion}', '${curso.aula}', ${curso.id_cc})`
 
         connection.connect()
 
@@ -29,11 +29,12 @@ class Coord_Cursos extends Usuario{
         })
     }
 
-    editar_curso(new_nombre, last_nombre, new_fecha_inicio, new_fecha_final, new_max_incripciones, new_ponentes, new_descripcion, new_aula){
+    editar_curso(new_nombre, last_nombre, new_fecha_inicio, new_fecha_final, new_max_inscripciones, new_precio, new_ponentes, new_descripcion, new_aula){
         const query = `UPDATE cursos SET nombre_curso = '${new_nombre}',
                                         fecha_inicio = '${new_fecha_inicio}',
                                         fecha_final = '${new_fecha_final}',
-                                        max_inscripciones = ${new_max_incripciones},
+                                        max_inscripciones = ${new_max_inscripciones},
+                                        precio = ${new_precio},
                                         ponente = '${new_ponentes}',
                                         descripcion = '${new_descripcion}',
                                         aula = '${new_aula}' 
