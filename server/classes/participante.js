@@ -26,7 +26,7 @@ class Participante extends Usuario{
         if(!this.#dni_ && !this.#id_curso_) return false
 
         connection.query(query, (err, rows) => {
-            if(err) throw err
+            if(err) return false
             console.log('INSCRITO')
         })
 

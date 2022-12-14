@@ -16,4 +16,9 @@ describe('Server tests', () => {
         const response = await request(app).get('/coordcursos').send()
         expect(response.statusCode).toBe(301)
     })
+
+    test('Coord_recursos page', async () => {
+        const response = await request(app).get('/coordrecursos').send()
+        expect(response.statusCode).toBe(301)
+    })
 })

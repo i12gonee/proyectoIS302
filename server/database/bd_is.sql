@@ -78,8 +78,6 @@ ALTER TABLE cursos ADD CONSTRAINT fk_coord_cursos_cursos FOREIGN KEY (id_cc) REF
 
 ALTER TABLE recursos ADD CONSTRAINT fk_cursos_recursos FOREIGN KEY (id_curso) REFERENCES cursos (id_curso);
 
-ALTER TABLE recursos ADD CONSTRAINT fk_nombre_cursos_recursos FOREIGN KEY (nombre_curso) REFERENCES cursos (nombre_curso);
-
 ALTER TABLE recursos ADD CONSTRAINT fk_coord_recursos_recursos FOREIGN KEY (id_cr) REFERENCES coord_recursos (id_cr);
 
 INSERT INTO participantes(id_p, nombre_p, mail_p, contrasena_p) 
