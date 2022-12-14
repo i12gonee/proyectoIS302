@@ -28,7 +28,7 @@ body .topbar{
     display: flex;
     flex-direction: row;
     background-color: #444444;
-    width: 70%;
+    width: 85%;
     height: 27rem;
     margin-top: 5rem;
     border-radius: 20px;
@@ -376,14 +376,14 @@ body .topbar{
     }
 
     .bttm {
-        margin-left: 9rem;
-        margin-top: 3rem;
+        margin-left: 7rem;
+        margin-top: 21rem;
         width: 10rem;
         height: 4rem;
     }
 
     .tarjetareg{
-        height: 27rem;
+        height: 44rem;
     }
 
     .Nombre{
@@ -407,7 +407,7 @@ body .topbar{
     }
 
     .lineamedio{
-        height: 24rem;
+        height: 42rem;
         margin-top: 1rem;
         margin-left: 10rem;
     }
