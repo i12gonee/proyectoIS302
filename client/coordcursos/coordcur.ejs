@@ -25,6 +25,7 @@
                 <div>
                     <h1 class="titulo uno"> <%=curso.nombre_curso%> </h1>
                     <p class="plazo">Plazo de inscripcion: <%=curso.fecha_inicio%> - <%=curso.fecha_final%></p>
+                    <p class="precio">Precio: <%=curso.precio%> €</p>
                     <p class="id">Id del curso: <%=curso.id_curso%></p>
                 </div>
                 <span onclick="cru(this)" id="crus" class="material-icons menu">menu</span>
@@ -39,6 +40,5 @@
         <span onclick="add()" class="material-icons delete">add_circle</span>
         <span onclick="editar()" class="material-icons edit">edit</span>
     </div>
-    <h1>COORD_CURSOS</h1>
 </body>
 </html>

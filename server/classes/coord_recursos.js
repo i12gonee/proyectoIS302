@@ -11,11 +11,11 @@ class Coord_Recursos extends Usuario{
         this.#dni_ = dni
     }
 
-    añadir_recurso(nombre_recurso, tipo_recurso, id_curso){
-        const recurso = new Recurso(nombre_recurso, tipo_recurso, id_curso, this.#dni_)
+    añadir_recurso(nombre_recurso, tipo_recurso, id_curso, nombre_curso){
+        const recurso = new Recurso(nombre_recurso, tipo_recurso, id_curso, nombre_curso, this.#dni_)
 
-        const query = `INSERT INTO recursos(id_recurso, nombre_recurso, tipo_recurso, id_curso, id_cr)
-                        VALUES(${recurso.id_recurso}, '${recurso.nombre_recurso}', '${recurso.tipo_recurso}', ${recurso.id_curso}, ${recurso.id_cr})`
+        const query = `INSERT INTO recursos(id_recurso, nombre_recurso, tipo_recurso, id_curso, nombre_curso, id_cr)
+                        VALUES(${recurso.id_recurso}, '${recurso.nombre_recurso}', '${recurso.tipo_recurso}', ${recurso.id_curso}, ${recurso.nombre_curso}, ${recurso.id_cr})`
 
         connection.connect()
 

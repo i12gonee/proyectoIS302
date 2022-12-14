@@ -48,6 +48,7 @@ CREATE TABLE cursos (
   fecha_inicio DATE NOT NULL,
   fecha_final DATE NOT NULL,
   max_inscripciones INT(8) NOT NULL,
+  precio INT(8) NOT NULL,
   ponente VARCHAR(64) NOT NULL,
   descripcion VARCHAR(64) NOT NULL,
   aula VARCHAR(64) NOT NULL,
@@ -59,6 +60,7 @@ CREATE TABLE recursos (
   nombre_recurso VARCHAR(64) NOT NULL,
   tipo_recurso VARCHAR(64) NOT NULL,
   id_curso INT(8) NOT NULL,
+  nombre_curso VARCHAR(64) NOT NULL,
   id_cr INT(8) NOT NULL
 );
 
@@ -75,6 +77,8 @@ ALTER TABLE participantes_cursos ADD FOREIGN KEY (cursos_id_curso) REFERENCES cu
 ALTER TABLE cursos ADD CONSTRAINT fk_coord_cursos_cursos FOREIGN KEY (id_cc) REFERENCES coord_cursos (id_cc);
 
 ALTER TABLE recursos ADD CONSTRAINT fk_cursos_recursos FOREIGN KEY (id_curso) REFERENCES cursos (id_curso);
+
+ALTER TABLE recursos ADD CONSTRAINT fk_nombre_cursos_recursos FOREIGN KEY (nombre_curso) REFERENCES cursos (nombre_curso);
 
 ALTER TABLE recursos ADD CONSTRAINT fk_coord_recursos_recursos FOREIGN KEY (id_cr) REFERENCES coord_recursos (id_cr);
 
@@ -119,39 +123,39 @@ INSERT INTO participantes(id_p, nombre_p, mail_p, contrasena_p)
       VALUES (58886431, 'Paco', 'i12almuf@uco.es', 'pacop');
 
 
-INSERT INTO cursos(id_curso, nombre_curso, fecha_inicio, fecha_final, max_inscripciones, ponente, descripcion, aula, id_cc) 
-      VALUES (12347865, 'Algebra lineal', '2023-09-01', '2023-10-01', 20, 'Alfonso', 'Curso de Algebra', 'B1', 92943376);
+INSERT INTO cursos(id_curso, nombre_curso, fecha_inicio, fecha_final, max_inscripciones, precio, ponente, descripcion, aula, id_cc) 
+      VALUES (12347865, 'Algebra lineal', '2023-09-01', '2023-10-01', 20, 20, 'Alfonso', 'Curso de Algebra', 'B1', 92943376);
 
-INSERT INTO cursos(id_curso, nombre_curso, fecha_inicio, fecha_final, max_inscripciones, ponente, descripcion, aula, id_cc) 
-      VALUES (12549987, 'IS', '2023-09-05', '2023-10-05', 50, 'Emilio', 'Curso de IS', 'B2', 92943376);
+INSERT INTO cursos(id_curso, nombre_curso, fecha_inicio, fecha_final, max_inscripciones, precio, ponente, descripcion, aula, id_cc) 
+      VALUES (12549987, 'IS', '2023-09-05', '2023-10-05', 50, 200, 'Emilio', 'Curso de IS', 'B2', 92943376);
 
-INSERT INTO cursos(id_curso, nombre_curso, fecha_inicio, fecha_final, max_inscripciones, ponente, descripcion, aula, id_cc) 
-      VALUES (16745567, 'POO', '2023-09-10', '2023-12-05', 50, 'Paco', 'Curso de IS', 'B6', 92943376);
+INSERT INTO cursos(id_curso, nombre_curso, fecha_inicio, fecha_final, max_inscripciones, precio, ponente, descripcion, aula, id_cc) 
+      VALUES (16745567, 'POO', '2023-09-10', '2023-12-05', 50, 30, 'Paco', 'Curso de IS', 'B6', 92943376);
 
-INSERT INTO cursos(id_curso, nombre_curso, fecha_inicio, fecha_final, max_inscripciones, ponente, descripcion, aula, id_cc) 
-      VALUES (16778567, 'Cálculo', '2023-09-08', '2023-05-10', 100, 'Alfonso', 'Curso de cálculo', 'P10', 92943376);
+INSERT INTO cursos(id_curso, nombre_curso, fecha_inicio, fecha_final, max_inscripciones, precio, ponente, descripcion, aula, id_cc) 
+      VALUES (16778567, 'Cálculo', '2023-09-08', '2023-05-10', 100, 50, 'Alfonso', 'Curso de cálculo', 'P10', 92943376);
 
-INSERT INTO cursos(id_curso, nombre_curso, fecha_inicio, fecha_final, max_inscripciones, ponente, descripcion, aula, id_cc) 
-      VALUES (16790567, 'IP', '2023-09-10', '2023-12-05', 200, 'Salinas', 'Curso de introducción a la programación', 'P2', 92943376);
+INSERT INTO cursos(id_curso, nombre_curso, fecha_inicio, fecha_final, max_inscripciones, precio, ponente, descripcion, aula, id_cc) 
+      VALUES (16790567, 'IP', '2023-09-10', '2023-12-05', 200, 80, 'Salinas', 'Curso de introducción a la programación', 'P2', 92943376);
 
-INSERT INTO cursos(id_curso, nombre_curso, fecha_inicio, fecha_final, max_inscripciones, ponente, descripcion, aula, id_cc) 
-      VALUES (17690567, 'Física', '2023-10-10', '2023-12-05', 200, 'Salinas', 'Curso de física', 'P9', 92943376);
+INSERT INTO cursos(id_curso, nombre_curso, fecha_inicio, fecha_final, max_inscripciones, precio, ponente, descripcion, aula, id_cc) 
+      VALUES (17690567, 'Física', '2023-10-10', '2023-12-05', 200, 70, 'Salinas', 'Curso de física', 'P9', 92943376);
 
 
-INSERT INTO recursos(id_recurso, nombre_recurso, tipo_recurso, id_curso, id_cr) 
-      VALUES (17098567, 'B1', 'Aula', 12347865, 71004647);
+INSERT INTO recursos(id_recurso, nombre_recurso, tipo_recurso, id_curso, nombre_curso, id_cr) 
+      VALUES (17098567, 'B1', 'Aula', 12347865, 'Algebra lineal', 71004647);
 
-INSERT INTO recursos(id_recurso, nombre_recurso, tipo_recurso, id_curso, id_cr) 
-      VALUES (17908567, 'Canon', 'Proyector', 12549987, 71004647);
+INSERT INTO recursos(id_recurso, nombre_recurso, tipo_recurso, id_curso, nombre_curso, id_cr) 
+      VALUES (17908567, 'Canon', 'Proyector', 12549987, 'IS', 71004647);
 
-INSERT INTO recursos(id_recurso, nombre_recurso, tipo_recurso, id_curso, id_cr) 
-      VALUES (71098567, 'B2', 'Aula', 16745567, 71004647);
+INSERT INTO recursos(id_recurso, nombre_recurso, tipo_recurso, id_curso, nombre_curso, id_cr) 
+      VALUES (71098567, 'B2', 'Aula', 16745567, 'POO', 71004647);
 
-INSERT INTO recursos(id_recurso, nombre_recurso, tipo_recurso, id_curso, id_cr) 
-      VALUES (81098567, 'P6', 'Aula', 16778567, 71004647);
+INSERT INTO recursos(id_recurso, nombre_recurso, tipo_recurso, id_curso, nombre_curso, id_cr) 
+      VALUES (81098567, 'P6', 'Aula', 16778567, 'Cálculo', 71004647);
 
-INSERT INTO recursos(id_recurso, nombre_recurso, tipo_recurso, id_curso, id_cr) 
-      VALUES (91098567, 'Gigital', 'Pizarra', 16790567, 71004647);
+INSERT INTO recursos(id_recurso, nombre_recurso, tipo_recurso, id_curso, nombre_curso, id_cr) 
+      VALUES (91098567, 'Gigital', 'Pizarra', 16790567, 'IP', 71004647);
 
-INSERT INTO recursos(id_recurso, nombre_recurso, tipo_recurso, id_curso, id_cr) 
-      VALUES (28098567, 'P4', 'Aula', 17690567, 71004647);
+INSERT INTO recursos(id_recurso, nombre_recurso, tipo_recurso, id_curso, nombre_curso, id_cr) 
+      VALUES (28098567, 'P4', 'Aula', 17690567, 'Física', 71004647);
