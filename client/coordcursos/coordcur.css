@@ -112,12 +112,17 @@ body .topbar{
 }
 
 .titulo{
-    margin-top: 3rem;
+    margin-top: 2rem;
     margin-left: 0.9rem;
 }
 
 .plazo {
     margin-top: -1.5rem;
+    margin-left: 1rem;
+}
+
+.precio {
+    margin-top: -1rem;
     margin-left: 1rem;
 }
 

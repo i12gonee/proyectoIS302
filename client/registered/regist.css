@@ -128,6 +128,11 @@ body .topbar{
     margin-left: 1rem;
 }
 
+.precio {
+    margin-top: -1rem;
+    margin-left: 1rem;
+}
+
 .botonisc{
     margin-top: 2.75rem;
     margin-left: 35rem;

@@ -213,9 +213,8 @@ app.get('/coordrecursos', (req, res) => {
     app.set('views', path.join(client_dir, '/coordrecursos'))
 
     const querys = [
-        'SELECT * FROM cursos',
-        `SELECT nombre_cr FROM coord_recursos where mail_cr = '${nombre}' or nombre_cr = '${nombre}'`,
         'SELECT * FROM recursos',
+        `SELECT nombre_cr FROM coord_recursos where mail_cr = '${nombre}' or nombre_cr = '${nombre}'`
     ]
 
     connection.query(querys.join(';'), (err, rows) => {
@@ -223,7 +222,7 @@ app.get('/coordrecursos', (req, res) => {
 
         console.log(rows[1]);
 
-        res.render('coordrecursos', {cursos: rows[0], nombre: rows[1][0].nombre_cr, recursos: rows[2]})
+        res.render('coordrecursos', {recursos: rows[0], nombre: rows[1][0].nombre_cr})
     })
 })
 
