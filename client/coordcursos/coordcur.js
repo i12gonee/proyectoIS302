@@ -33,10 +33,14 @@ function cru(){
     }
 }
 
-function editar(){
+function add(){
     window.location.assign("form_add/form_add.html")
 }
 
 function eliminar(){
     window.location.assign("form_delete/form_delete.html")
+}
+
+function editar(){
+    window.location.assign("/edit_cursos_form")
 }

@@ -27,18 +27,17 @@
                     <p class="plazo">Plazo de inscripcion: <%=curso.fecha_inicio%> - <%=curso.fecha_final%></p>
                     <p class="id">Id del curso: <%=curso.id_curso%></p>
                 </div>
-                <a class="botonisc" href="/edit_cursos_form">
-                    Editar
-                </a>
                 <span onclick="cru(this)" id="crus" class="material-icons menu">menu</span>
-                <span onclick="eliminar()" class="material-icons delete">delete</span>
             </div>
             <div id="despl"></div>
         <% }); %>
         
     </div>
+
     <div class="editar">
-        <span onclick="editar()" class="material-icons circle">add_circle</span>
+        <span onclick="eliminar()" class="material-icons circle">delete</span>
+        <span onclick="add()" class="material-icons delete">add_circle</span>
+        <span onclick="editar()" class="material-icons edit">edit</span>
     </div>
     <h1>COORD_CURSOS</h1>
 </body>

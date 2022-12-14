@@ -180,21 +180,33 @@ body .topbar{
     border-radius: 0.2rem;
 }
 
+
 .editar{
-    margin-left: 45rem;
-    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
 }
 
 .material-icons.circle{
-    transform: scale(2,2);
+    transform: scale(1.5,1.5);
     cursor:pointer;
+    margin-top: 5rem;
+    color: #444444;
+    
 }
 
-.material-icons.delete{
-    margin-top: 8rem;
+.material-icons.edit{
+    margin-left: 0.5rem;
+    margin-top: 5rem;
     color: #444444;
-    cursor: pointer;
     transform: scale(1.2,1.2);
+    cursor: pointer;
+}
+
+
+.material-icons.delete{
+    margin-top: 5rem;
+    cursor: pointer;
+    transform: scale(1.5,1.5);
 }
 
 /*PANTALLA RESOLUCION ANCHO 1920*/
