@@ -15,8 +15,8 @@ class Coord_Recursos extends Usuario{
 
         const recurso = new Recurso(nombre_recurso, tipo_recurso, id_curso, this.#dni_)
 
-        const query = `INSERT INTO recursos(id_recurso, nombre_recurso, tipo_recurso, id_curso, nombre_curso, id_cr)
-                        VALUES(${recurso.id_recurso}, '${recurso.nombre_recurso}', '${recurso.tipo_recurso}', ${recurso.id_curso}, ${recurso.nombre_curso}, ${recurso.id_cr})`
+        const query = `INSERT INTO recursos(id_recurso, nombre_recurso, tipo_recurso, id_curso, id_cr)
+                        VALUES(${recurso.id_recurso}, '${recurso.nombre_recurso}', '${recurso.tipo_recurso}', ${recurso.id_curso}, ${recurso.id_cr})`
 
         connection.connect()
 
@@ -25,8 +25,10 @@ class Coord_Recursos extends Usuario{
 
             console.log('Recurso añadido a la base de datos')
 
-            return true
+            return
         })
+
+        return true
     }
 
     editar_recurso(nombre_recurso, tipo_recurso, id_recurso){
@@ -40,6 +42,8 @@ class Coord_Recursos extends Usuario{
             if(err) return false
 
             console.log('EDITADO')
+
+            return
         })
 
         return true
@@ -55,8 +59,10 @@ class Coord_Recursos extends Usuario{
 
             console.log('Recurso eliminado de la base de datos')
 
-            return true
+            return
         })
+
+        return true
     }
 }
 

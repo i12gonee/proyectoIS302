@@ -132,7 +132,7 @@ app.post('/add_cursos', urlencodedParser,(req, res) => {
 
 
     if(!user.añadir_curso(nombre_curso, fecha_inicio, fecha_fin, max_inscripciones, ponentes, descripcion, aula)){
-        return res.redirect('/erro_page')
+        return res.redirect('/error_page')
     }
 
     return res.redirect('/coordcursos')
@@ -149,7 +149,7 @@ app.post('/edit_cursos', urlencodedParser,(req, res) => {
     let ponentes = req.body.ponentes
 
     if(!user.editar_curso(new_nombre_curso, last_nombre_curso, fecha_inicio, fecha_fin, max_inscripciones, ponentes, descripcion, aula)){
-        return res.redirect('/erro_page')
+        return res.redirect('/error_page')
     }
 
     return res.redirect('/coordcursos')
@@ -160,7 +160,7 @@ app.post('/delete_cursos', urlencodedParser,(req, res) => {
     let id_curso = req.body.id_curso
 
     if(!user.eliminar_curso(id_curso)){
-        return res.redirect('/erro_page')
+        return res.redirect('/error_page')
     }
 
     return res.redirect('/coordcursos')
@@ -173,7 +173,7 @@ app.post('/add_recursos', urlencodedParser,(req, res) => {
 
 
     if(!user.añadir_recurso(nombre_recurso, tipo_recurso, id_curso)){
-        return res.redirect('/erro_page')
+        return res.redirect('/error_page')
     }
 
     return res.redirect('/coordrecursos')
@@ -185,7 +185,7 @@ app.post('/edit_recursos', urlencodedParser,(req, res) => {
     let id_recurso = req.body.id_recurso
 
     if(!user.editar_recurso(new_nombre_recurso, tipo_recurso, id_recurso)){
-        return res.redirect('/erro_page')
+        return res.redirect('/error_page')
     }
 
     return res.redirect('/coordrecursos')
@@ -196,7 +196,7 @@ app.post('/delete_recursos', urlencodedParser,(req, res) => {
     let id_recurso = req.body.id_recurso
 
     if(!user.eliminar_recurso(id_recurso)){
-        return res.redirect('/erro_page')
+        return res.redirect('/error_page')
     }
 
     return res.redirect('/coordrecursos')

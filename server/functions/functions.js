@@ -1,4 +1,5 @@
 const nodemailer = require('nodemailer')
+const { callbackPromise } = require('nodemailer/lib/shared')
 const connection = require('../database/connection')
 
 const generate_id = () => {
@@ -85,7 +86,7 @@ const get_name_curso = (id_curso) => {
     connection.query(query, (err, rows) => {
         if(err) throw err
 
-        return rows[0].nombre_curso
+        nombre_curso = rows[0].nombre_curso
     })
 }
 
