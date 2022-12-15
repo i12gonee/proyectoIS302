@@ -42,5 +42,5 @@ function eliminar(){
 }
 
 function editar(){
-    window.location.assign("/edit_cursos_form")
+    window.location.assign("/edit_recursos_form")
 }
