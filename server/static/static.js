@@ -3,8 +3,6 @@ const path = require('path')
 const express = require('express')
 const client_dir = require('../dir_client')
 
-console.log(client_dir);
-
 const app = express()
 
 //Set static files
@@ -17,6 +15,9 @@ app.use('/coordrecursos', express.static(path.join(client_dir, '/coordrecursos')
 app.use('/add_cursos_form', express.static(path.join(client_dir, '/coordcursos/form_add')))
 app.use('/edit_cursos_form', express.static(path.join(client_dir, '/coordcursos/form_edit')))
 app.use('/delete_cursos_form', express.static(path.join(client_dir, '/coordcursos/form_delete')))
+app.use('/add_recursos_form', express.static(path.join(client_dir, '/coordrecursos/form_add')))
+app.use('/edit_recursos_form', express.static(path.join(client_dir, '/coordrecursos/form_edit')))
+app.use('/delete_recursos_form', express.static(path.join(client_dir, '/coordrecursos/form_delete')))
 app.use('/login_page', express.static(path.join(client_dir, '/inicreg')))
 app.use('/register_page', express.static(path.join(client_dir, '/inicreg')))
 app.use('/error_page', express.static(path.join(client_dir, '/error')))

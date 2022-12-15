@@ -13,5 +13,5 @@ function arrimba2(){
 }
 
 function volver(){
-    window.location.replace("/")
+    window.location.replace("/participant")
 }

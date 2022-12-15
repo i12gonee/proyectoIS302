@@ -166,6 +166,42 @@ app.post('/delete_cursos', urlencodedParser,(req, res) => {
     return res.redirect('/coordcursos')
 })
 
+app.post('/add_recursos', urlencodedParser,(req, res) => {
+    let nombre_recurso = req.body.nombre_recurso
+    let tipo_recurso = req.body.tipo
+    let id_curso = req.body.id_curso
+
+
+    if(!user.añadir_curso(nombre_recurso, tipo_recurso, id_curso)){
+        return res.redirect('/erro_page')
+    }
+
+    return res.redirect('/coordrecursos')
+})
+
+app.post('/edit_recursos', urlencodedParser,(req, res) => {
+    let new_nombre_recurso = req.body.new_nombre
+    let tipo_recurso = req.body.tipo
+    let id_recurso = req.body.id_recurso
+
+    if(!user.editar_recurso(new_nombre_recurso, tipo_recurso, id_recurso)){
+        return res.redirect('/erro_page')
+    }
+
+    return res.redirect('/coordrecursos')
+
+})
+
+app.post('/delete_recursos', urlencodedParser,(req, res) => {
+    let id_recurso = req.body.id_recurso
+
+    if(!user.eliminar_recurso(id_recurso)){
+        return res.redirect('/erro_page')
+    }
+
+    return res.redirect('/coordrecursos')
+})
+
 app.get('/', (req, res) => {
     app.set('views', path.join(client_dir))
 
@@ -260,6 +296,18 @@ app.get('/edit_cursos_form', (req, res) => {
 
 app.get('/delete_cursos_form', (req, res) => {
     res.sendFile(path.join(client_dir, '/coordcursos/form_delete/form_delete.html'))
+})
+
+app.get('/add_recursos_form', (req, res) => {
+    res.sendFile(path.join(client_dir, '/coordrecursos/form_add/form_add.html'))
+})
+
+app.get('/edit_recursos_form', (req, res) => {
+    res.sendFile(path.join(client_dir, '/coordrecursos/form_edit/form_edit.html'))
+})
+
+app.get('/delete_recursos_form', (req, res) => {
+    res.sendFile(path.join(client_dir, '/coordrecursos/form_delete/form_delete.html'))
 })
 
 const is_in_querys = (matrix) => {

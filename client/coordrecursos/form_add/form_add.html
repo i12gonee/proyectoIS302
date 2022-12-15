@@ -7,31 +7,23 @@
     <link rel="stylesheet" type = "text/css" href="form_add.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito">
     <script src="./form_add.js"></script>
-    <title>Modificacion de curso</title>
+    <title>Modificacion de recurso</title>
 </head>
 <body>
     <div class="topbar">
-        <img class="logo" src="../resources/logo.png" onclick="volver()">
+        <img class="logo" src="../../resources/logo.png" onclick="volver()">
     </div>
     <div class="container">
         <div class="tarjetareg">
-            <form action = "/add_cursos" method = "POST" id = "reg">
+            <form action = "/add_recursos" method = "POST" id = "reg">
                 <div class="flexbox">
                 <div class="parteizquierda">
-                        <p id="nomb" class="Nombre">Nombre del curso:</p>
-                        <input onclick="arrimba()" type="text" name="new_nombre" id="name">
-                        <p id="aplld" class="Apellidos">Descripcion:</p>
-                        <input onclick="arrimba2()" type="text" name="descripcion" id="surname">
-                        <p id="dni" class="documentodeidentidad">Fecha incio:</p>
-                        <input onclick="arrimba3()" type="text" name="fecha_inicio" id="id">
-                        <p id="dni" class="documentodeidentidad">Fecha fin:</p>
-                        <input onclick="arrimba3()" type="text" name="fecha_fin" id="id">
-                        <p id="dni" class="documentodeidentidad">Máx inscripciones:</p>
-                        <input onclick="arrimba3()" type="text" name="max_inscripciones" id="id">
-                        <p id="dni" class="documentodeidentidad">Aula:</p>
-                        <input onclick="arrimba3()" type="text" name="aula" id="id">
-                        <p id="mailtext" class="Correo">Ponentes:</p>
-                        <input onclick="arrimba4()" type="text" name="ponentes" id="mail">
+                        <p id="nomb" class="Nombre">Nombre del recurso:</p>
+                        <input onclick="arrimba()" type="text" name="nombre_recurso" id="name">
+                        <p id="aplld" class="Apellidos">Tipo recurso:</p>
+                        <input onclick="arrimba2()" type="text" name="tipo" id="surname">
+                        <p id="dni" class="documentodeidentidad">ID curso asociado:</p>
+                        <input onclick="arrimba3()" type="text" name="id_curso" id="id">
                 </div>
                 <div class="lineamedio"></div>
                     <div class="partederecha">

@@ -5,19 +5,19 @@ class Curso{
     #nombre_curso_
     #fecha_inicio_
     #fecha_final_
-    #n_inscripciones_
+    #max_inscripciones_
     #precio_
     #ponentes_
     #descripcion_
     #aula_
     #id_cc_
 
-    constructor(nombre_curso, fecha_inicio, fecha_final, n_inscripciones, precio, ponentes, descripcion, aula, id_cc){
+    constructor(nombre_curso, fecha_inicio, fecha_final, max_inscripciones, precio, ponentes, descripcion, aula, id_cc){
         this.#id_curso_ = functions.generate_id()
         this.#nombre_curso_ = nombre_curso
         this.#fecha_inicio_ = fecha_inicio
         this.#fecha_final_ = fecha_final
-        this.#n_inscripciones_ = n_inscripciones
+        this.#max_inscripciones_ = max_inscripciones
         this.#precio_ = precio
         this.#ponentes_ = ponentes
         this.#descripcion_ = descripcion
@@ -29,7 +29,7 @@ class Curso{
     get nombre_curso(){return this.#nombre_curso_}
     get fecha_inicio(){return this.#fecha_inicio_}
     get fecha_final(){return this.#fecha_final_}
-    get n_inscripciones(){return this.#n_inscripciones_}
+    get max_inscripciones(){return this.#max_inscripciones_}
     get precio(){return this.#precio_}
     get ponentes(){return this.#ponentes_}
     get descripcion(){return this.#descripcion_}
@@ -40,7 +40,7 @@ class Curso{
     set nombre_curso(nombre_curso){this.#nombre_curso_ = nombre_curso}
     set fecha_inicio(fecha_inicio){this.#fecha_inicio_ = fecha_inicio}
     set fecha_final(fecha_final){this.#fecha_final_ = fecha_final}
-    set n_inscripciones(n_inscripciones){this.#n_inscripciones_ = n_inscripciones}
+    set max_inscripciones(max_inscripciones){this.#max_inscripciones_ = max_inscripciones}
     set precio(precio){this.#precio_ = precio}
     set ponentes(ponentes){this.#ponentes_ = ponentes}
     set descripcion(descripcion){this.#descripcion_ = descripcion}

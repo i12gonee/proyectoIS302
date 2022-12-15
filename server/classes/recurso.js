@@ -8,12 +8,12 @@ class Recurso{
     #nombre_curso_
     #id_cr_
 
-    constructor(nombre_recurso, tipo_recurso, id_curso, nombre_curso, id_cr){
+    constructor(nombre_recurso, tipo_recurso, id_curso, id_cr){
         this.#id_recurso_ = functions.generate_id()
         this.#nombre_recurso_ = nombre_recurso
         this.#tipo_recurso_ = tipo_recurso
         this.#id_curso_ = id_curso
-        this.#nombre_curso_ = nombre_curso
+        this.#nombre_curso_ = functions.get_name_curso(id_curso)
         this.#id_cr_ = id_cr
     }
 

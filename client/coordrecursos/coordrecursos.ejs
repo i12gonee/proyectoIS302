@@ -23,12 +23,12 @@
         <% recursos.forEach(recurso => { %>
             <div class="Curso 1" id="curso">
                 <div>
-                    <h1 class="titulo uno"> <%=recurso.nombre_curso%> </h1>
-                    <p class="plazo">Recurso: <%=recurso.nombre_recurso%> (<%=recurso.tipo_recurso%>)</p>
-                    <p class="id">ID recurso: <%=recurso.id_recurso%></p>
+                    <h1 class="titulo uno">Nombre: <%=recurso.nombre_recurso%> (<%=recurso.tipo_recurso%>) </h1>
+                    <p class="plazo">ID recurso: <%=recurso.id_recurso%></p>
+                    <p class="id">Curso asociado: <%=recurso.nombre_curso%></p>
                     <p class="id">ID curso: <%=recurso.id_curso%></p>
                 </div>
-                <a class="botonisc" href="/edit_cursos_form">
+                <a class="botonisc" href="/edit_recursos_form">
                     Editar
                 </a>
                 <span onclick="cru(this)" id="crus" class="material-icons menu">menu</span>
