@@ -24,7 +24,6 @@ class Usuario{
     set correo_electronico(correo_electronico){this.#correo_electronico_ = correo_electronico}
     set contraseña(contraseña){this.#contraseña_ = contraseña}
 
-    
     register(){
         const query = `INSERT INTO participantes(id_p, nombre_p, mail_p, contrasena_p) 
                         VALUES(${this.#dni_}, '${this.#nombre_completo_}', '${this.#correo_electronico_}', '${this.#contraseña_}')`

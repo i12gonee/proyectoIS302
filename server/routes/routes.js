@@ -59,11 +59,11 @@ app.post('/login', urlencodedParser, (req, res) => {
     user = new Usuario()
 
     const querys = [
-        `SELECT id_p, nombre_p, mail_p, contrasena_p FROM participantes WHERE nombre_p = '${nombre}' OR mail_p = '${nombre}' AND contrasena_p = '${contraseña}'`,
+        `SELECT * FROM participantes WHERE contrasena_p = '${contraseña}' AND (nombre_p = '${nombre}' OR mail_p = '${nombre}')`,
 
-        `SELECT id_cc, nombre_cc, mail_cc, contrasena_cc FROM coord_cursos WHERE nombre_cc = '${nombre}' OR mail_cc = '${nombre}' AND contrasena_cc = '${contraseña}'`,
+        `SELECT * FROM coord_cursos WHERE contrasena_cc = '${contraseña}' AND (nombre_cc = '${nombre}' OR mail_cc = '${nombre}')`,
 
-        `SELECT id_cr, nombre_cr, mail_cr, contrasena_cr FROM coord_recursos WHERE nombre_cr = '${nombre}' OR mail_cr = '${nombre}' AND contrasena_cr = '${contraseña}'`
+        `SELECT * FROM coord_recursos WHERE contrasena_cr = '${contraseña}' AND (nombre_cr = '${nombre}' OR mail_cr = '${nombre}')`
     ]
 
     connection.connect()

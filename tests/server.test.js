@@ -7,7 +7,7 @@ describe('Server tests', () => {
         expect(response.statusCode).toBe(200)
     })
 
-    test('Participant page', async () => {
+    test('Participante page', async () => {
         const response = await request(app).get('/participant').send()
         expect(response.statusCode).toBe(301)
     })
