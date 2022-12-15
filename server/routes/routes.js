@@ -172,7 +172,7 @@ app.post('/add_recursos', urlencodedParser,(req, res) => {
     let id_curso = req.body.id_curso
 
 
-    if(!user.añadir_curso(nombre_recurso, tipo_recurso, id_curso)){
+    if(!user.añadir_recurso(nombre_recurso, tipo_recurso, id_curso)){
         return res.redirect('/erro_page')
     }
 
