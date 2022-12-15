@@ -32,3 +32,19 @@ body{
     50% { border-color: orange; }
 }
   
+
+.boton_volver{
+    font-family: 'Nunito',serif;
+    margin-top: 30rem;
+    margin-left: -10rem;
+
+}
+
+.volver{
+    color: #444444;
+    text-decoration: none;
+    font-weight: bolder;
+    background-color: orange;
+    border-radius: 7px;
+
+}
