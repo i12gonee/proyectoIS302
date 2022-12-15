@@ -18,8 +18,8 @@ app.use('/delete_cursos_form', express.static(path.join(client_dir, '/coordcurso
 app.use('/add_recursos_form', express.static(path.join(client_dir, '/coordrecursos/form_add')))
 app.use('/edit_recursos_form', express.static(path.join(client_dir, '/coordrecursos/form_edit')))
 app.use('/delete_recursos_form', express.static(path.join(client_dir, '/coordrecursos/form_delete')))
-app.use('/login_page', express.static(path.join(client_dir, '/inicreg')))
-app.use('/register_page', express.static(path.join(client_dir, '/inicreg')))
+app.use('/login_page', express.static(path.join(client_dir, '/inicreg/inicio_sesion')))
+app.use('/register_page', express.static(path.join(client_dir, '/inicreg/register')))
 app.use('/error_page', express.static(path.join(client_dir, '/error')))
 
 //Set dinamic files

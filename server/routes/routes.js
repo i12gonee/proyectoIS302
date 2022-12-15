@@ -52,11 +52,9 @@ app.post('/pass', urlencodedParser, (req, res) => {
     return res.redirect('/')
 })
 
-app.post('/login', urlencodedParser, (req, res) => {
+app.post('/login', urlencodedParser, (req, res) => {    
     nombre = req.body.usuario
     let contraseña = req.body.contraseña
-
-    user = new Usuario()
 
     const querys = [
         `SELECT * FROM participantes WHERE contrasena_p = '${contraseña}' AND (nombre_p = '${nombre}' OR mail_p = '${nombre}')`,
@@ -93,7 +91,6 @@ app.post('/login', urlencodedParser, (req, res) => {
                         return res.redirect('/coordrecursos')
                 }
             } else {
-                console.log("no")
                 return res.redirect('/error_page')
             }
         })
@@ -206,7 +203,7 @@ app.get('/', (req, res) => {
     app.set('views', path.join(client_dir))
 
     is_login = false
-    //user = new Usuario
+    //user = new Usuario()
 
     connection.query('SELECT * FROM cursos', (err, rows) => {
         if(err) throw err
@@ -263,11 +260,15 @@ app.get('/coordrecursos', (req, res) => {
 })
 
 app.get('/login_page', (req, res) => {
-    res.sendFile(path.join(client_dir, '/inicreg/inicioindex.html'))
+    app.set('views', path.join(client_dir, '/inicreg/inicio_sesion'))
+
+    res.render('inicioindex')
 })
 
 app.get('/register_page', (req, res) => {
-    res.sendFile(path.join(client_dir, '/inicreg/registroindex.html'))
+    app.set('views', path.join(client_dir, '/inicreg/register'))
+
+    res.render('registroindex')
 })
 
 app.get('/password', (req, res) => {

@@ -43,5 +43,3 @@ function hideoverlay2() {
     document.getElementById("cont").style.backgroundColor = "rgba(255, 255, 255, 0.481)";
     
 }
-
-module.exports = showoverlay
