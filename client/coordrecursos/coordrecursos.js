@@ -34,11 +34,11 @@ function cru(){
 }
 
 function add(){
-    window.location.assign("form_add/form_add.html")
+    window.location.assign("/add_recursos_form")
 }
 
 function eliminar(){
-    window.location.assign("form_delete/form_delete.html")
+    window.location.assign("/delete_recursos_form")
 }
 
 function editar(){
