@@ -180,6 +180,44 @@ body .topbar{
     border-radius: 0.2rem;
 }
 
+
+.editar{
+    display: flex;
+    justify-content: center;
+}
+
+.material-icons.circle{
+    transform: scale(1.5,1.5);
+    cursor:pointer;
+    margin-top: 4rem;
+    color: #444444;
+    margin-bottom: 1rem;
+    
+}
+
+.material-icons.edit{
+    margin-left: 0.5rem;
+    margin-top: 4rem;
+    color: #444444;
+    transform: scale(1.2,1.2);
+    cursor: pointer;
+    margin-bottom: 1rem;
+
+}
+
+
+.material-icons.delete{
+    margin-top: 4rem;
+    cursor: pointer;
+    transform: scale(1.5,1.5);
+    margin-bottom: 1rem;
+}
+
+
+
+
+
+
 /*PANTALLA RESOLUCION ANCHO 1920*/
 
 @media screen and (max-width: 1920px){
@@ -196,4 +234,13 @@ body .topbar{
     body .topbar{
         padding: 8px;
     }
+}
+
+@media screen and (max-width: 1680px){
+
+    .material-icons.delete{
+        margin-left: -6rem;  
+    }
+
+
 }
