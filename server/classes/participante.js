@@ -23,11 +23,10 @@ class Participante extends Usuario{
         const query = `INSERT INTO participantes_cursos(participantes_id_p, cursos_id_curso)
                         VALUES(${this.#dni_}, ${this.#id_curso_})`
 
-        if(!this.#dni_ && !this.#id_curso_) return false
+        if(!this.#dni_ || !this.#id_curso_) return false
 
-        connection.query(query, (err, rows) => {
+        connection.query(query, (err, rows, correct) => {
             if(err) return false
-            console.log('INSCRITO')
         })
 
         return true
@@ -42,9 +41,7 @@ class Participante extends Usuario{
         if(!this.#dni_) return false
 
         connection.query(query, (err, rows) => {
-            if(err) throw err
-
-            console.log('Dado de alta correctamente')
+            if(err) return false
         })
 
         return true

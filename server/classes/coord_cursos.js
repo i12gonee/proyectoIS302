@@ -6,27 +6,29 @@ class Coord_Cursos extends Usuario{
     
     #dni_
     
-    constructor(id_usuario, nombre, apellidos, correo_electronico, contraseña){
-        super(id_usuario, nombre, apellidos, correo_electronico, contraseña)
+    constructor(dni, nombre, apellidos, correo_electronico, contraseña){
+        super(dni, nombre, apellidos, correo_electronico, contraseña)
 
-        this.#dni_ = id_usuario
+        this.#dni_ = dni
     }
 
-    añadir_curso(nombre_curso, fecha_inicio, fecha_final, n_inscripciones, precio, ponentes, descripcion, aula){
-        const curso = new Curso(nombre_curso, fecha_inicio, fecha_final, n_inscripciones, precio, ponentes, descripcion, aula, this.#dni_)
-        
-        const query = `INSERT INTO cursos(id_curso, nombre_curso, fecha_inicio, fecha_final, max_inscripciones, precio, ponente, descripcion, aula, id_cc)
-                        VALUES(${curso.id_curso}, '${curso.nombre_curso}', '${curso.fecha_inicio}', '${curso.fecha_final}', ${curso.n_inscripciones}, ${curso.precio}, '${curso.ponentes}', '${curso.descripcion}', '${curso.aula}', ${curso.id_cc})`
-
+    añadir_curso(nombre_curso, fecha_inicio, fecha_final, max_inscripciones, precio, ponentes, descripcion, aula){
         connection.connect()
+
+        if(!nombre_curso || !fecha_inicio || !fecha_final || !max_inscripciones || !precio || !ponentes || !descripcion || !aula || !this.#dni_){
+            return false
+        }
+
+        const curso = new Curso(nombre_curso, fecha_inicio, fecha_final, max_inscripciones, precio, ponentes, descripcion, aula, this.#dni_)
+
+        const query = `INSERT INTO cursos(id_curso, nombre_curso, fecha_inicio, fecha_final, max_inscripciones, precio, ponente, descripcion, aula, id_cc)
+                        VALUES(${curso.id_curso}, '${curso.nombre_curso}', '${curso.fecha_inicio}', '${curso.fecha_final}', ${curso.max_inscripciones}, ${curso.precio}, '${curso.ponentes}', '${curso.descripcion}', '${curso.aula}', ${curso.id_cc})`
 
         connection.query(query, (err, rows) => {
             if(err) return false
-
-            console.log('Curso añadido a la base de datos')
-
-            return true
         })
+
+        return true
     }
 
     editar_curso(new_nombre, last_nombre, new_fecha_inicio, new_fecha_final, new_max_inscripciones, new_precio, new_ponentes, new_descripcion, new_aula){
@@ -40,14 +42,12 @@ class Coord_Cursos extends Usuario{
                                         aula = '${new_aula}' 
                         WHERE nombre_curso = '${last_nombre}'`
 
+        if(!new_nombre || !last_nombre || !new_fecha_inicio || !new_fecha_final || !new_max_inscripciones || !new_precio || !new_ponentes || !new_descripcion || !new_aula) return false
+        
         connection.connect()
 
         connection.query(query, (err, rows) => {
             if(err) return false
-
-            console.log('EDITADO')
-
-            console.log(rows)
         })
 
         return true
@@ -56,16 +56,17 @@ class Coord_Cursos extends Usuario{
     eliminar_curso(id_curso){
         const query = `DELETE FROM cursos WHERE id_curso = ${id_curso}`
 
+        if(!id_curso){
+            return false
+        }
+
         connection.connect()
 
         connection.query(query, (err, rows) => {
             if(err) return false
-
-            console.log('Curso eliminado de la base de datos')
-
-            return true
-
         })
+
+        return true
     }
 }
 

@@ -21,4 +21,14 @@ describe('GET responses', () => {
         const response = await request(app).get('/coordrecursos').type('text/html')
         expect(response.text).toBeDefined();
     })
+
+    test('Login page', async () => {
+        const response = await request(app).get('/login_page').type('text/html')
+        expect(response.text).toBeDefined();
+    })
+
+    test('Register page', async () => {
+        const response = await request(app).get('/register_page').type('text/html')
+        expect(response.text).toBeDefined();
+    })
 })
