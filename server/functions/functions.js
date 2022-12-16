@@ -77,20 +77,6 @@ const send_email_to_user = (email_user, password) => {
     })
 }
 
-const get_name_curso = (id_curso) => {
-    const query = `SELECT nombre_curso FROM cursos 
-                    WHERE id_curso = ${id_curso}`
-    
-    connection.connect()
-
-    connection.query(query, (err, rows) => {
-        if(err) throw err
-
-        nombre_curso = rows[0].nombre_curso
-    })
-}
-
 module.exports.generate_id = generate_id
 module.exports.send_email_to_admin = send_email_to_admin
 module.exports.send_email_to_user = send_email_to_user
-module.exports.get_name_curso = get_name_curso
