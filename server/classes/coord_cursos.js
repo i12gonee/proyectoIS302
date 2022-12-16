@@ -15,7 +15,7 @@ class Coord_Cursos extends Usuario{
     añadir_curso(nombre_curso, fecha_inicio, fecha_final, max_inscripciones, precio, ponentes, descripcion, aula){
         connection.connect()
 
-        if(!nombre_curso || !fecha_inicio || !fecha_final || !max_inscripciones || !precio || !ponentes || !descripcion || !aula || !this.#dni_){
+        if(!nombre_curso || !fecha_inicio || !fecha_final || !max_inscripciones || !precio || !ponentes || !descripcion || !aula){
             return false
         }
 

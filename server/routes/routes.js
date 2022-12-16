@@ -142,10 +142,11 @@ app.post('/edit_cursos', urlencodedParser,(req, res) => {
     let fecha_inicio = req.body.fecha_inicio
     let fecha_fin = req.body.fecha_fin
     let max_inscripciones = req.body.max_inscripciones
+    let precio = req.body.precio
     let aula = req.body.aula
     let ponentes = req.body.ponentes
 
-    if(!user.editar_curso(new_nombre_curso, last_nombre_curso, fecha_inicio, fecha_fin, max_inscripciones, ponentes, descripcion, aula)){
+    if(!user.editar_curso(new_nombre_curso, last_nombre_curso, fecha_inicio, fecha_fin, max_inscripciones, precio, ponentes, descripcion, aula)){
         return res.redirect('/error_page')
     }
 
