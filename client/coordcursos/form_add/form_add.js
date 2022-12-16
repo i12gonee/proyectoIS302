@@ -22,6 +22,22 @@ function arrimba4(){
     document.getElementById("mailtext").style.cssText=style;
 }
 
+function arrimba5(){
+    document.getElementById("ffin").classList.add("funcionactive5");
+    document.getElementById("ffin").style.cssText=style;
+}
+
+function arrimba6(){
+    document.getElementById("minscp").classList.add("funcionactive6");
+    document.getElementById("minscp").style.cssText=style;
+}
+
+function arrimba7(){
+    document.getElementById("aula").classList.add("funcionactive7");
+    document.getElementById("aula").style.cssText=style;
+}
+
+
 function volver(){
     window.location.replace("/coordcursos")
 }
