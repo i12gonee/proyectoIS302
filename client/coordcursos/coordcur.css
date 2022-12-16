@@ -23,11 +23,13 @@ body .topbar{
     margin-top: 1.3rem;
 }
 
-.topbar .coordcur{
+.coordcur{
     color:#ff8c00;
     margin-right: 2rem;
+    margin-top: -2rem;
     font-family: 'Nunito',serif;
     text-decoration: none;
+    transform: translateX(-5rem) translateY(2.3rem);
 }
 
 .material-icons{
@@ -216,6 +218,21 @@ body .topbar{
     cursor: pointer;
     transform: scale(1.5,1.5);
     margin-bottom: 1rem;
+}
+
+.cerrarsesion{
+    font-family: 'Nunito',serif;
+    border-radius: 1rem;
+    color: #444444;
+    text-decoration: none;
+    text-align: center;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    height: 3rem;
+    width: 10rem;
+    background-color:   #ff8c00;
+    cursor: pointer;
+    font-weight: bolder;
+   
 }
 
 /*PANTALLA RESOLUCION ANCHO 1920*/
