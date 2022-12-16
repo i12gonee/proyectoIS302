@@ -6,5 +6,3 @@ const url = 'http://localhost:' + port
 app.listen(port, () => {
     console.log('Listening in ' + url)
 })
-
-module.exports = app
