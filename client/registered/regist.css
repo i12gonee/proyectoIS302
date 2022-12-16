@@ -5,8 +5,10 @@
 .nombreusuario{
     color:#ff8c00;
     margin-right: 2rem;
+    margin-top: -2rem;
     font-family: 'Nunito',serif;
     text-decoration: none;
+    transform: translateX(-5rem) translateY(2.3rem);
 }
 
 body .topbar{
@@ -41,6 +43,21 @@ body .topbar{
     color: #ff8c00;
     transform: translateY(0.5rem);
     width: 1.8rem;
+}
+
+.cerrarsesion{
+    font-family: 'Nunito',serif;
+    border-radius: 1rem;
+    color: #444444;
+    text-decoration: none;
+    text-align: center;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    height: 3rem;
+    width: 10rem;
+    background-color:   #ff8c00;
+    cursor: pointer;
+    font-weight: bolder;
+   
 }
 
 .cursosdisponibles{
