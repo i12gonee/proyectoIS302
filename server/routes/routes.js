@@ -111,7 +111,7 @@ app.post('/inscribirse', urlencodedParser, (req, res) => {
         console.log(user.id_curso)
 
         if(user.inscribirse_curso()){
-            res.send('INSCRITO')
+            res.redirect('/participant')
         } else {
             res.redirect('/error_page')
         }
