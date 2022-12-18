@@ -326,7 +326,11 @@ body .topbar{
     }
 
     .tarjetareg{
-        height: 40rem;
+        height: 60rem;
+    }
+
+    .lineamedio{
+        height: 57rem;
     }
 
     #usr {
