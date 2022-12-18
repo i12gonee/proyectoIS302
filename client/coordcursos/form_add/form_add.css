@@ -29,7 +29,7 @@ body .topbar{
     flex-direction: row;
     background-color: #444444;
     width: 85%;
-    height: 27rem;
+    height: 50rem;
     margin-top: 5rem;
     border-radius: 20px;
     box-shadow: 10px 10px 5px 0px rgba(56, 54, 56, 0.212);
@@ -302,7 +302,7 @@ body .topbar{
     }
 
     .tarjetareg{
-        height: 40rem;
+        height: 50rem;
     }
 
     #usr {
@@ -341,7 +341,7 @@ body .topbar{
     }
 
     .tarjetareg{
-        height: 44rem;
+        height: 50rem;
     }
 
     .lineamedio{
