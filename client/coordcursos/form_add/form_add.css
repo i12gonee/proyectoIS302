@@ -304,6 +304,9 @@ body .topbar{
     .tarjetareg{
         height: 50rem;
     }
+    .lineamedio{
+        height: 47rem;
+    }
 
     #usr {
         width: 70%;
