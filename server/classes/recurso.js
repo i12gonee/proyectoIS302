@@ -1,5 +1,4 @@
 const functions = require('../functions/functions')
-const connection = require('../database/connection')
 
 class Recurso{
     #id_recurso_

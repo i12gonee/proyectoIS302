@@ -1,6 +1,6 @@
 const Coord_cursos = require('../server/classes/coord_cursos')
 
-describe('Test de la clase Participante', () => {
+describe('Test de la clase Coordinador de Cursos', () => {
     test('Añadir un curso (datos correctos)', async () => {
         let cc = new Coord_cursos(92943376, 'Emilio', 'i12gonee@uco.es', 'emiliocc')
         const funcion = await cc.añadir_curso('curso', '2023-09-01', '2023-10-01', 40, 20, 'ponente', 'descripcion', 'aula')

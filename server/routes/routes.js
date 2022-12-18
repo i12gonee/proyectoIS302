@@ -206,7 +206,7 @@ app.get('/', (req, res) => {
     app.set('views', path.join(client_dir))
 
     is_login = false
-    //user = new Usuario()
+    user = new Usuario()
 
     connection.query('SELECT * FROM cursos', (err, rows) => {
         if(err) throw err

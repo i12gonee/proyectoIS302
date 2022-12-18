@@ -22,6 +22,32 @@ function arrimba4(){
     document.getElementById("mailtext").style.cssText=style;
 }
 
+function arrimba5(){
+    document.getElementById("nombant").classList.add("funcionactive5");
+    document.getElementById("nombant").style.cssText=style;
+}
+
+function arrimba6(){
+    document.getElementById("ffin").classList.add("funcionactive6");
+    document.getElementById("ffin").style.cssText=style;
+}
+
+function arrimba7(){
+    document.getElementById("minscp").classList.add("funcionactive7");
+    document.getElementById("minscp").style.cssText=style;
+}
+
+function arrimba8(){
+    document.getElementById("precio").classList.add("funcionactive8");
+    document.getElementById("precio").style.cssText=style;
+}
+
+function arrimba9(){
+    document.getElementById("aula").classList.add("funcionactive9");
+    document.getElementById("aula").style.cssText=style;
+}
+
+
 function volver(){
     window.location.replace("/coordcursos")
 }

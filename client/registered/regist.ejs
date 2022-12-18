@@ -29,6 +29,35 @@
                     <h1 class="titulo uno"> <%=curso.nombre_curso%> </h1>
                     <p class="plazo">Plazo de inscripcion: <%=curso.fecha_inicio%> - <%=curso.fecha_final%></p>
                     <p class="precio">Precio: <%=curso.precio%> €</p>
+                    <script>
+                        var x = 0;
+
+                        function cru(){
+                            if (x == 0) {
+                                document.getElementById("crus").textContent = "close";
+                                x++;
+                                document.getElementById("despl").innerHTML = `
+                                                                            <div class="desplegable">
+                                                                                <div class="Description one">Descripción:</div>
+                                                                                <div class="Description"> <%= curso.descripcion %>. </div>
+                                                                                <div class="Description two">Aula:</div>
+                                                                                <div class="Description 3"> <%= curso.aula %>. </div>
+                                                                            </div>`;
+                                document.getElementById("curso").style.cssText=style;
+                        
+                            }
+                            else{
+                                document.getElementById("crus").textContent = "menu";
+                                x--;
+                                document.getElementById("despl").innerHTML = `<div class="desplegable2">
+                                                                                <div class="Description one">Descripción:</div>
+                                                                                <div class="Description"> <%= curso.descripcion %>. </div>
+                                                                                <div class="Description two">Aula:</div>
+                                                                                <div class="Description 3"> <%= curso.aula %>. </div>
+                                                                            </div>`;
+                            }
+                        }
+                    </script>
                 </div>
                 <a class="botonisc" href = "/page_inscribirse">
                     Inscribirse
