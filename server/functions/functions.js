@@ -1,6 +1,4 @@
 const nodemailer = require('nodemailer')
-const { callbackPromise } = require('nodemailer/lib/shared')
-const connection = require('../database/connection')
 
 const generate_id = () => {
     let numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
