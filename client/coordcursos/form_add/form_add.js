@@ -37,6 +37,11 @@ function arrimba7(){
     document.getElementById("aula").style.cssText=style;
 }
 
+function arrimba8(){
+    document.getElementById("precio").classList.add("funcionactive7");
+    document.getElementById("precio").style.cssText=style;
+}
+
 
 function volver(){
     window.location.replace("/coordcursos")

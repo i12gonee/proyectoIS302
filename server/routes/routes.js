@@ -123,12 +123,14 @@ app.post('/add_cursos', urlencodedParser,(req, res) => {
     let descripcion = req.body.descripcion
     let fecha_inicio = req.body.fecha_inicio
     let fecha_fin = req.body.fecha_fin
+    let precio = req.body.precio
     let max_inscripciones = req.body.max_inscripciones
     let aula = req.body.aula
     let ponentes = req.body.ponentes
 
+    console.log(precio, nombre_curso, descripcion, fecha_fin, fecha_inicio, max_inscripciones, aula, ponentes);
 
-    if(!user.añadir_curso(nombre_curso, fecha_inicio, fecha_fin, max_inscripciones, ponentes, descripcion, aula)){
+    if(!user.añadir_curso(nombre_curso, fecha_inicio, fecha_fin, max_inscripciones, precio, ponentes, descripcion, aula)){
         return res.redirect('/error_page')
     }
 
