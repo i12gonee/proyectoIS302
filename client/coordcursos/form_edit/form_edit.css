@@ -60,6 +60,33 @@ body .topbar{
     100% {transform: translateY(2rem) scale(1);}
 }
 
+@keyframes arrimba5{
+    0% {transform: translateY(4rem) translateX(-4.2rem) scale(0.6);}
+    100% {transform: translateY(2rem) scale(1);}
+}
+
+@keyframes arrimba6{
+    0% {transform: translateY(4rem) translateX(-4.2rem) scale(0.6);}
+    100% {transform: translateY(2rem) scale(1);}
+}
+
+@keyframes arrimba7{
+    0% {transform: translateY(4rem) translateX(-4.2rem) scale(0.6);}
+    100% {transform: translateY(2rem) scale(1);}
+}
+
+@keyframes arrimba8{
+    0% {transform: translateY(4rem) translateX(-4.2rem) scale(0.6);}
+    100% {transform: translateY(2rem) scale(1);}
+}
+
+@keyframes arrimba9{
+    0% {transform: translateY(4rem) translateX(-4.2rem) scale(0.6);}
+    100% {transform: translateY(2rem) scale(1);}
+}
+
+
+
 .funcionactive{
     animation-name: arrimba;
     animation-duration: 0.5s;
@@ -83,6 +110,37 @@ body .topbar{
     animation-duration: 0.5s;
     animation-iteration-count: 1;
 }
+
+.funcionactive5{
+    animation-name: arrimba5;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+}
+
+.funcionactive6{
+    animation-name: arrimba6;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+}
+
+.funcionactive7{
+    animation-name: arrimba7;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+}
+
+.funcionactive8{
+    animation-name: arrimba8;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+}
+
+.funcionactive9{
+    animation-name: arrimba9;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+}
+
 
 .Nombre{
     font-family: 'Nunito',serif;
