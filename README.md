@@ -60,6 +60,6 @@ Cuando ya esté dentro escriba:
 
 Estó hará que se cree toda la base de datos que viene definida en el archivo SQL.
 
-El video tutorial de la página web está en el siguiente enlace;
-    https://youtu.be/n6mpCFwNXFc
+##Vídeo tutorial
+El video tutorial de la página web está en el siguiente enlace: https://youtu.be/n6mpCFwNXFc
 
